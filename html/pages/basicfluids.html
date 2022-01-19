@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -51,7 +53,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Astrophysical Fluid Dynamics" href="../intro.html" />
+    <link rel="prev" title="Introduction" href="../intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -91,7 +93,7 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   Astrophysical Fluid Dynamics
+   Introduction
   </a>
  </li>
 </ul>
@@ -192,6 +194,13 @@
   <a class="reference internal nav-link" href="#fluid-approximation-and-the-fluid-element">
    Fluid Approximation and the Fluid Element
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#counterexamples-and-an-example-of-a-fluid">
+     Counterexamples and an Example of a Fluid
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#derivatives-eulerian-versus-lagrangian">
@@ -247,6 +256,13 @@
   <a class="reference internal nav-link" href="#fluid-approximation-and-the-fluid-element">
    Fluid Approximation and the Fluid Element
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#counterexamples-and-an-example-of-a-fluid">
+     Counterexamples and an Example of a Fluid
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#derivatives-eulerian-versus-lagrangian">
@@ -291,7 +307,29 @@
 <h1>Basic Things about Fluids<a class="headerlink" href="#basic-things-about-fluids" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="fluid-approximation-and-the-fluid-element">
 <h2>Fluid Approximation and the Fluid Element<a class="headerlink" href="#fluid-approximation-and-the-fluid-element" title="Permalink to this headline">¶</a></h2>
+<p>We will start with three criteria (hand-wavy, order of magnitude criteria). When these three criteria are met, only then can we apply the <strong>fluid approximation.</strong> Let’s start by thinking about a fluid and fluid element (blue) of size <span class="math notranslate nohighlight">\(L\)</span>:</p>
+<a class="reference internal image-reference" href="../_images/fig1.png"><img alt="fig1" class="align-center" src="../_images/fig1.png" style="width: 600px;" /></a>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(L\)</span> has to be <em>large</em> enough to contain many atoms or molecules. Mathematically, this is: <span class="math notranslate nohighlight">\(L \gg n^{-1/3}\)</span>, where <span class="math notranslate nohighlight">\(n\)</span> is the mean number density of atoms. Note that <span class="math notranslate nohighlight">\(n^{-1/3}\)</span> is roughly the mean atomic spacing.</p></li>
+<li><p><span class="math notranslate nohighlight">\(L\)</span> has to be <em>small</em> enough that the “fluid properties” (temperature <span class="math notranslate nohighlight">\(T\)</span>, pressure <span class="math notranslate nohighlight">\(P\)</span>, mass density <span class="math notranslate nohighlight">\(\rho\)</span>, etc) we are looking at are constant within the fluid element. Mathematically, this is: <span class="math notranslate nohighlight">\(L \ll R\)</span> where <span class="math notranslate nohighlight">\(R \sim \frac{Q}{|\vec{\nabla}Q|}\)</span> where <span class="math notranslate nohighlight">\(Q\)</span> can be any of our relevant quantities above. Note that <span class="math notranslate nohighlight">\(\vec{\nabla}\)</span> is the gradient.</p></li>
+<li><p>The fluid is “collisional,” meaning we have frequent interactions between particles, enough to “erase” the individual trajectories of particles in the fluid. These collisions can be anything – physical, Thomson scattering, anything – so long as they are frequent enough. Mathematically, we have: <span class="math notranslate nohighlight">\(L \gg \lambda\)</span>, where <span class="math notranslate nohighlight">\(\lambda\)</span> is the mean free path of the fluid. <strong>In this limit, frequent interactions allow particle distributions to depend only on macroscopic properties.</strong></p></li>
+</ol>
+<div class="section" id="counterexamples-and-an-example-of-a-fluid">
+<h3>Counterexamples and an Example of a Fluid<a class="headerlink" href="#counterexamples-and-an-example-of-a-fluid" title="Permalink to this headline">¶</a></h3>
+<p><strong>Counterexample</strong>
+A note about Criteria 3 – when does this note occur (i.e., when are they “collisionless?”)? For example, in cosmology, cold dark matter (CDM) is a collisionless fluid (so are neutrinos), meaning extremely weakly interaction. Another example are photons, but that sort of depends on what is happening in the Universe. Photons rapidly interact with Thomson and Compton scattering at high densities. Photons <em>after</em> recombination (or decoupling) are no longer a fluid.</p>
+<p><strong>Example</strong>
+Let’s look at an example for which we <strong>can</strong> find an <span class="math notranslate nohighlight">\(L\)</span> to make us a fluid. Consider the Galactic HI disk:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(n \sim 0.1 \text{ cm}^{-3} \rightarrow n^{-1/3} \sim 2 \text{ cm}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(R \sim 10 \text{ kpc} \rightarrow 3 \times 10^{22} \text{ cm}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda \sim \frac{1}{n\sigma} \frac{1}{(0.1 \text{ cm}^{-3})\times(10^{-15} \text{ cm}^{-2})} \sim 10^{16} \text{ cm}\)</span></p></li>
+</ul>
+<p>Putting these together, we don’t have any problem finding an <span class="math notranslate nohighlight">\(L\)</span> to obey Rules 1, 2, and 3! <strong>No problem!</strong>: <span class="math notranslate nohighlight">\(10^{16} \text{ cm}^{2} \ll L \ll 3\times 10^{22} \text{ cm}\)</span>. Note
+that if we have a weaker interaction like Thomson scattering <span class="math notranslate nohighlight">\(\sim 10^{-25} \text{ cm}^{2}\)</span>, we pretty soon cannot use fluid theory.</p>
 </div>
+</div>
+<hr class="docutils" />
 <div class="section" id="derivatives-eulerian-versus-lagrangian">
 <h2>Derivatives: Eulerian versus Lagrangian<a class="headerlink" href="#derivatives-eulerian-versus-lagrangian" title="Permalink to this headline">¶</a></h2>
 </div>
@@ -341,7 +379,7 @@
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Astrophysical Fluid Dynamics</p>
+            <p class="prev-next-title">Introduction</p>
         </div>
     </a>
 </div>
