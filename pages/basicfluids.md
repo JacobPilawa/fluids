@@ -19,7 +19,7 @@ We will start with three criteria (hand-wavy, order of magnitude criteria). When
 ### Counterexamples and an Example of a Fluid
 
 **Counterexample**
-A note about Criteria 3 – when does this note occur (i.e., when are they "collisionless?")? For example, in cosmology, cold dark matter (CDM) is a collisionless fluid (so are neutrinos), meaning extremely weakly interaction. Another example are photons, but that sort of depends on what is happening in the Universe. Photons rapidly interact with Thomson and Compton scattering at high densities. Photons _after_ recombination (or decoupling) are no longer a fluid. 
+A note about Criteria 3 – when does this note occur (i.e., when are they "collisionless?")? For example, in cosmology, cold dark matter (CDM) is a collisionless fluid (so are neutrinos), meaning extremely weakly interaction. Another example are photons, but that sort of depends on what is happening in the Universe. Photons rapidly interact with Thomson and Compton scattering depending on conditions. Photons _after_ recombination (or decoupling) are no longer a fluid. 
 
 **Example** 
 Let's look at an example for which we **can** find an $L$ to make us a fluid. Consider the Galactic HI disk:
