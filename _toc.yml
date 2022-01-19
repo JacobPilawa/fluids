@@ -4,4 +4,4 @@
 format: jb-book
 root: intro
 chapters:
-- file: pages/markdown.md
+- file: pages/basicfluids.md

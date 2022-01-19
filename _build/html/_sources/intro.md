@@ -8,7 +8,7 @@ The main references in the class are:
 
 * Thorne and Blandford: Modern Classical Physics (Princeton University Press 2017). A pre-published version (January 2013) is available [here](http://www.pmaweb.caltech.edu/Courses/ph136/yr2012/1200.1.K-withContents.pdf).
 
-* Balbus Texts: [Hydrodynamics](https://w.astro.berkeley.edu/~cpma/202/hydro_balbus.pdf) and [Magnetohydrodynamics](https://w.astro.berkeley.edu/~cpma/202/mhd_balbus.pdf).
+* Balbus Texts: [Hydrodynamics](https://w.astro.berkeley.edu/~cpma/202/hydro_balbus.pdf) and [Magnetohydrodynamics](https://w.astro.berkeley.edu/~cpma/202/mhd_balbus.pdf)
 
 Some supplementary references are:
 
