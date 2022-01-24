@@ -196,6 +196,11 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-fluid-approximation">
+     The Fluid Approximation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#counterexamples-and-an-example-of-a-fluid">
      Counterexamples and an Example of a Fluid
     </a>
@@ -206,6 +211,18 @@
   <a class="reference internal nav-link" href="#derivatives-eulerian-versus-lagrangian">
    Derivatives: Eulerian versus Lagrangian
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deriving-the-fluid-derivative">
+     Deriving the Fluid Derivative
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-newton-s-2nd-law-applied-to-a-fluid-element">
+     Example: Newton’s 2nd Law Applied to a Fluid Element
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mass-conservation-and-the-continuity-equation">
@@ -214,7 +231,29 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#momentum-conservation-the-euler-equation-pressure-and-the-stress-tensor">
-   Momentum Conservation, the Euler Equation, Pressure, and the Stress Tensor
+   Momentum Conservation: The Euler Equation, Pressure, and the Stress Tensor
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pressure-forces">
+     Pressure Forces
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gravitational-forces">
+     Gravitational Forces
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#collecting-our-work">
+     Collecting our Work
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-real-quick-summary-of-our-three-fluid-equations">
+   A Real Quick Summary of our Three Fluid Equations
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -258,6 +297,11 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-fluid-approximation">
+     The Fluid Approximation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#counterexamples-and-an-example-of-a-fluid">
      Counterexamples and an Example of a Fluid
     </a>
@@ -268,6 +312,18 @@
   <a class="reference internal nav-link" href="#derivatives-eulerian-versus-lagrangian">
    Derivatives: Eulerian versus Lagrangian
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deriving-the-fluid-derivative">
+     Deriving the Fluid Derivative
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-newton-s-2nd-law-applied-to-a-fluid-element">
+     Example: Newton’s 2nd Law Applied to a Fluid Element
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mass-conservation-and-the-continuity-equation">
@@ -276,7 +332,29 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#momentum-conservation-the-euler-equation-pressure-and-the-stress-tensor">
-   Momentum Conservation, the Euler Equation, Pressure, and the Stress Tensor
+   Momentum Conservation: The Euler Equation, Pressure, and the Stress Tensor
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pressure-forces">
+     Pressure Forces
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gravitational-forces">
+     Gravitational Forces
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#collecting-our-work">
+     Collecting our Work
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-real-quick-summary-of-our-three-fluid-equations">
+   A Real Quick Summary of our Three Fluid Equations
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -307,6 +385,8 @@
 <h1>Basic Things about Fluids<a class="headerlink" href="#basic-things-about-fluids" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="fluid-approximation-and-the-fluid-element">
 <h2>Fluid Approximation and the Fluid Element<a class="headerlink" href="#fluid-approximation-and-the-fluid-element" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-fluid-approximation">
+<h3>The Fluid Approximation<a class="headerlink" href="#the-fluid-approximation" title="Permalink to this headline">¶</a></h3>
 <p>We will start with three criteria (hand-wavy, order of magnitude criteria). When these three criteria are met, only then can we apply the <strong>fluid approximation.</strong> Let’s start by thinking about a fluid and fluid element (blue) of size <span class="math notranslate nohighlight">\(L\)</span>:</p>
 <a class="reference internal image-reference" href="../_images/fig1.png"><img alt="fig1" class="align-center" src="../_images/fig1.png" style="width: 600px;" /></a>
 <ol class="simple">
@@ -314,6 +394,7 @@
 <li><p><span class="math notranslate nohighlight">\(L\)</span> has to be <em>small</em> enough that the “fluid properties” (temperature <span class="math notranslate nohighlight">\(T\)</span>, pressure <span class="math notranslate nohighlight">\(P\)</span>, mass density <span class="math notranslate nohighlight">\(\rho\)</span>, etc) we are looking at are constant within the fluid element. Mathematically, this is: <span class="math notranslate nohighlight">\(L \ll R\)</span> where <span class="math notranslate nohighlight">\(R \sim \frac{Q}{|\vec{\nabla}Q|}\)</span> where <span class="math notranslate nohighlight">\(Q\)</span> can be any of our relevant quantities above. Note that <span class="math notranslate nohighlight">\(\vec{\nabla}\)</span> is the gradient.</p></li>
 <li><p>The fluid is “collisional,” meaning we have frequent interactions between particles, enough to “erase” the individual trajectories of particles in the fluid. These collisions can be anything – physical, Thomson scattering, anything – so long as they are frequent enough. Mathematically, we have: <span class="math notranslate nohighlight">\(L \gg \lambda\)</span>, where <span class="math notranslate nohighlight">\(\lambda\)</span> is the mean free path of the fluid. <strong>In this limit, frequent interactions allow particle distributions to depend only on macroscopic properties.</strong></p></li>
 </ol>
+</div>
 <div class="section" id="counterexamples-and-an-example-of-a-fluid">
 <h3>Counterexamples and an Example of a Fluid<a class="headerlink" href="#counterexamples-and-an-example-of-a-fluid" title="Permalink to this headline">¶</a></h3>
 <p><strong>Counterexample</strong>
@@ -332,12 +413,209 @@ that if we have a weaker interaction like Thomson scattering <span class="math n
 <hr class="docutils" />
 <div class="section" id="derivatives-eulerian-versus-lagrangian">
 <h2>Derivatives: Eulerian versus Lagrangian<a class="headerlink" href="#derivatives-eulerian-versus-lagrangian" title="Permalink to this headline">¶</a></h2>
+<p><strong>A great thing to do on a Monday afternoon!</strong></p>
+<p>Having this general concept in mind, let’s move to a more mathematical and descriptive properties of these fluid elements moving throughout space. We must start with something we are familiar with – taking derivatives.</p>
+<p>We have two choices in tracking the fluid element. In the Lagrangian perspective, we move along <em>with</em> the fluid element; the Eulerian approach looks at the time rate of change of a quantity while beign in a fixed frame. Note that numerically, there are many more considerations to Eulerian versus Lagrangian methods.</p>
+<hr class="docutils" />
+<div class="section" id="deriving-the-fluid-derivative">
+<h3>Deriving the Fluid Derivative<a class="headerlink" href="#deriving-the-fluid-derivative" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../_images/fig2.png"><img alt="fig2" class="align-center" src="../_images/fig2.png" style="width: 600px;" /></a>
+<p><strong>Consier a fluid element</strong> at <span class="math notranslate nohighlight">\((\vec{r},t)\)</span>, then at <span class="math notranslate nohighlight">\((\vec{r} + \delta \vec{r}, t + \delta t)\)</span> at a later time. A time change of any quantity <span class="math notranslate nohighlight">\(Q\)</span> (scalar, vector, tensor, …) in a fluid element:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{DQ}{Dt} \equiv \lim_{\delta t \rightarrow 0} \frac{Q(\vec{r} + \delta \vec{r}, t+\delta t) - Q(\vec{r},t)}{\delta t}
+\]</div>
+<p>Let’s Taylor expand:</p>
+<div class="math notranslate nohighlight">
+\[
+Q(\vec{r}+\delta \vec{r}, t + \delta t) - Q(\vec{r},t) 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+= \underbrace{Q(\vec{r},t+\delta t) - Q(\vec{r},t)}_{\frac{\partial Q}{\partial t} \delta t} + \underbrace{Q(\vec{r} + \delta \vec{r}, t+\delta t) - Q(\vec{r},t+\delta t)}_{\delta \vec{r} \cdot \vec{\nabla}Q(\vec{r},t+\delta t)}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\text{second term} = \delta \vec{r} \cdot \left(\vec{\nabla} Q(\vec{r},t) + \delta t \cdot \frac{\partial}{\partial t} \vec{\nabla} Q(\vec{r},t)\right)
+\]</div>
+<p>Note that the <span class="math notranslate nohighlight">\(\delta \vec{r}\)</span> and <span class="math notranslate nohighlight">\(\delta t\)</span> terms are second order, and thus we can drop in the differentiation.</p>
+<p>Collecting our tmerms, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+= \frac{\partial Q(\vec{r},t)}{\partial t} \delta t + \left(\delta \vec{r} \cdot \vec{\nabla}\right) Q(\vec{r},t)
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>One thing to be careful of in this class – keep track of vectors and scalars! If we hav a vector equation, everything must be a vector. If we have a scalar equation, everything must be a scalar.</p>
 </div>
+<p>Cleaning things up, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{DQ}{Dt} = \frac{\partial Q(\vec{r},t)}{\partial t} + \left(\vec{v}\cdot\vec{\nabla}\right)Q(\vec{r},t)}
+\]</div>
+<p>where</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\vec{v} = \frac{d\vec{r}}{dt}\)</span> is the fluid velocity</p></li>
+</ul>
+<p>The way to think about this equation is as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\text{rate of change \newline in the frame of the fluid} = \text{rate of change at fixed position } \vec{r} + \\ \text{ change due to fluid element moving to a new location}
+\end{split}\]</div>
+<p>In other words, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{Lagrangian} = \text{Eulerian} + \text{ Advective/Convective Derivative Term}
+\]</div>
+<p>This motivates the use of the <strong>Lagrangian operator</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{D}{Dt} = \frac{\partial}{\partial t} + \vec{v} \cdot \vec{\nabla}}
+\]</div>
+</div>
+<div class="section" id="example-newton-s-2nd-law-applied-to-a-fluid-element">
+<h3>Example: Newton’s 2nd Law Applied to a Fluid Element<a class="headerlink" href="#example-newton-s-2nd-law-applied-to-a-fluid-element" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[
+\vec{F} = m \frac{D \vec{v}}{Dt} = m \left(\frac{\partial \vec{v}}{\partial t} + \left(\vec{v} \cdot \vec{\nabla}\right)\vec{v}\right)
+\]</div>
+<p>Writing this as <span class="math notranslate nohighlight">\(F/m\)</span> on the lhs gives the Navier-Stokes equation from last time!</p>
+<p><strong>We emphasize here that the advection term is second order in <span class="math notranslate nohighlight">\(v\)</span>, making life extremely difficult.</strong></p>
+<p>Also, recall that, when we have <span class="math notranslate nohighlight">\(\vec{v}\cdot \vec{\nabla}\)</span> . Be careful moving to different coordinate systems! Any time you are confused, go back to Cartesian (to comprehend).</p>
+</div>
+</div>
+<hr class="docutils" />
 <div class="section" id="mass-conservation-and-the-continuity-equation">
 <h2>Mass Conservation and the Continuity Equation<a class="headerlink" href="#mass-conservation-and-the-continuity-equation" title="Permalink to this headline">¶</a></h2>
+<p>Consider a fluid of mass <span class="math notranslate nohighlight">\(M\)</span>, density <span class="math notranslate nohighlight">\(\rho\)</span>, velocity <span class="math notranslate nohighlight">\(\vec{v}\)</span>. Let’s examine the time change of <span class="math notranslate nohighlight">\(M\)</span>. Note that <span class="math notranslate nohighlight">\(\rho \vec{v}\)</span> is the flux.</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial M}{\partial t} = \underbrace{- \int \rho \vec{v} \cdot \mathrm{d} \vec{S}}_\text{net flow through surface S}
+\]</div>
+<p>Let’s re-write the left hand side in terms of density and the right-hand side using the divergence theorem:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial}{\partial t} \int \rho \mathrm{d} V = - \int \vec{\nabla} \left(\rho \vec{v}\right) \mathrm{d}V
+\]</div>
+<p>The integrads should be equal, giving <strong>the continuity equation in differential form (Eulerian framework)</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{\partial \rho}{\partial t} + \vec{\nabla} \left(\rho\vec{v}\right) = 0}
+\]</div>
+<p>If we use the Lagrangian operator we defined above, we have the <strong>continuty equation in the Lagrangian framework</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{D\rho}{Dt} + \rho \left(\vec{\nabla} \cdot \vec{v}\right) =0
+\]</div>
+<p>We will still likely use the Eulerian form mostly, but Lagrangian forms allow us to discuss <em>incompressible flow</em>.</p>
+<div class="admonition-incompressible-flows-fluids admonition">
+<p class="admonition-title">Incompressible flows/fluids</p>
+<p>This means that the individual fluid elemnts preserve their density along their paths. When this is the case, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{D\rho}{Dt} = 0 \rightarrow \vec{\nabla}\cdot \vec{v} = 0
+\]</div>
+<p>Incompressible flows are thus awesome because we can drop the divergence of <span class="math notranslate nohighlight">\(\vec{v}\)</span> terms.</p>
+<p>Another way of saying this: if the velocity field is divergence free, we have incompressible flows.</p>
+<p>To beat this to death: Incompressible flows are divergence free. Applications to come later.</p>
+</div>
 </div>
 <div class="section" id="momentum-conservation-the-euler-equation-pressure-and-the-stress-tensor">
-<h2>Momentum Conservation, the Euler Equation, Pressure, and the Stress Tensor<a class="headerlink" href="#momentum-conservation-the-euler-equation-pressure-and-the-stress-tensor" title="Permalink to this headline">¶</a></h2>
+<h2>Momentum Conservation: The Euler Equation, Pressure, and the Stress Tensor<a class="headerlink" href="#momentum-conservation-the-euler-equation-pressure-and-the-stress-tensor" title="Permalink to this headline">¶</a></h2>
+<p>There are two forces to consider: gravity and pressure. Let’s consider them separately, starting with pressure.</p>
+<div class="section" id="pressure-forces">
+<h3>Pressure Forces<a class="headerlink" href="#pressure-forces" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../_images/fig3.png"><img alt="fig3" class="align-center" src="../_images/fig3.png" style="width: 600px;" /></a>
+<p><strong>The force due to thermal pressure (gradient)</strong> (not shear stress or other fancier forms, but just a classic pressure gradient giving a force) along a direction <span class="math notranslate nohighlight">\(\hat{n}\)</span> (not necessarily normal to the surface) over surface <span class="math notranslate nohighlight">\(S\)</span> due to pressure <span class="math notranslate nohighlight">\(P\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{F} \cdot \hat{n} = - \int P \hat{n} \cdot \,\mathrm{d}\vec{S}
+\]</div>
+<p>Let’s use the divergence theorem again, giving:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{F} \cdot \hat{n} = - \int \vec{\nabla} \left(P \hat{n}\right) \, \mathrm{d} V
+\]</div>
+<p>Note that <span class="math notranslate nohighlight">\(\hat{n}\)</span> is not affected by the gradient, and thus:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{F} = - \int \vec{\nabla} P \, \mathrm{d} V
+\]</div>
+<p>We typically want the force per unit mass, which is:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\vec{F}}{m} \approx - \vec{\nabla} P \cdot \frac{V}{m} = -\frac{1}{\rho} \vec{\nabla} P
+\]</div>
+<p><strong>An important note: if there is no gradient of pressure, there is no pressure force. Forces move things from high pressure to low pressure, and that is why we have the minus sign in front of the gradient.</strong></p>
+</div>
+<div class="section" id="gravitational-forces">
+<h3>Gravitational Forces<a class="headerlink" href="#gravitational-forces" title="Permalink to this headline">¶</a></h3>
+<p>Again, we want the force per unit mass due to gravity:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\vec{F}}{m} = -\vec{\nabla} \Phi = \text{grav. potential} = -\frac{GM}{r^2} \hat{r}
+\]</div>
+<p>Let’s take the surface integral of <span class="math notranslate nohighlight">\(\Phi\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \vec{\nabla} \Phi \cdot \, \mathrm{d}\vec{S} = \int \frac{GM}{r^2} \hat{r} \cdot \,\mathrm{d}\vec{S}
+\]</div>
+<p>Using the divergence theorem again (over a sphere for the right side), we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \nabla^2 \Phi \, \mathrm{d}V = 4\pi G \int \rho \mathrm{d}V \text{ since} \int \frac{GM}{r^2} \mathrm{d}S = 4\pi GM
+\]</div>
+<p>This gives one of our favorite equations, <strong>the Poisson equation</strong>!:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\nabla^2 \Phi = 4\pi G \rho}
+\]</div>
+</div>
+<div class="section" id="collecting-our-work">
+<h3>Collecting our Work<a class="headerlink" href="#collecting-our-work" title="Permalink to this headline">¶</a></h3>
+<p>The force on a fluid element is thus:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{F} = m \frac{D\vec{v}}{Dt}
+\]</div>
+<p><strong>And substituting in our work, we have the Lagrangian form of the Euler equation for momentum conservation</strong></p>
+<div class="math notranslate nohighlight">
+\[
+\underbrace{\frac{D\vec{v}}{Dt}}_\text{fluid element accel.} = -\frac{1}{\rho} \underbrace{\vec{\nabla}P}_\text{press. grad.} - \underbrace{\vec{\nabla}\Phi}_\text{gravity}
+\]</div>
+<p>Re-writing for the Eulerian form, we have <strong>the Euler Equation for momentum conservation:</strong></p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{\partial \vec{v}}{\partial t} + (\vec{v} \cdot \vec{\nabla}) \vec{v} = -\frac{1}{\rho} \vec{\nabla}P - \vec{\nabla}\Phi}
+\]</div>
+</div>
+</div>
+<div class="section" id="a-real-quick-summary-of-our-three-fluid-equations">
+<h2>A Real Quick Summary of our Three Fluid Equations<a class="headerlink" href="#a-real-quick-summary-of-our-three-fluid-equations" title="Permalink to this headline">¶</a></h2>
+<p>Above, we motivated and derived three fluid equations</p>
+<div class="admonition-the-continuity-equation admonition">
+<p class="admonition-title">The Continuity Equation</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \rho}{\partial t} + \vec{\nabla} \left(\rho\vec{v}\right) = 0
+\]</div>
+</div>
+<div class="admonition-the-euler-equation admonition">
+<p class="admonition-title">The Euler Equation</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \vec{v}}{\partial t} + (\vec{v} \cdot \vec{\nabla}) \vec{v} = -\frac{1}{\rho} \vec{\nabla}P - \vec{\nabla}\Phi
+\]</div>
+</div>
+<div class="admonition-the-poisson-equation admonition">
+<p class="admonition-title">The Poisson Equation</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla^2 \Phi = 4\pi G \rho
+\]</div>
+</div>
+<p>Counting degress of freedom, we have <span class="math notranslate nohighlight">\(5\)</span> real, independent equations. But how many unknowns? We have <span class="math notranslate nohighlight">\(\vec{v}\)</span>, <span class="math notranslate nohighlight">\(\rho\)</span>, <span class="math notranslate nohighlight">\(P\)</span>, and <span class="math notranslate nohighlight">\(\Phi\)</span>.</p>
+<p>We thus cannot uniquely solve our equations – we need one more to close our system of equations: <strong>the equation of state</strong> relating the ressure to the density. Once we have that, we have six equations with six unknowns.</p>
 </div>
 <div class="section" id="energy-conservation-and-the-equation-of-state">
 <h2>Energy Conservation and the Equation of State<a class="headerlink" href="#energy-conservation-and-the-equation-of-state" title="Permalink to this headline">¶</a></h2>
