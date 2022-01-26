@@ -449,14 +449,16 @@ Note that we didn't do anything special to get the ram pressure term. It really 
 #### Example: Fluid Flow Along A Pipe
 
 
-Let's consider fluid flowing along a part in the $\hat{x}$ direction: $\vec{v} = v \hat{x}$. 
-
-
 ```{image} ../figures/fig6.png
 :alt: fig6
 :width: 600px
 :align: center
 ```
+
+
+
+Let's consider fluid flowing along a part in the $\hat{x}$ direction: $\vec{v} = v \hat{x}$. 
+
 
 * $T_{zz}$ and $T_{yy}$ are just pressure! We have no velocity along $y$ or $z$. 
 * We also have no off diagonal terms since $v_{y}$ and $v_z$ are both $0.$
