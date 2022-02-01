@@ -591,7 +591,279 @@ $$
 $$
 
 
+#### An Aside: Energy in an Ideal Gas
+
+Let's review equations from last time, and then derive the enery conservation equation.
+
+Last time, we saw:
+
+* The First Law: $\mathrm{d}Q = \mathrm{d}\mathcal{E} + P\mathrm{d}V$
+* Adiabatic, Ideal Gas Law: $P = k \rho^\gamma$, where $\gamma \equiv \frac{C_p}{C_v}$ is the adiabatic index. 
+    * This is a very good example of an **equation of state**.  We will see more!
+    * A few words about $k$:
+        * This coefficient $k$ can be shown to be related to **entropy** $S$: 
+
+$$
+\boxed{k = e^{\frac{S(\gamma-1)}{k_b}}}
+$$
+
+We will push this a bit farther –
+
+Assuming adiabatic expansion, we have:
+
+$$
+dQ = 0 \rightarrow \mathrm{d}\mathcal{E_{permass}} = -P \frac{\mathrm{d}V}{m} = -P  \mathrm{d}\left(\frac{1}{\rho}\right)
+$$
+
+Using our equation of state $P\propto \rho^\gamma$  we have:
+
+$$
+\mathrm{d}\mathcal{E}_{permass} = \frac{k \rho^{\gamma}}{\rho^2} \mathrm{d}\rho \rightarrow \mathcal{E}_{permass} = \frac{k}{\gamma-1}\rho^{\gamma-1}
+$$
+
+We can re-write this last expression for the internal energy:
+
+$$
+\mathcal{E}_{permass} = \frac{1}{\gamma-1}\frac{P}{\rho}
+$$
+
+**Thus, we have shown that the internal energy (per unit mass) is:**
+
+$$
+\boxed{\mathcal{E}_{permass} = \frac{1}{\gamma-1} \frac{P}{\rho} \rightarrow P = \rho(\gamma-1)\mathcal{E}_{permass}}
+$$
+
+Or, we can do this in terms of volume instead of mass:
+
+$$
+\boxed{\mathcal{E}_{pervolume} = \frac{1}{\gamma-1} P}
+$$
+
+
+
+### Energy Density in an Ideal Gas:
+
+$$
+\underbrace{E}_\text{energy density} = \rho \left(\underbrace{\frac12 v^2}_\text{kinetic} + \underbrace{\Phi}_\text{potential} + \underbrace{\mathcal{E}}_\text{int. energy per mass}\right)
+$$
+
+We want to see how the total energy changes with time:
+
+The first two terms are easy to deal with, so let's begin with the **internal energy change as a function of time**. 
+
+$$
+\frac{D \mathcal{E}}{Dt} = 
+$$
+
+Let's start with: $\rho=M/V$, and  $\mathrm{d}\mathcal{E} = \mathrm{d}Q - P \mathrm{d}V$. This expression tells us that:
+
+$$
+\frac{DV}{Dt} = -\frac{M}{\rho^2}\frac{D\rho}{Dt}
+$$
+
+This makes our expression for the internal enegy:
+
+
+$$
+\frac{D \mathcal{E}}{Dt} =  \frac{P}{\rho^2}\frac{D\rho}{Dt} - \dot{Q}_{cool}
+$$
+
+where $\dot{Q}_{cool}$ is the cooling function (per mass). Note that it is convention to say that it is a _cooling_ function (because of the minus sign). $\dot{Q} > 0$ is fluid is cooling. $\dot{Q} < 0$ for heating. This depends on the microphysics. 
+
+We now want to calculate the full change in energy density:
+
+$$
+\frac{DE}{dt} = \frac{E}{\rho}\frac{D\rho}{Dt} + \rho\left(\vec{v} \cdot \frac{D \vec{v}}{Dt} + \frac{D\Phi}{Dt} + \frac{P}{\rho^2}\frac{D\rho}{Dt} - \dot{Q}_{cool}\right)
+$$
+
+This looks complicated, but we know lots of stuff!
+
+The first term is related to the continuity equation.
+
+$$
+\frac{E}{\rho}\frac{D\rho}{Dt} = -E \vec{\nabla}\cdot \vec{v}
+$$
+
+The second term of $\vec{v} \cdot \frac{D\vec{v}}{Dt} = -\vec{v} \cdot \vec{\nabla} P - \rho \vec{v} \cdot \vec{\nabla}\Phi$ from the Euler equation. 
+
+The potential derivative term can be written as:
+
+$$
+\frac{D\Phi}{Dt} = \rho \frac{\partial \Phi}{\partial t} + \rho \vec{v} \cdot \vec{\nabla}\Phi
+$$
+
+And the last term, from Contunity equation:
+
+$$
+\frac{P}{\rho^2} \frac{D\rho}{Dt} = -P \vec{\nabla}\cdot \vec{v}
+$$
+
+If you stare at these equations, some nice cancellation happens! Collecting terms, we have:
+
+$$
+\frac{DE}{Dt} = -\left({E+P}\right) \vec{\nabla} \cdot \vec{v} - \left(\vec{v} \cdot \vec{\nabla}\right)P + \rho\frac{\partial \Phi}{\partial t} - \rho\dot{Q}_{cool}
+$$
+
+The left hand side, by the way, is:
+
+$$
+\frac{DE}{Dt} = \frac{\partial E}{\partial t} + \left(\vec{v} \cdot \vec{\nabla}\right)E
+$$
+
+Notice! The right hand side and left hand side have some common terms, now! **Magic happens when we put this into a suggestive form!**
+
+$$
+\boxed{\frac{\partial E}{\partial t} + \vec{\nabla} \cdot \left(\left[E+P\right]\vec{v}\right) = -\rho \dot{Q}_{cool} + \rho \frac{\partial \Phi}{\partial t}}
+$$
+
+This is **energy conservation equation!** This is worth a note of its own, noting that $E$ is the energy density:
+
+```{admonition} Energy Conservation Equation
+
+
+$$
+\boxed{\frac{\partial E}{\partial t} + \vec{\nabla} \cdot \left(\left[E+P\right]\vec{v}\right) = -\rho \dot{Q}_{cool} + \rho \frac{\partial \Phi}{\partial t}}
+$$
+
+
+where $E$ is the energy density.
+
+```
+
+### Enthalpy and Energy Flux
+
+Recall this foreign concept from way long ago…
+
+$$
+H = \mathcal{E} + PV
+$$
+
+The reason we are bothering with this quantity is because it **sort of** appeared in our enery conservation equation:
+
+$$
+E+P =  \rho\left(\frac12 v^2 + \Phi + \underbrace{\mathcal{E}_{permass} + \frac{P}{\rho}}_\text{enthalpy per unit mass}\right)
+$$
+
+Note that $P/\rho = PV/m$ which allows us to recognize it as enthalpy per unit mass $h$. 
+
+Now, we can write down an expression that we will call **energy flux**: 
+
+$$
+\text{Energy Flux} = \left(E+ P\right)\cdot \vec{v}
+$$
+
+Our expression above is thus:
+
+
+$$
+\boxed{\text{Energy Flux} = \rho\vec{v}\left(\frac12 v^2 + \Phi + h\right)} 
+$$
+
+
+
+### Executive Summary for Inviscid (non-viscous) Fluids
+
+
+
+| Quantity | Density                                                          | Flux                                                                     | Conservation Equation for Quantity                                                                                                             |
+|----------|------------------------------------------------------------------|--------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| Mass     | $\rho$                                                           | mass per time per area  $= \rho \vec{v}$                                | $\frac{\partial \rho}{\partial t} + \vec{\nabla}\cdot(\rho\vec{v}) = 0$ (Continuity Equation)                                                  |
+| Momentum | $\rho \vec{v}$                                                   | $T_{ij} = P\delta_{ij} + \rho v_i v_j$                                  | $\frac{\partial}{\partial t} \left(\rho v_i \right) + \partial_j T_{ij} = -\rho \partial_i \Phi$ (Euler Equation)                              |
+| Energy   | $E = \rho\left(\frac12 v^2 + \Phi + \mathcal{E}_{permass}\right)$| $\vec{f} = \rho\vec{v}\left(\frac12 v^2 + \Phi + h\right) = (E+P)\vec{v}$| $\frac{\partial E}{\partial t} + \vec{\nabla}\cdot \vec{f} = -\rho\dot{Q}_{cool} + \rho \frac{\partial \Phi}{\partial t}$ (Energy Conservation)|                                                                                                 |
+
+
+
+
+
+## Example Simple Solutions: Hydrostatic Equilibrium, Polytropic Stars, and the Lane-Emden Equation
+
+
+### Hydrostatic Equilibrium 
+
+Let's start solving the three equations above! The most obvious first place to start is with hydrostatic equilibirum.
+
+* Hydrostatic means that $\vec{v} = 0$. 
+* Equilibrium means that $\frac{\partial}{\partial t} = 0$. 
+
+Start with our three equations:
+
+1\. Continuity Equation: Satisfied trivially: $0=0$
+
+2\. Euler's Equation:
+
+$$
+\frac{\partial \vec{v}}{\partial t} + (\vec{v} \cdot \vec{\nabla})\vec{v} = -\frac{1}{\rho} \vec{\nabla}P - \vec{\nabla} \Phi \rightarrow \frac{1}{\rho}\vec{\nabla} P = -\vec{\nabla}\Phi
+$$
+
+3\. Poisson:
+
+$$
+\nabla^2 \Phi = 4\pi G \rho
+$$
+
+
+**Using $2$, $3$, and the Equation of State, should give us solutions!** Thus, the solution will depend on the equation of state.
+
+#### Example 1: Atmosphere
+
+Assume an isothermal equation of state for the atmosphere (approximately true for the lower stratosphere, about $15$ to $35$ kilometers up). Treating this as an ideal gas:
+
+$$
+P = nk_b T \rightarrow P = \frac{\rho}{\mu m_p} kT
+$$
+
+
+where $\mu$ is the mean molecular mass of our gas. Note the right side is a ton of constants since we have an isothermal atmosphere. Thus, $P = A\rho$ for some constatnt $A$. That is: $P\propto \rho$. Also note that:
+
+$$
+\mu \equiv 1 \text{ for hydrogen, } \equiv 16 \text{ for oxygen, and }  \approx 28.8 \text{ for air}
+$$
+
+
+Note that for the surface of a planet, we have $\vec\nabla \Phi = -\vec{g}$ which is constant near Earth's surface. 
+
+Using this information, we have:
+
+$$
+\frac{1}{\rho} \vec\nabla P = -\vec\nabla \Phi \rightarrow \frac{A}{\rho} \vec\nabla \rho = -\vec{g}
+$$
+
+Let's choose $\vec g = -g \hat{z}$.
+
+This gives:
+
+$$
+\frac{1}{\rho} \frac{\partial \rho }{\partial z} = -\frac{g}{A} = - \frac{\mu m_p g}{kT}
+$$
+
+This has a well-known solution!
+
+$$
+\boxed{\boxed{\rho(z) = \rho_0 e^{-\frac{z}{z_s}}} \text{ where } z_s \equiv \frac{kT}{\mu m_p g}}
+$$
+
+is the **exponentially stratified soluiton**. Putting in some numbers, we have:
+
+* Atmosphere: $T \sim 300$ K $\boxed{\rightarrow z_s \approx 9}$ km. 
+* At Mauna Kea, we have $z \sim 14000$ feet, which is about $z\sim 4.2$ km. This gives $\rho(z = 4.2 km) \approx 0.63 \rho(0)$.
+    * The same is true for pressure since we assumed an equation of state of $P \propto \rho$. 
+
+
+#### Example 2: Adiabatic Atmosphere
+
+The adiabatic equation of state is different than an isothermal equation of state. The adiabatic approximation holds for the **troposphere** (see PS 1 in which we derive $\frac{dT}{dz}$). 
+
+
+
+
 
 ## Simple Solutions: Hydrostatic Equilibrium, Polytropic Stars, and the Lane-Emden Equation
+
+
+
+
+
+
+
 
 ## Bernoulli's Principle

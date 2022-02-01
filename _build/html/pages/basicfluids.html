@@ -317,6 +317,50 @@
        Adiabatic Index
       </a>
      </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#an-aside-energy-in-an-ideal-gas">
+       An Aside: Energy in an Ideal Gas
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#energy-density-in-an-ideal-gas">
+     Energy Density in an Ideal Gas:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#enthalpy-and-energy-flux">
+     Enthalpy and Energy Flux
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#executive-summary-for-inviscid-non-viscous-fluids">
+     Executive Summary for Inviscid (non-viscous) Fluids
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-simple-solutions-hydrostatic-equilibrium-polytropic-stars-and-the-lane-emden-equation">
+   Example Simple Solutions: Hydrostatic Equilibrium, Polytropic Stars, and the Lane-Emden Equation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hydrostatic-equilibrium">
+     Hydrostatic Equilibrium
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-1-atmosphere">
+       Example 1: Atmosphere
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-2-adiabatic-atmosphere">
+       Example 2: Adiabatic Atmosphere
+      </a>
+     </li>
     </ul>
    </li>
   </ul>
@@ -476,6 +520,50 @@
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#adiabatic-index">
        Adiabatic Index
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#an-aside-energy-in-an-ideal-gas">
+       An Aside: Energy in an Ideal Gas
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#energy-density-in-an-ideal-gas">
+     Energy Density in an Ideal Gas:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#enthalpy-and-energy-flux">
+     Enthalpy and Energy Flux
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#executive-summary-for-inviscid-non-viscous-fluids">
+     Executive Summary for Inviscid (non-viscous) Fluids
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-simple-solutions-hydrostatic-equilibrium-polytropic-stars-and-the-lane-emden-equation">
+   Example Simple Solutions: Hydrostatic Equilibrium, Polytropic Stars, and the Lane-Emden Equation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hydrostatic-equilibrium">
+     Hydrostatic Equilibrium
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-1-atmosphere">
+       Example 1: Atmosphere
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-2-adiabatic-atmosphere">
+       Example 2: Adiabatic Atmosphere
       </a>
      </li>
     </ul>
@@ -977,6 +1065,244 @@ C_V \mathrm{d}T + \frac{NkT}{V}\mathrm{d}V = 0 \rightarrow \frac{\mathrm{d}T}{T}
 \[
 \boxed{\gamma_{diatomic} = \frac75}
 \]</div>
+</div>
+<div class="section" id="an-aside-energy-in-an-ideal-gas">
+<h4>An Aside: Energy in an Ideal Gas<a class="headerlink" href="#an-aside-energy-in-an-ideal-gas" title="Permalink to this headline">¶</a></h4>
+<p>Let’s review equations from last time, and then derive the enery conservation equation.</p>
+<p>Last time, we saw:</p>
+<ul class="simple">
+<li><p>The First Law: <span class="math notranslate nohighlight">\(\mathrm{d}Q = \mathrm{d}\mathcal{E} + P\mathrm{d}V\)</span></p></li>
+<li><p>Adiabatic, Ideal Gas Law: <span class="math notranslate nohighlight">\(P = k \rho^\gamma\)</span>, where <span class="math notranslate nohighlight">\(\gamma \equiv \frac{C_p}{C_v}\)</span> is the adiabatic index.</p>
+<ul>
+<li><p>This is a very good example of an <strong>equation of state</strong>.  We will see more!</p></li>
+<li><p>A few words about <span class="math notranslate nohighlight">\(k\)</span>:</p>
+<ul>
+<li><p>This coefficient <span class="math notranslate nohighlight">\(k\)</span> can be shown to be related to <strong>entropy</strong> <span class="math notranslate nohighlight">\(S\)</span>:</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\boxed{k = e^{\frac{S(\gamma-1)}{k_b}}}
+\]</div>
+<p>We will push this a bit farther –</p>
+<p>Assuming adiabatic expansion, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+dQ = 0 \rightarrow \mathrm{d}\mathcal{E_{permass}} = -P \frac{\mathrm{d}V}{m} = -P  \mathrm{d}\left(\frac{1}{\rho}\right)
+\]</div>
+<p>Using our equation of state <span class="math notranslate nohighlight">\(P\propto \rho^\gamma\)</span>  we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{d}\mathcal{E}_{permass} = \frac{k \rho^{\gamma}}{\rho^2} \mathrm{d}\rho \rightarrow \mathcal{E}_{permass} = \frac{k}{\gamma-1}\rho^{\gamma-1}
+\]</div>
+<p>We can re-write this last expression for the internal energy:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{E}_{permass} = \frac{1}{\gamma-1}\frac{P}{\rho}
+\]</div>
+<p><strong>Thus, we have shown that the internal energy (per unit mass) is:</strong></p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\mathcal{E}_{permass} = \frac{1}{\gamma-1} \frac{P}{\rho} \rightarrow P = \rho(\gamma-1)\mathcal{E}_{permass}}
+\]</div>
+<p>Or, we can do this in terms of volume instead of mass:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\mathcal{E}_{pervolume} = \frac{1}{\gamma-1} P}
+\]</div>
+</div>
+</div>
+<div class="section" id="energy-density-in-an-ideal-gas">
+<h3>Energy Density in an Ideal Gas:<a class="headerlink" href="#energy-density-in-an-ideal-gas" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[
+\underbrace{E}_\text{energy density} = \rho \left(\underbrace{\frac12 v^2}_\text{kinetic} + \underbrace{\Phi}_\text{potential} + \underbrace{\mathcal{E}}_\text{int. energy per mass}\right)
+\]</div>
+<p>We want to see how the total energy changes with time:</p>
+<p>The first two terms are easy to deal with, so let’s begin with the <strong>internal energy change as a function of time</strong>.</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{D \mathcal{E}}{Dt} = 
+\]</div>
+<p>Let’s start with: <span class="math notranslate nohighlight">\(\rho=M/V\)</span>, and  <span class="math notranslate nohighlight">\(\mathrm{d}\mathcal{E} = \mathrm{d}Q - P \mathrm{d}V\)</span>. This expression tells us that:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{DV}{Dt} = -\frac{M}{\rho^2}\frac{D\rho}{Dt}
+\]</div>
+<p>This makes our expression for the internal enegy:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{D \mathcal{E}}{Dt} =  \frac{P}{\rho^2}\frac{D\rho}{Dt} - \dot{Q}_{cool}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\dot{Q}_{cool}\)</span> is the cooling function (per mass). Note that it is convention to say that it is a <em>cooling</em> function (because of the minus sign). <span class="math notranslate nohighlight">\(\dot{Q} &gt; 0\)</span> is fluid is cooling. <span class="math notranslate nohighlight">\(\dot{Q} &lt; 0\)</span> for heating. This depends on the microphysics.</p>
+<p>We now want to calculate the full change in energy density:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{DE}{dt} = \frac{E}{\rho}\frac{D\rho}{Dt} + \rho\left(\vec{v} \cdot \frac{D \vec{v}}{Dt} + \frac{D\Phi}{Dt} + \frac{P}{\rho^2}\frac{D\rho}{Dt} - \dot{Q}_{cool}\right)
+\]</div>
+<p>This looks complicated, but we know lots of stuff!</p>
+<p>The first term is related to the continuity equation.</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{E}{\rho}\frac{D\rho}{Dt} = -E \vec{\nabla}\cdot \vec{v}
+\]</div>
+<p>The second term of <span class="math notranslate nohighlight">\(\vec{v} \cdot \frac{D\vec{v}}{Dt} = -\vec{v} \cdot \vec{\nabla} P - \rho \vec{v} \cdot \vec{\nabla}\Phi\)</span> from the Euler equation.</p>
+<p>The potential derivative term can be written as:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{D\Phi}{Dt} = \rho \frac{\partial \Phi}{\partial t} + \rho \vec{v} \cdot \vec{\nabla}\Phi
+\]</div>
+<p>And the last term, from Contunity equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{P}{\rho^2} \frac{D\rho}{Dt} = -P \vec{\nabla}\cdot \vec{v}
+\]</div>
+<p>If you stare at these equations, some nice cancellation happens! Collecting terms, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{DE}{Dt} = -\left({E+P}\right) \vec{\nabla} \cdot \vec{v} - \left(\vec{v} \cdot \vec{\nabla}\right)P + \rho\frac{\partial \Phi}{\partial t} - \rho\dot{Q}_{cool}
+\]</div>
+<p>The left hand side, by the way, is:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{DE}{Dt} = \frac{\partial E}{\partial t} + \left(\vec{v} \cdot \vec{\nabla}\right)E
+\]</div>
+<p>Notice! The right hand side and left hand side have some common terms, now! <strong>Magic happens when we put this into a suggestive form!</strong></p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{\partial E}{\partial t} + \vec{\nabla} \cdot \left(\left[E+P\right]\vec{v}\right) = -\rho \dot{Q}_{cool} + \rho \frac{\partial \Phi}{\partial t}}
+\]</div>
+<p>This is <strong>energy conservation equation!</strong> This is worth a note of its own, noting that <span class="math notranslate nohighlight">\(E\)</span> is the energy density:</p>
+<div class="admonition-energy-conservation-equation admonition">
+<p class="admonition-title">Energy Conservation Equation</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{\partial E}{\partial t} + \vec{\nabla} \cdot \left(\left[E+P\right]\vec{v}\right) = -\rho \dot{Q}_{cool} + \rho \frac{\partial \Phi}{\partial t}}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(E\)</span> is the energy density.</p>
+</div>
+</div>
+<div class="section" id="enthalpy-and-energy-flux">
+<h3>Enthalpy and Energy Flux<a class="headerlink" href="#enthalpy-and-energy-flux" title="Permalink to this headline">¶</a></h3>
+<p>Recall this foreign concept from way long ago…</p>
+<div class="math notranslate nohighlight">
+\[
+H = \mathcal{E} + PV
+\]</div>
+<p>The reason we are bothering with this quantity is because it <strong>sort of</strong> appeared in our enery conservation equation:</p>
+<div class="math notranslate nohighlight">
+\[
+E+P =  \rho\left(\frac12 v^2 + \Phi + \underbrace{\mathcal{E}_{permass} + \frac{P}{\rho}}_\text{enthalpy per unit mass}\right)
+\]</div>
+<p>Note that <span class="math notranslate nohighlight">\(P/\rho = PV/m\)</span> which allows us to recognize it as enthalpy per unit mass <span class="math notranslate nohighlight">\(h\)</span>.</p>
+<p>Now, we can write down an expression that we will call <strong>energy flux</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{Energy Flux} = \left(E+ P\right)\cdot \vec{v}
+\]</div>
+<p>Our expression above is thus:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\text{Energy Flux} = \rho\vec{v}\left(\frac12 v^2 + \Phi + h\right)} 
+\]</div>
+</div>
+<div class="section" id="executive-summary-for-inviscid-non-viscous-fluids">
+<h3>Executive Summary for Inviscid (non-viscous) Fluids<a class="headerlink" href="#executive-summary-for-inviscid-non-viscous-fluids" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Quantity</p></th>
+<th class="head"><p>Density</p></th>
+<th class="head"><p>Flux</p></th>
+<th class="head"><p>Conservation Equation for Quantity</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Mass</p></td>
+<td><p><span class="math notranslate nohighlight">\(\rho\)</span></p></td>
+<td><p>mass per time per area  <span class="math notranslate nohighlight">\(= \rho \vec{v}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{\partial \rho}{\partial t} + \vec{\nabla}\cdot(\rho\vec{v}) = 0\)</span> (Continuity Equation)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Momentum</p></td>
+<td><p><span class="math notranslate nohighlight">\(\rho \vec{v}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(T_{ij} = P\delta_{ij} + \rho v_i v_j\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{\partial}{\partial t} \left(\rho v_i \right) + \partial_j T_{ij} = -\rho \partial_i \Phi\)</span> (Euler Equation)</p></td>
+</tr>
+<tr class="row-even"><td><p>Energy</p></td>
+<td><p><span class="math notranslate nohighlight">\(E = \rho\left(\frac12 v^2 + \Phi + \mathcal{E}_{permass}\right)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\vec{f} = \rho\vec{v}\left(\frac12 v^2 + \Phi + h\right) = (E+P)\vec{v}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{\partial E}{\partial t} + \vec{\nabla}\cdot \vec{f} = -\rho\dot{Q}_{cool} + \rho \frac{\partial \Phi}{\partial t}\)</span> (Energy Conservation)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="example-simple-solutions-hydrostatic-equilibrium-polytropic-stars-and-the-lane-emden-equation">
+<h2>Example Simple Solutions: Hydrostatic Equilibrium, Polytropic Stars, and the Lane-Emden Equation<a class="headerlink" href="#example-simple-solutions-hydrostatic-equilibrium-polytropic-stars-and-the-lane-emden-equation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="hydrostatic-equilibrium">
+<h3>Hydrostatic Equilibrium<a class="headerlink" href="#hydrostatic-equilibrium" title="Permalink to this headline">¶</a></h3>
+<p>Let’s start solving the three equations above! The most obvious first place to start is with hydrostatic equilibirum.</p>
+<ul class="simple">
+<li><p>Hydrostatic means that <span class="math notranslate nohighlight">\(\vec{v} = 0\)</span>.</p></li>
+<li><p>Equilibrium means that <span class="math notranslate nohighlight">\(\frac{\partial}{\partial t} = 0\)</span>.</p></li>
+</ul>
+<p>Start with our three equations:</p>
+<p>1. Continuity Equation: Satisfied trivially: <span class="math notranslate nohighlight">\(0=0\)</span></p>
+<p>2. Euler’s Equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \vec{v}}{\partial t} + (\vec{v} \cdot \vec{\nabla})\vec{v} = -\frac{1}{\rho} \vec{\nabla}P - \vec{\nabla} \Phi \rightarrow \frac{1}{\rho}\vec{\nabla} P = -\vec{\nabla}\Phi
+\]</div>
+<p>3. Poisson:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla^2 \Phi = 4\pi G \rho
+\]</div>
+<p><strong>Using <span class="math notranslate nohighlight">\(2\)</span>, <span class="math notranslate nohighlight">\(3\)</span>, and the Equation of State, should give us solutions!</strong> Thus, the solution will depend on the equation of state.</p>
+<div class="section" id="example-1-atmosphere">
+<h4>Example 1: Atmosphere<a class="headerlink" href="#example-1-atmosphere" title="Permalink to this headline">¶</a></h4>
+<p>Assume an isothermal equation of state for the atmosphere (approximately true for the lower stratosphere, about <span class="math notranslate nohighlight">\(15\)</span> to <span class="math notranslate nohighlight">\(35\)</span> kilometers up). Treating this as an ideal gas:</p>
+<div class="math notranslate nohighlight">
+\[
+P = nk_b T \rightarrow P = \frac{\rho}{\mu m_p} kT
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mu\)</span> is the mean molecular mass of our gas. Note the right side is a ton of constants since we have an isothermal atmosphere. Thus, <span class="math notranslate nohighlight">\(P = A\rho\)</span> for some constatnt <span class="math notranslate nohighlight">\(A\)</span>. That is: <span class="math notranslate nohighlight">\(P\propto \rho\)</span>. Also note that:</p>
+<div class="math notranslate nohighlight">
+\[
+\mu \equiv 1 \text{ for hydrogen, } \equiv 16 \text{ for oxygen, and }  \approx 28.8 \text{ for air}
+\]</div>
+<p>Note that for the surface of a planet, we have <span class="math notranslate nohighlight">\(\vec\nabla \Phi = -\vec{g}\)</span> which is constant near Earth’s surface.</p>
+<p>Using this information, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{\rho} \vec\nabla P = -\vec\nabla \Phi \rightarrow \frac{A}{\rho} \vec\nabla \rho = -\vec{g}
+\]</div>
+<p>Let’s choose <span class="math notranslate nohighlight">\(\vec g = -g \hat{z}\)</span>.</p>
+<p>This gives:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{\rho} \frac{\partial \rho }{\partial z} = -\frac{g}{A} = - \frac{\mu m_p g}{kT}
+\]</div>
+<p>This has a well-known solution!</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\boxed{\rho(z) = \rho_0 e^{-\frac{z}{z_s}}} \text{ where } z_s \equiv \frac{kT}{\mu m_p g}}
+\]</div>
+<p>is the <strong>exponentially stratified soluiton</strong>. Putting in some numbers, we have:</p>
+<ul class="simple">
+<li><p>Atmosphere: <span class="math notranslate nohighlight">\(T \sim 300\)</span> K <span class="math notranslate nohighlight">\(\boxed{\rightarrow z_s \approx 9}\)</span> km.</p></li>
+<li><p>At Mauna Kea, we have <span class="math notranslate nohighlight">\(z \sim 14000\)</span> feet, which is about <span class="math notranslate nohighlight">\(z\sim 4.2\)</span> km. This gives <span class="math notranslate nohighlight">\(\rho(z = 4.2 km) \approx 0.63 \rho(0)\)</span>.</p>
+<ul>
+<li><p>The same is true for pressure since we assumed an equation of state of <span class="math notranslate nohighlight">\(P \propto \rho\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="example-2-adiabatic-atmosphere">
+<h4>Example 2: Adiabatic Atmosphere<a class="headerlink" href="#example-2-adiabatic-atmosphere" title="Permalink to this headline">¶</a></h4>
+<p>The adiabatic equation of state is different than an isothermal equation of state. The adiabatic approximation holds for the <strong>troposphere</strong> (see PS 1 in which we derive <span class="math notranslate nohighlight">\(\frac{dT}{dz}\)</span>).</p>
 </div>
 </div>
 </div>
