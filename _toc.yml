@@ -5,4 +5,3 @@ format: jb-book
 root: intro
 chapters:
 - file: pages/basicfluids.md
-- file: pages/basicfluids2.md
