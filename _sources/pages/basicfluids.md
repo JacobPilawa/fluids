@@ -855,15 +855,392 @@ The adiabatic equation of state is different than an isothermal equation of stat
 
 
 
+## Simple Solutions to the Fluid Equations
 
 
-## Simple Solutions: Hydrostatic Equilibrium, Polytropic Stars, and the Lane-Emden Equation
+### Spherical Stars in Hydrostatic Equilibrium: The Lane-Emden Equation
+
+
+We start with our equation for HE:
+
+$$
+\frac{1}{\rho} \vec\nabla P = -\vec\nabla \Phi
+$$
+
+We start with the standard parameterization, the **polytropic index** $n$:
+
+$$
+P = K \rho^{1+ \frac{1}{n}}
+$$
+
+Normally, lots of complications come into deriving $K$, so we will treat it as a constant for now.
+
+#### Step 1
+
+Solve HE equation, starting with the LHS:
+
+$$
+\frac{1}{\rho} \vec\nabla P = \frac{1}{\rho} \vec\nabla \left(K\rho^{1+\frac{1}{n}}\right)
+$$
+
+We will now define $q \equiv \rho^{1/n}$ for convenience. Using this:
+
+$$
+= \frac{1}{\rho}\vec\nabla\left(Kq^{n+1}\right) = \frac{n+1}{\rho} q^{n} \vec\nabla \left(Kq\right)
+$$
+
+Putting back in our $q$:
+
+
+$$
+= \left(n+1\right)\vec\nabla\left(K\rho^{1/n}\right)
+$$
+
+Now, the hydrostatic equilibrium equation becomes:
+
+$$
+\left(n+1\right)\vec\nabla\left(K\rho^{1/n}\right) = -\vec\nabla\Phi
+$$
+
+The solution to this equation:
+
+$$
+\rho = \left(\frac{\Phi_0 - \Phi}{\left(n+1\right)K}\right)^{n}
+$$
+
+where $\Phi=\Phi_0$ and $\rho=0$ at the surface. We also have the central boundary condition:
+
+$$
+\rho_c = \left(\frac{\Phi_0 - \Phi_c}{\left(n+1\right)K}\right)^{n}
+$$
+
+
+
+#### Step 2
+
+Here, we add in the Poisson equation to solve for $\rho = \rho(r)$. After we have that, we have $\Phi(r)$ from the relation above and $P(r)$. 
+
+To use the Poisson equation, let's re-write one more time:
+
+$$
+\rho = \rho_c \left(\frac{\Phi_0 - \Phi}{\Phi_0 - \Phi_c}\right)^{n}
+$$
+
+Notice that the term in parentheses is dimensionless! Let's start a new variable which will serve :
+
+$$
+\theta \equiv \frac{\Phi_0 - \Phi}{\Phi_0 - \Phi_c} = \left(\frac{\rho}{\rho_c}\right)^{1/n}
+$$
+
+With this definition, let's look at Possion's equation:
+
+$$
+\nabla^2 \Phi = 4\pi G \rho \rightarrow \nabla^2 \theta = -\frac{4\pi G \rho_c}{\Phi_0 - \Phi_c} \theta^n
+$$
+
+Let's impose spherical symmetry since we are dealing with spherical stars! This makes:
+
+$$
+\nabla^2 \theta = \frac{1}{r^2} \frac{1}{dr}\left(r^2 \frac{d\theta}{dr}\right)
+$$
+
+We will introduce another new variable, $\xi$, which will serve as a dimensionless radius:
+
+$$
+\xi \equiv \left(\frac{4\pi G \rho_c}{\Phi_0 - \Phi_c} \right)^{1/n} r
+$$
+
+We can get rid of the ugly denominator:
+
+$$
+\xi = \left(\frac{4\pi G}{(n+1)K} \rho_c^{1-1/n}\right)^{1/2} r
+$$
+
+Now back to Poisson, and we get the 
+
+```{admonition} The Lane-Emden Equation
+
+$$
+\boxed{\frac{1}{\xi^2} \frac{d}{d\xi}\left(\xi^2 \frac{d\theta}{d\xi}\right) = -\theta^n}
+$$
+
+which depends on $n$ (the properties of the star). Note that this is second order, so we have two boundary conditions:
+
+1\. At the star's center:
+
+* $\xi \rightarrow 0$
+* $\theta \rightarrow 1$ 
+* $\frac{d\theta}{d\xi} = 0$ (zero force when the enclosed mass goes to $0$ as $r$ goes to $0$)
+* EXCEPTION: When we have a central point mass, the differential boundary condition is a bit different, but we won't go down that route.
+
+2\. At the star's surface:
+
+* $\xi \rightarrow \xi_{max}$, which we can solve for
+* $\theta \rightarrow 0$ 
+
+```
+Again, note that:
+
+* $\xi \rightarrow r$
+* $\theta \rightarrow \Phi \text{ or } r$
+
+**Thus, if we solve this equation, we have our stellar structure!**
+
+We are going to do one last variable change:
+
+$$
+\theta \rightarrow \chi \equiv \theta \xi 
+$$
+
+If we allow this, we get:
+
+$$
+\frac{d^2 \chi}{d \xi^2} = - \frac{\chi^n}{\xi^{n-1}}
+$$
+
+
+There are some analytic solutions to this equation for a few different $n$:
+
+```{admonition} Case 1: $n=0$
+
+See Problem Set 2. The gist:
+
+This is the very incompressible limit, or basically when we have **solids**. This is the **stiffest** equation of state. Note that the other extreme is an isothermal sphere!
+
+Solving for $\theta$ vs. $\xi$, we can also solve for $\xi_{max}$. 
+
+```
+
+
+```{admonition} Case 2: $n=1$
+
+See Problem Set 2. The gist:
+
+We have a different $\xi_{max}$ here, and thus we should find that, as $n$ increases, $\xi_{max}$ should also increase. Note that $n=1$ to about $n=1.5$ is a good approximation for fully convective stars. 
+
+```
+
+
+```{admonition} Case 3: $n=5$
+
+When $n>5$, the energy is positive and we don't have a physical solution. Here, we have: $P \propto \rho^{6/5}$. Going through some mathematics, we get:
+
+$$
+\boxed{\theta(\xi) = \frac{1}{\sqrt{1+ \frac13 \xi^2}} = \left(\frac{\rho}{\rho_c}\right)^{1/5}}
+$$
+
+What are the boundary conditions here?
+
+* At the center, $\xi \rightarrow 0$ and $\theta \rightarrow 1$. This checks out!
+* At the surface, we have $\theta \rightarrow 0$ as $\xi \rightarrow \infty$. This gives our real density profile of:
+
+$$
+\frac{\rho}{\rho_c} = \frac{1}{(1+\frac13 \xi^2)^{5/2}} \propto r^{-5}
+$$
+
+Note that this profile is a **Plummer sphere**, which is well-studied and well-known. 
+
+```
+
+Note that, in general, the Lane-Emden equation can be solved numerically pretty easily. 
+
+
+#### Mass-Radius Relation 
+
+
+Recall our definitions of $\theta$ and $\xi$. For a fixed $K$, the value of the central desnity $\rho_c$ is what is setting the physical scale of the system/everything ($r$, $\rho$, etc). Consequently, we can see how our parameters scale with $\rho_c$, pulling out how mass depends on radius. 
+
+We start at the star's surface:
+
+$$
+\theta = 0 \rightarrow \xi = \xi_{max} \rightarrow r = r_{max} = R_{star}
+$$
+
+We can now write down the star's mass:
+
+$$
+M = \int_0^{R} 4\pi \rho r^2  \, \mathrm{d}r
+$$
+
+Can we write this in terms of $\xi$ and $\theta?$ We can! Use the definitions from earlier.
+
+$$
+M = 4\pi \rho_c \left(\frac{4\pi G}{(n+1)K} \rho_c^{1-1/n}\right)^{-3/2} \int_0^{\xi_{max}} \underbrace{\theta^n \xi^2 \, \mathrm{d} \xi}_\text{fixed number for a given n}
+$$
+
+We now have:
+
+$$
+M \propto \rho_c^{1 - \frac32 + \frac{3}{2n}} \propto \rho_c^{\frac{1}{2}\left(\frac{3}{n}-1\right)}
+$$
+
+One last step – let's look at the star's radius:
+
+$$
+R = r_{max} \propto \rho_c^{\frac12 \left(\frac{1}{n}-1\right)}
+$$
+
+Thus, we have a relation between the mass and radius of a polytrope of index $n$:
+
+$$
+\boxed{M \propto R^{\frac{n-3}{n-1}}}
+$$
+##### A Famous Example 
+
+When $n=\frac32$, the adiabatic index is $\gamma = 1 + 1/n = \frac53 \rightarrow P \propto \rho^{5/3}$. This is also the equation of state of non-degenerate stars! We also have:
+
+$$
+M \propto R^{-3}
+$$
+
+This is similar to the equation of state for a white dwarf. This is so weird! If we want **heavier** things, we need **smaller** volumes since mass is inversely proportionalt to the radius!
+
+##### Another Famous Example
+
+$n=0$ gives $M\propto R^{3}$ which is normal for solids/incompressible material sense. 
 
 
 
 
+## Bernoulli's Theorem/Principle/Function/Equation
+
+Let's start with Euler's equation:
+
+$$
+\frac{\partial \vec v}{\partial t} + \left(\vec v \cdot \vec\nabla\right) \vec v = -\frac{1}{\rho} \vec\nabla P - \vec\nabla \Phi
+$$
+
+Let's use a vector identity we have seen before:
+
+$$
+\left(\vec v \cdot \vec\nabla\right) \vec{v} = \frac12 \vec \nabla v^2 - \vec v \times \left(\vec \nabla \times \vec v\right)
+$$
+
+Why do we care about this? We can introduce the **vorticity**:
+
+```{admonition} Vorticity
+
+The vorticity $\vec \omega$ is:
+
+$$
+\vec \omega \equiv \vec \nabla \times \vec v
+$$
+
+```
+
+We can now re-rwite our Euler equation and get **Equation (A)**:
+
+$$
+\frac{\partial \vec v}{\partial t} + \vec \nabla \left(\frac12 \vec v^2 + \Phi\right) + \frac{1}{\rho}\vec\nabla P - \vec v \times \vec \omega = 0
+$$
 
 
 
+We have two special cases of interest:
 
-## Bernoulli's Principle
+1\. **Steady-flow Limit**
+
+This means that $\partial_t (\text{everything}) = 0$. We also are dealing with "ideal" fluids, meaning we ignore dissipation. In this case, **entropy is constant along flows.**
+
+We will now do something a bit strange, but we will dot $\vec{v}$ into equation (A), which will allow us to throw out the vorticity piece. In this case, this equation becomes:
+
+$$
+\vec v \cdot \vec \nabla\left(\frac12 v^2 + \Phi\right) + \frac{1}{\rho}\left(\vec v \cdot \vec \nabla\right)P = 0
+$$
+
+We would **love** to put everything in one parentheses, but we need a bit of help. **Anytime we get stuck, just use enthalpy.**\
+
+Recall that **enthalpy:**
+
+$$
+H = \mathcal{E} + PV
+$$
+
+We had the per-mass version as well:
+
+$$
+h = \epsilon + \frac{P}{\rho}
+$$
+
+This gives 
+
+$$
+dh = d\epsilon + P d(\frac{1}{\rho}) + \frac{1}{\rho} dP
+$$
+
+From the First Law, we have $d\epsilon = T \mathrm{d}S - P \,\mathrm{d}\left(\frac{1}{\rho}\right)$. This gives:
+
+$$
+dh = T\mathrm{d}S + \frac{1}{\rho} \mathrm{d}P
+$$
+
+For ideal flow $dS = 0$, we have:
+
+$$
+\vec \nabla h = \frac{1}{\rho}\vec\nabla P \text{ for constant S, i.e., ideal fluids}
+$$
+
+Returning to our equation above:
+
+$$
+\vec v \cdot \vec \nabla \left(\frac12 v^2 + \Phi + h \right) 0
+$$
+
+This gives our **Bernoulli Function**:
+
+
+```{admonition} Bernoulli Function 
+
+\mathcal{B} \equiv \frac12 v^2 + \Phi + h = \frac12 v^2 + \Phi + \epsilon + \frac{P}{\rho}
+
+```
+
+Thus:
+
+$$
+\vec v \cdot \vec \nabla \mathcal{B} = 0 = \frac{D\mathcal{B}}{Dt} 
+$$
+
+Thus:
+
+$$
+\mathcal{B} = \text{constant along fluid flow}
+$$
+
+Recall energy flux $\vec{f}$ from last time. It turns out that:
+
+$$
+\vec{f} = \mathcal{B}\rho \vec{v}
+$$
+
+So nothing is new!
+
+
+---
+
+
+2\. **If flow is also irrotational in addition to steady-flow**
+
+
+This case means that $\vec w = \vec \nabla \times \vec v = 0$. Thus, we don't have to do the weird $\vec v$ dotted throughout the entire equation since the voricity term is already $0$. This gives:
+
+$$
+\vec \nabla \mathcal{B} = 0
+$$
+
+Thus $\mathcal{B}$ is constant **everywhere**, not just **along the fluid flow**. 
+
+---
+
+
+##### A Comment: Vorticity is Conserved
+
+In general, 
+
+* Euler Equation $\rightarrow \frac{\partial \vec v}{\partial t} + \vec \nabla \mathcal{B} - \vec v \times \vec \omega = 0$.
+* We can take the curl of this above equation. If we do this, we get an equation for the vorticity:
+
+$$
+\boxed{\frac{\partial \vec \omega}{\partial t} = \vec \nabla \times \left(\vec v \times \vec \omega\right)}
+$$
+
