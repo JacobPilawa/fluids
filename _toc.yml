@@ -4,4 +4,5 @@
 format: jb-book
 root: intro
 chapters:
-- file: pages/basicfluids.md
+- file: pages/basicfluids
+- file: pages/waves
