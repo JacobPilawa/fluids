@@ -262,8 +262,42 @@
       <a class="reference internal nav-link" href="#boundary-conditions">
        Boundary Conditions
       </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#some-notes-from-above-eulerian-vs-lagrangian-perturbations">
+         Some notes from above: Eulerian vs. Lagrangian Perturbations
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-dispersion-relation">
+       The Dispersion Relation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plugging-in-numbers-for-tsunamis">
+       Plugging in Numbers for Tsunamis
+      </a>
      </li>
     </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#capillary-waves">
+   Capillary Waves
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shock-waves">
+   Shock Waves
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#shocks-jump-conditions-rankine-hugoniot-relations">
+     Shocks – Jump Conditions (Rankine-Hugoniot Relations)
+    </a>
    </li>
   </ul>
  </li>
@@ -354,8 +388,42 @@
       <a class="reference internal nav-link" href="#boundary-conditions">
        Boundary Conditions
       </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#some-notes-from-above-eulerian-vs-lagrangian-perturbations">
+         Some notes from above: Eulerian vs. Lagrangian Perturbations
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-dispersion-relation">
+       The Dispersion Relation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plugging-in-numbers-for-tsunamis">
+       Plugging in Numbers for Tsunamis
+      </a>
      </li>
     </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#capillary-waves">
+   Capillary Waves
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shock-waves">
+   Shock Waves
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#shocks-jump-conditions-rankine-hugoniot-relations">
+     Shocks – Jump Conditions (Rankine-Hugoniot Relations)
+    </a>
    </li>
   </ul>
  </li>
@@ -672,7 +740,190 @@ v_{1z} = \frac{Ak}{\rho_0 i \omega } e^{i(kx-\omega t)} e^{-kH} \cdot 2 \sinh (k
 \[
 P_1 + \vec \xi \cdot \vec \nabla P_0 = 0 \text{ if surface tension is unimportant}
 \]</div>
-<p>We will see this next time.</p>
+<hr class="docutils" />
+<p>Continuing from last time…</p>
+<p>Now, let’s recall we have, from the unperturbed equations:</p>
+<div class="math notranslate nohighlight">
+\[
+P_0 = - \rho g z + \text{const.}
+\]</div>
+<p>When we impose the first boundary condition at the bottom of the sea, we get:</p>
+<div class="math notranslate nohighlight">
+\[
+P_1 = A e^{i(kx-\omega t)}e^{-kH} \cdot 2\cosh\left(k(z+H)\right)
+\]</div>
+<p>We went to the Euler equation, and got:</p>
+<div class="math notranslate nohighlight">
+\[
+v_{1z} = \frac{Ak}{\rho_0 i \omega}e^{i(kx-\omega t)} \cdot 2\sinh(k(z+H))
+\]</div>
+<p>We then introduced the fluid displacement <span class="math notranslate nohighlight">\(\vec \xi\)</span> such that <span class="math notranslate nohighlight">\(d\xi/dt \equiv \vec v_1 \rightarrow \xi_{z} = \frac{v_{1z}}{-i\omega} = \frac{Ak}{\rho_0 \omega^2 }e^{i(kx-\omega t)}e^{-kh} \cdot 2\sinh(k(z+H))\)</span>.</p>
+<p>When we impose the second boundary condition (at the air-water interface), and if we assume that we have no surface tension, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+P_1 + \vec \xi \cdot \vec \nabla P_0 = 0 \text{ at } z=0
+\]</div>
+<p>At <span class="math notranslate nohighlight">\(z=0\)</span>, we thus have (recalling that <span class="math notranslate nohighlight">\(P_0 = -\rho_0 gz\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[
+P_1 - \rho_0 g \xi_{z}\Bigg\vert_{z=0} = 0 
+\]</div>
+<p>We have expressions for all this stuff (<span class="math notranslate nohighlight">\(P_1\)</span> and <span class="math notranslate nohighlight">\(\xi_{z}\)</span> from above)! The only significant pieces give:</p>
+<div class="math notranslate nohighlight">
+\[
+\cosh (k H) = \frac{kg}{\omega^2} \sinh(kH)
+\]</div>
+<p><strong>Note that this is a dispersion relation!</strong> We thus have:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\omega^2 = gk\tanh(kH)}
+\]</div>
+<p>This is the <strong>dispersion relation for surface water waves under no external forces at the boundaries.</strong></p>
+<div class="section" id="some-notes-from-above-eulerian-vs-lagrangian-perturbations">
+<h5>Some notes from above: Eulerian vs. Lagrangian Perturbations<a class="headerlink" href="#some-notes-from-above-eulerian-vs-lagrangian-perturbations" title="Permalink to this headline">¶</a></h5>
+<p>Let’s come back to :</p>
+<div class="math notranslate nohighlight">
+\[
+P_1 + \vec \xi \cdot \vec \nabla P_0 = 0 \text{ at } z=0
+\]</div>
+<p>What does this mean? Where does this come from?</p>
+<p>An Eulerian perturbation looks like:</p>
+<div class="math notranslate nohighlight">
+\[
+P(\vec r, t) = P_0(\vec r) + P_1(\vec r, t)
+\]</div>
+<p>This is what we have been doing so far. The Lagrangian perturbation looks at the perturbation along the fluid element as it is traveling. This looks like:</p>
+<div class="math notranslate nohighlight">
+\[
+P(\vec r+\vec \xi, t) = P_0(\vec r) + P_{1,\text{Lagrangian}}(\vec r, t)
+\]</div>
+<p>We can thus relate the two pictures:</p>
+<div class="math notranslate nohighlight">
+\[
+P_{1,\text{Lagrangian}} = P(\vec r + \vec \xi, t) - P_0(\vec r)
+\]</div>
+<p>We taylor expand:</p>
+<div class="math notranslate nohighlight">
+\[
+P_{1,\text{Lagrangian}} = P(\vec r,t) + \vec \xi \cdot \vec\nabla P - P_0(\vec r)
+\]</div>
+<p>The first and third term are just Eulerian perturbations!</p>
+<div class="math notranslate nohighlight">
+\[
+\rightarrow P_{1,\text{Lagrangian}} = \underbrace{P_{1}(\vec r, t)}_\text{Eulerian} + \vec \xi \cdot \vec \nabla P_0 + \mathcal{O}(\xi^2) + \cdots 
+\]</div>
+<p>The extra piece of our perturbation then pops out, and that’s why we had that at the boundary from before.</p>
+<p>**This means that we are requiring the pressure to be constant along a fluid element, not just at a fixed <span class="math notranslate nohighlight">\(\vec r\)</span>. ** This is another way of saying we are force-free along the fluid element.</p>
+</div>
+</div>
+<div class="section" id="the-dispersion-relation">
+<h4>The Dispersion Relation<a class="headerlink" href="#the-dispersion-relation" title="Permalink to this headline">¶</a></h4>
+<p>The disperion relation derived above is fascinating. Let’s play around in different regimes. Let’s consider <span class="math notranslate nohighlight">\(\lambda \ll H\)</span> and <span class="math notranslate nohighlight">\(\lambda \gg H\)</span> for the two interesting limits.</p>
+<p>1. Deep Water Limit: <span class="math notranslate nohighlight">\(H \gg \lambda\)</span>.</p>
+<p>In this limit, our intuition tells us that we don’t really care about <span class="math notranslate nohighlight">\(H\)</span> because the waves are too small to feel the ground. Recall that:</p>
+<div class="math notranslate nohighlight">
+\[
+\tanh x = \frac{e^x - e^{-x}}{e^{x} + e^{-x}} \rightarrow x \gg 1 \rightarrow \tanh x = 1
+\]</div>
+<p>Thus our disperion relation is:</p>
+<div class="math notranslate nohighlight">
+\[
+\omega^2 = gk \rightarrow \boxed{\omega = \sqrt{gk}}
+\]</div>
+<p>This is a dispersive wave – different wavelengths travel with different speeds. How can we see this? Well the phase velocity is:</p>
+<div class="math notranslate nohighlight">
+\[
+ v_{phase} = \frac{\omega}{k} \rightarrow \sqrt{g/k}
+ \]</div>
+<div class="math notranslate nohighlight">
+\[
+ v_{group} = d\omega/dk \rightarrow = \frac12 \sqrt{g/k}
+ \]</div>
+<p><strong>Shorter wave length disturbances travel more slowly.</strong></p>
+<p>2. Shallow Water Limit: <span class="math notranslate nohighlight">\(H \ll \lambda\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\tanh x \rightarrow x \ll 1 \rightarrow x 
+\]</div>
+<p>Our dispersion relation becomes:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\omega = \sqrt{gH} k }
+\]</div>
+<p>This is equite intuitive – when we have long wavelengths compared to <span class="math notranslate nohighlight">\(H\)</span>, we shoild know about <span class="math notranslate nohighlight">\(H\)</span>! It shows up, whereas before it disappeared. Note that:</p>
+<div class="math notranslate nohighlight">
+\[
+v_{phase} = \sqrt{gH} = v_{group} 
+\]</div>
+<p>Which is independent of <span class="math notranslate nohighlight">\(k\)</span>! All waves travel at the same speed, making this non-dispersive. <strong>A wave packet does not spread apart as it travels along the surface.</strong> This is the limit that matters for tsunamis. As you move toward the shore, <span class="math notranslate nohighlight">\(H\)</span> decreases.</p>
+</div>
+<div class="section" id="plugging-in-numbers-for-tsunamis">
+<h4>Plugging in Numbers for Tsunamis<a class="headerlink" href="#plugging-in-numbers-for-tsunamis" title="Permalink to this headline">¶</a></h4>
+<p>These behave as shallow water gravity waves. Typically <span class="math notranslate nohighlight">\(\lambda \sim \text{ many kilometers }\)</span>. The average depth of the Pacific Ocean is around <span class="math notranslate nohighlight">\(4\)</span> km. We know <span class="math notranslate nohighlight">\(g = 9.8\)</span> m/s<span class="math notranslate nohighlight">\(^2\)</span>. In this case:</p>
+<div class="math notranslate nohighlight">
+\[
+v_{phase} = v_{group} = \sqrt{10 \cdot 40,000} \sim 200 \text{ m/s} \sim 700 \text{km/hr} \sim 440 \text{ mph}
+\]</div>
+<p>It takes roughly 10-20 hours to cross the Pacific!</p>
+</div>
+</div>
+</div>
+<div class="section" id="capillary-waves">
+<h2>Capillary Waves<a class="headerlink" href="#capillary-waves" title="Permalink to this headline">¶</a></h2>
+<p>This is the case when surface tension is non-negligible. We will do this in Problem Set 3. In this case, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+P_1 + \vec \xi \cdot \vec \nabla P_0 = - T\frac{\partial^2 \xi_z}{\partial x^2}\Bigg\vert_{z=0}
+\]</div>
+<p>where the negative sign is downward, and <span class="math notranslate nohighlight">\(T\)</span> is a constant for surface tension.</p>
+</div>
+<div class="section" id="shock-waves">
+<h2>Shock Waves<a class="headerlink" href="#shock-waves" title="Permalink to this headline">¶</a></h2>
+<p>Shocks are fundamentally discontinuous. We will look in front of and behind these shocks, and relate these two systems with boundary conditions. This builds up to the <strong>jump conditions.</strong></p>
+<p>Shocks are characterized by <em><strong>sudden changes in the fluid properties.</strong></em> We introduce the <strong>Mach number</strong>.</p>
+<div class="admonition-mach-number admonition">
+<p class="admonition-title">Mach Number</p>
+<div class="math notranslate nohighlight">
+\[
+\text{Mach} \equiv \frac{v}{v_{s}}
+\]</div>
+</div>
+<a class="reference internal image-reference" href="../_images/fig8.png"><img alt="fig8" class="align-center" src="../_images/fig8.png" style="width: 600px;" /></a>
+<p>We can see that we get a Mach cone, with the shock fronts shown in blue in the Figure above. The angle of the shock front <span class="math notranslate nohighlight">\(\alpha\)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+\sin \alpha = \frac{v_s}{v} = \frac{1}{M}
+\]</div>
+<p>The region within the cone is <strong>in causal contact</strong>. We say that interior to the cone is shocked, and outside the cone is ambient/pre-shock.</p>
+<a class="reference internal image-reference" href="../_images/fig9.png"><img alt="fig9" class="align-center" src="../_images/fig9.png" style="width: 600px;" /></a>
+<p>We now want to examine interior and exterior to this shock front.</p>
+<div class="section" id="shocks-jump-conditions-rankine-hugoniot-relations">
+<h3>Shocks – Jump Conditions (Rankine-Hugoniot Relations)<a class="headerlink" href="#shocks-jump-conditions-rankine-hugoniot-relations" title="Permalink to this headline">¶</a></h3>
+<p>These describe boundary conditions across shocks (in the frame of shocks).</p>
+<p>Let’s imagine two regions separated by a shock boundary. On the left is pre-shock with <span class="math notranslate nohighlight">\(P_1\)</span>, <span class="math notranslate nohighlight">\(\rho_1\)</span>, and <span class="math notranslate nohighlight">\(v_1\)</span>. The right side is post-shock, with <span class="math notranslate nohighlight">\(P_2\)</span>, <span class="math notranslate nohighlight">\(\rho_2\)</span> and <span class="math notranslate nohighlight">\(v_2\)</span>. The shock is contained within a box of <span class="math notranslate nohighlight">\(\Delta x\)</span> width. Typically cold, fast flow gets shocked to hot, slow flow, with:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(v_1 &gt; v_2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho_1 &lt; \rho_2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P_1 &lt; P_2\)</span></p></li>
+</ul>
+<p>In this box around the shock front, we have:</p>
+<p>1. Mass Conservation</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \rho}{\partial t}+ \frac{\partial}{\partial x} (\rho v_x) = 0
+\]</div>
+<p>We can integrate over <span class="math notranslate nohighlight">\(x\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\underbrace{\frac{\partial}{\partial t}\int \rho \,\mathrm{d}x}_\text{0 bc mass flux in = mass flux out} + \rho v_{x}\Big\vert_{x = \Delta x/2} - \rho v_{x}\Big\vert_{x = -\Delta x/2} = 0
+\]</div>
+<p>Thus:</p>
+<div class="admonition-jump-condition-1 admonition">
+<p class="admonition-title">Jump Condition 1</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\rho_2 v_2 = \rho_1 v_1}
+\]</div>
 </div>
 </div>
 </div>

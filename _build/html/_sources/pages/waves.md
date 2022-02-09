@@ -371,5 +371,240 @@ $$
 P_1 + \vec \xi \cdot \vec \nabla P_0 = 0 \text{ if surface tension is unimportant}
 $$
 
-We will see this next time. 
+---
+
+
+Continuing from last time…
+
+
+Now, let's recall we have, from the unperturbed equations:
+
+$$
+P_0 = - \rho g z + \text{const.}
+$$
+
+When we impose the first boundary condition at the bottom of the sea, we get:
+
+$$
+P_1 = A e^{i(kx-\omega t)}e^{-kH} \cdot 2\cosh\left(k(z+H)\right)
+$$
+
+We went to the Euler equation, and got:
+
+$$
+v_{1z} = \frac{Ak}{\rho_0 i \omega}e^{i(kx-\omega t)} \cdot 2\sinh(k(z+H))
+$$
+We then introduced the fluid displacement $\vec \xi$ such that $d\xi/dt \equiv \vec v_1 \rightarrow \xi_{z} = \frac{v_{1z}}{-i\omega} = \frac{Ak}{\rho_0 \omega^2 }e^{i(kx-\omega t)}e^{-kh} \cdot 2\sinh(k(z+H))$.  
+
+When we impose the second boundary condition (at the air-water interface), and if we assume that we have no surface tension, we have:
+
+$$
+P_1 + \vec \xi \cdot \vec \nabla P_0 = 0 \text{ at } z=0
+$$
+
+At $z=0$, we thus have (recalling that $P_0 = -\rho_0 gz$):
+
+$$
+P_1 - \rho_0 g \xi_{z}\Bigg\vert_{z=0} = 0 
+$$
+
+We have expressions for all this stuff ($P_1$ and $\xi_{z}$ from above)! The only significant pieces give:
+
+$$
+\cosh (k H) = \frac{kg}{\omega^2} \sinh(kH)
+$$
+
+**Note that this is a dispersion relation!** We thus have:
+
+$$
+\boxed{\omega^2 = gk\tanh(kH)}
+$$
+
+This is the **dispersion relation for surface water waves under no external forces at the boundaries.**
+
+##### Some notes from above: Eulerian vs. Lagrangian Perturbations
+
+Let's come back to :
+
+$$
+P_1 + \vec \xi \cdot \vec \nabla P_0 = 0 \text{ at } z=0
+$$
+
+What does this mean? Where does this come from?
+
+An Eulerian perturbation looks like:
+
+$$
+P(\vec r, t) = P_0(\vec r) + P_1(\vec r, t)
+$$
+
+This is what we have been doing so far. The Lagrangian perturbation looks at the perturbation along the fluid element as it is traveling. This looks like:
+
+$$
+P(\vec r+\vec \xi, t) = P_0(\vec r) + P_{1,\text{Lagrangian}}(\vec r, t)
+$$
+We can thus relate the two pictures:
+
+
+$$
+P_{1,\text{Lagrangian}} = P(\vec r + \vec \xi, t) - P_0(\vec r)
+$$
+
+We taylor expand:
+
+$$
+P_{1,\text{Lagrangian}} = P(\vec r,t) + \vec \xi \cdot \vec\nabla P - P_0(\vec r)
+$$
+The first and third term are just Eulerian perturbations!
+
+$$
+\rightarrow P_{1,\text{Lagrangian}} = \underbrace{P_{1}(\vec r, t)}_\text{Eulerian} + \vec \xi \cdot \vec \nabla P_0 + \mathcal{O}(\xi^2) + \cdots 
+$$
+
+The extra piece of our perturbation then pops out, and that's why we had that at the boundary from before. 
+
+**This means that we are requiring the pressure to be constant along a fluid element, not just at a fixed $\vec r$. ** This is another way of saying we are force-free along the fluid element. 
+
+
+#### The Dispersion Relation
+
+The disperion relation derived above is fascinating. Let's play around in different regimes. Let's consider $\lambda \ll H$ and $\lambda \gg H$ for the two interesting limits. 
+
+1\. Deep Water Limit: $H \gg \lambda$.
+
+In this limit, our intuition tells us that we don't really care about $H$ because the waves are too small to feel the ground. Recall that:
+
+
+$$
+\tanh x = \frac{e^x - e^{-x}}{e^{x} + e^{-x}} \rightarrow x \gg 1 \rightarrow \tanh x = 1
+$$
+
+Thus our disperion relation is:
+
+$$
+\omega^2 = gk \rightarrow \boxed{\omega = \sqrt{gk}}
+$$
+ This is a dispersive wave – different wavelengths travel with different speeds. How can we see this? Well the phase velocity is:
+ 
+ $$
+ v_{phase} = \frac{\omega}{k} \rightarrow \sqrt{g/k}
+ $$
+ 
+ $$
+ v_{group} = d\omega/dk \rightarrow = \frac12 \sqrt{g/k}
+ $$
+ 
+**Shorter wave length disturbances travel more slowly.**
+
+2\. Shallow Water Limit: $H \ll \lambda$. 
+
+$$
+\tanh x \rightarrow x \ll 1 \rightarrow x 
+$$
+
+Our dispersion relation becomes:
+
+$$
+\boxed{\omega = \sqrt{gH} k }
+$$
+
+This is equite intuitive – when we have long wavelengths compared to $H$, we shoild know about $H$! It shows up, whereas before it disappeared. Note that:
+
+$$
+v_{phase} = \sqrt{gH} = v_{group} 
+$$
+
+Which is independent of $k$! All waves travel at the same speed, making this non-dispersive. **A wave packet does not spread apart as it travels along the surface.** This is the limit that matters for tsunamis. As you move toward the shore, $H$ decreases. 
+
+
+#### Plugging in Numbers for Tsunamis
+
+These behave as shallow water gravity waves. Typically $\lambda \sim \text{ many kilometers }$. The average depth of the Pacific Ocean is around $4$ km. We know $g = 9.8$ m/s$^2$. In this case:
+
+$$
+v_{phase} = v_{group} = \sqrt{10 \cdot 40,000} \sim 200 \text{ m/s} \sim 700 \text{km/hr} \sim 440 \text{ mph}
+$$
+
+It takes roughly 10-20 hours to cross the Pacific! 
+
+
+## Capillary Waves
+
+This is the case when surface tension is non-negligible. We will do this in Problem Set 3. In this case, we have:
+
+$$
+P_1 + \vec \xi \cdot \vec \nabla P_0 = - T\frac{\partial^2 \xi_z}{\partial x^2}\Bigg\vert_{z=0}
+$$
+
+where the negative sign is downward, and $T$ is a constant for surface tension.
+
+
+## Shock Waves
+
+Shocks are fundamentally discontinuous. We will look in front of and behind these shocks, and relate these two systems with boundary conditions. This builds up to the **jump conditions.**
+
+Shocks are characterized by _**sudden changes in the fluid properties.**_ We introduce the **Mach number**.
+
+```{admonition} Mach Number
+
+$$
+\text{Mach} \equiv \frac{v}{v_{s}}
+$$
+
+```
+
+```{image} ../figures/fig8.png
+:alt: fig8
+:width: 600px
+:align: center
+```
+
+We can see that we get a Mach cone, with the shock fronts shown in blue in the Figure above. The angle of the shock front $\alpha$ is given by:
+
+$$
+\sin \alpha = \frac{v_s}{v} = \frac{1}{M}
+$$
+The region within the cone is **in causal contact**. We say that interior to the cone is shocked, and outside the cone is ambient/pre-shock.
+
+```{image} ../figures/fig9.png
+:alt: fig9
+:width: 600px
+:align: center
+```
+
+We now want to examine interior and exterior to this shock front. 
+
+### Shocks – Jump Conditions (Rankine-Hugoniot Relations)
+
+These describe boundary conditions across shocks (in the frame of shocks). 
+
+Let's imagine two regions separated by a shock boundary. On the left is pre-shock with $P_1$, $\rho_1$, and $v_1$. The right side is post-shock, with $P_2$, $\rho_2$ and $v_2$. The shock is contained within a box of $\Delta x$ width. Typically cold, fast flow gets shocked to hot, slow flow, with:
+
+* $v_1 > v_2$
+* $\rho_1 < \rho_2$
+* $P_1 < P_2$
+
+In this box around the shock front, we have:
+
+1\. Mass Conservation
+
+$$
+\frac{\partial \rho}{\partial t}+ \frac{\partial}{\partial x} (\rho v_x) = 0
+$$
+
+We can integrate over $x$:
+
+$$
+\underbrace{\frac{\partial}{\partial t}\int \rho \,\mathrm{d}x}_\text{0 bc mass flux in = mass flux out} + \rho v_{x}\Big\vert_{x = \Delta x/2} - \rho v_{x}\Big\vert_{x = -\Delta x/2} = 0
+$$
+
+Thus:
+
+```{admonition} Jump Condition 1
+$$
+\boxed{\rho_2 v_2 = \rho_1 v_1}
+$$
+
+```
+
 
