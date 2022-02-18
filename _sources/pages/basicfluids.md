@@ -1191,7 +1191,9 @@ This gives our **Bernoulli Function**:
 
 ```{admonition} Bernoulli Function 
 
+$$
 \mathcal{B} \equiv \frac12 v^2 + \Phi + h = \frac12 v^2 + \Phi + \epsilon + \frac{P}{\rho}
+$$
 
 ```
 
