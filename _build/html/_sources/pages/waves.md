@@ -274,7 +274,7 @@ $$
 
 ```
 
-```{admonition} Euler Equation}
+```{admonition} Euler Equation
 
 We have:
 
@@ -586,7 +586,7 @@ Let's imagine two regions separated by a shock boundary. On the left is pre-shoc
 
 In this box around the shock front, we have:
 
-1\. Mass Conservation
+1\. Mass Conservation (Starting with Continuity Equation)
 
 $$
 \frac{\partial \rho}{\partial t}+ \frac{\partial}{\partial x} (\rho v_x) = 0
@@ -601,10 +601,437 @@ $$
 Thus:
 
 ```{admonition} Jump Condition 1
+
+Mass flux in is equal to the mass flux out. 
+
 $$
 \boxed{\rho_2 v_2 = \rho_1 v_1}
 $$
 
 ```
 
+2\. Momentum Conservation (Conservative Form of Euler Equation)
 
+
+
+$$
+\frac{\partial}{\partial t} \left(\rho v_i\right)  = -\partial_j T_{ij} - \rho \partial_i \Phi
+$$
+
+The momentum flux $T_{ij}$ term is:
+
+$$
+\text{momentum flux} = T_{ij} \equiv P \delta_{ij} + \rho v_i v_j
+$$
+
+Momentum cannot accumulate at the boundary, so momentum flux in has to equal the momentum flux out. The one dimensional form of this is:
+
+$$
+\boxed{P_2 + \rho_2 v_2^2 = P_1 + \rho_1v_1^2 }
+$$
+$$
+\text{sum of thermal and ram pressure in} = \text{sum of thermal and ram pressure out} 
+$$
+
+**Shocks convert ram pressure into thermal pressure, preserving the sum.**
+
+
+3\. Energy Conservation ()
+
+We had:
+
+$$
+\frac{\partial E}{\partial t} + \vec \nabla \underbrace{\cdot [\left(E+P\right)\vec v]}_{\vec f} = - \rho \dot Q_{cool} + \rho \frac{\partial \Phi}{\partial t}
+$$
+
+For adiabatic shocks $\dot{Q}_{cool}\sim 0$. When this is the case, we have 
+
+$$
+\text{energy flux in} = \text{energy flux out}
+$$
+
+And thus:
+
+$$
+\left(\frac12 v_1^2 + \Phi_1 + \epsilon_1 + \frac{P_1}{\rho_1}\right)\rho_1 v_1 = \left(\frac12 v_2^2 + \Phi_2 + \epsilon_2 + \frac{P_2}{\rho_2}\right)\rho_2 v_2
+$$
+
+
+
+
+Note that our first equation tells us that the $\rho v$ terms cancel out. Also, $\Phi_1 = \Phi_2$. This gives us:
+
+$$
+\boxed{\frac12 v_1^2 + \epsilon_1 + \frac{P_1}{\rho_1} = \frac12 v_2^2 + \epsilon_2 + \frac{P_2}{\rho_2} }
+$$
+
+
+
+Our three jump conditions are thus:
+
+
+```{admonition} Note
+
+$$
+\boxed{\rho_2 v_2 = \rho_1 v_1}
+$$
+
+
+```
+
+```{admonition} Note
+
+
+$$
+\boxed{P_2 + \rho_2 v_2^2 = P_1 + \rho_1v_1^2 }
+$$
+
+
+```
+
+```{admonition} Note
+
+
+$$
+\boxed{\frac12 v_1^2 + \epsilon_1 + \frac{P_1}{\rho_1} = \frac12 v_2^2 + \epsilon_2 + \frac{P_2}{\rho_2} }
+$$
+
+
+```
+
+Note that the internal energy is $\epsilon$ in the above equations.
+
+#### Example: Adiabatic, Ideal Gas 
+
+Under these assumptions, recall the polytropic relation:
+
+$$
+P = K \rho^\gamma
+$$
+
+And the internal energy per unit mass:
+
+$$
+\epsilon = \frac{1}{\gamma-1}\frac{P}{\rho} \rightarrow \epsilon + \frac{P}{\rho} = \frac{\gamma}{\gamma-1}\frac{P}{\rho}
+$$
+
+And our sound speed:
+
+$$
+v_s^2 = \frac{\partial P}{\partial \rho} = \gamma\frac{P}{\rho}
+$$
+
+If we additionally assume that $\gamma$ is constant across shocks, we can simplify the 3rd jump condition. This becomes (for adibatic ideal gases, remember):
+
+$$
+\frac12 v_1^2 + \frac{\gamma}{\gamma-1}\frac{P_1}{\rho_1} =\frac12 v_2^2 + \frac{\gamma}{\gamma-1}\frac{P_2}{\rho_2}  
+$$
+
+
+Re-writing this in terms of $v_s$:
+
+$$
+\boxed{\frac12 v_1^2 + \frac{1}{\gamma-1}v_{s,1}^2 = \frac12 v_2^2 + \frac{1}{\gamma-1}v_{s,2}^2}
+$$
+
+Re-writing our jump conditions once more (which is very, very tedious) in a way which removes $v_1$ and $v_2$. The trick that makes things much quicker is to define:
+
+$$
+j \equiv \rho_1 v_1 \equiv \rho_2 v_2
+$$
+
+Then, re-write the second jump condition as:
+
+$$
+\frac{j^2}{\rho_1} + P_1 = \frac{j^2}{\rho_2} + P_2  \rightarrow j^2 = \frac{P_2 - P_1}{\frac{1}{\rho_1} - \frac{1}{\rho_2}}
+$$
+
+We can now re-write the third jump condition in terms of $j$. Lots of tedious work leads to:
+
+$$
+\boxed{\frac{\rho_2}{\rho_1} = \frac{v_1}{v_2} = \frac{(\gamma-1)P_1 + (\gamma+1)P_2}{(\gamma+1)P_1 + (\gamma-1)P_2}}
+$$
+
+Lastly, we want to express everything in terms of the pre-shock (upstream) Mach number since we often can't measure post-shock (downstream) conditions. Recall that:
+
+$$
+M_1 \equiv \frac{v_1}{v_{s,1}} \underbrace{\rightarrow }_\text{adiabatic ideal gas} M_1^2 = \frac{v_1^2 \rho_1}{\gamma P_1}
+$$
+
+For convenience, let's define $x \equiv \frac{v_2}{v_1} \equiv \frac{\rho_1}{\rho_2}$ from jump condition 1. Using JC2:
+
+$$
+P_2 = P_1 + \rho v_1^2 - \underbrace{\rho_2 v_2^2}_{\underbrace{=\rho_1 v_1 v_2}_{\rho_1 v_1^2 x}}
+$$
+
+Thus:
+
+$$
+P_2 = P_1 + \underbrace{\rho_1 v_1^2}_{=\gamma M_1^2 P_1} (1-x)
+$$
+
+And thus:
+
+$$
+P_2 = P_1 \left[1+\gamma M_1^2 \left(1-x\right)\right]
+$$
+And thus:
+
+$$
+\frac{P_2}{P_1} = 1+\gamma M_1^2 (1-x)
+$$
+
+One last step – use this expression along with our most recently boxed equation (in class, we called this JC3'), which gives:
+
+$$
+\frac{v_1}{v_2} = \frac{1}{x} = \frac{(\gamma-1) + (\gamma+1)\left[1+\gamma M_1^2 (1-x)\right]}{(\gamma+1) + (\gamma-1)\left[1+\gamma M_1^2 (1-x)\right]}
+$$
+
+The right hand side can be simplified:
+
+$$
+\frac{1}{x} = \frac{2 + (\gamma+1) M_1^2 (1-x)}{2+(\gamma-1)M_1^2(1-x)}
+$$
+
+
+And:
+
+$$
+2+(\gamma-1) M_1^2 (1-x) = 2x + (\gamma+1)M_1^2 (1-x)x
+$$
+
+Collecting terms:
+
+$$
+(1-x)\left(x\cdots\right) = 0
+$$
+which has solutions:
+
+$$
+x = 1 \rightarrow \text{ No shock solution!} \text{ (when } M_1 < 1)
+$$
+
+$$
+\boxed{\frac{v_1}{v_2} = \frac{\rho_2}{\rho_1} = \frac{\gamma + 1}{\gamma - 1 + \frac{2 }{M_1^2}}} \text{ (when } M_1 > 1)
+$$
+
+
+We can also find, skipping the math, from Jump Condition 2:
+
+$$
+\boxed{\frac{P_2}{P_1} = \frac{2\gamma M_1^2 - (\gamma-1)}{\gamma+1}}
+$$
+
+We can also derive the post-shock Mach number:
+
+$$
+\boxed{M_2^2 = \frac{(\gamma-1)M_1^2 + 2}{2\gamma M_1^2 - (\gamma-1)}}
+$$
+
+
+We can show that, if $M_1>1$, then $M_2 <1$. The post-shock is always subsonic. For completeness, we can relate the temperatures as well:
+
+$$
+\boxed{\frac{T_2}{T_1} = \frac{P_2}{P_1}\frac{\rho_1}{\rho_2} = \frac{\left(2\gamma M_1^2 - (\gamma-1)\right)\left(\gamma-1 +\frac{2}{M_1^2}\right)}{(\gamma+1)^2}}
+$$
+
+
+##### Checking the Limits and the Physics
+
+Let's take the (1) no shock limit ($x=1, v_1=v_2, P_1=P_2,....$) and the (2) strong shock limit ($M_1 \gg 1$).
+
+
+1\. No shock – uninteresting.
+
+2\. Strong Shock:
+
+$$
+\frac{\rho_2}{\rho_1} = \frac{v_1}{v_2} \rightarrow \frac{\gamma+1}{\gamma-1} = 4 \text{ for } \gamma\equiv \frac53  \text{ or } 6 \text{ for } \gamma\equiv\frac75
+$$
+
+Let's look at pressure, now. When $M_1 \gg 1$, we reach:
+
+$$
+\frac{P_2}{P_1} \rightarrow \frac{2\gamma M_1^2}{\gamma+1} \gg \gg 1
+$$
+
+Pressure is not capped! Note that for air:
+
+$$
+\frac{P_2}{P_1} = 1.2 M_1^2 \text{ for air}
+$$
+
+Temperature is also not capped, and we will see this on Problem Set 3. 
+
+
+## Blast Waves
+
+Here, we consider strong shocks generated by explosions. This is interesting because we have a self-similar solution, the **Sedov-Taylor Similarity Solution**, which was used in WWII by the Russians.
+
+Consider a star exploding isotropically with a shock front of thickness $D$ traveling with velocity $v_1$. Outside the shock is $\rho_1$, and inside the thin shell, we will assume has $\rho_2$ density, the same density internal to the shock.  We assume vacuum interior the shocked shell.
+
+```{image} ../figures/fig10.png
+:alt: fig10
+:width: 600px
+:align: center
+```
+
+
+If we zoom in on the box, we basically have our pre and post-shock picture from above! 
+
+```{image} ../figures/fig11.png
+:alt: fig11
+:width: 600px
+:align: center
+```
+
+
+* In the pre-shock fluid's rest frame, the post-sock speed is $v_2^\prime \equiv v_1 - v_2 = v_1(1-\frac{\gamma-1}{\gamma+1}) = \frac{2}{\gamma + 1} v_1$.
+* We also assume that most mass within $R$ is swept into a shell of thickness $D$:
+
+$$
+\frac43 \pi R^3 \rho_1 = 4\pi R^2 D \rho_2
+$$
+
+And thus:
+
+$$
+D = \frac{R}{3}\frac{\rho_1}{\rho_2}
+$$
+
+Note that we actaully know the strong-shock ratio of densities:
+
+$$
+D = \frac{R}{3}\frac{\gamma-1}{\gamma+1} \underbrace{\approx}_{\gamma=5/3} 0.08 R \rightarrow D \ll R
+$$
+### Shell of Shocked Gas
+
+The shell of shocked gas is moving at speed $v_1 = \dot{R}(t)$ in the frame of the pre-shock fluid. The shell's kinetic energy is:
+
+$$
+E_{kin} = \frac12 mv_1^2 = \frac12 \left(\frac43 \pi R^3 \rho_1\right)\dot{R}^2 \rightarrow E \propto \rho_1 \frac{R^5}{t^2}
+$$
+
+The shell's internal energy:
+
+$$
+E_{int} = \frac{1}{\gamma-1} P_{2} V_{shell} \rightarrow E \propto \frac{1}{\gamma-1}\frac{2}{\gamma+1} v_1^2 \rho_1 \frac43 \pi R^3\rightarrow E \propto \rho_1 \frac{R^5}{t^2}
+$$
+
+Both the internal energy and the kinetic energy thus give us:
+
+$$
+\boxed{R = A \left(\frac{E}{\rho_1}\right)^{1/5} t^{2/5}}
+$$
+
+**This is the blast-wave scaling relationship. The radius doesn't depend linearly on time, instead it scales with time to the 2-5ths. This only holds for adiabatic explosions, by the way. It also doesn't hold in the very beginning of the explosion.**
+
+
+
+### The Sedov Phase
+
+Let's recall a few conditions we had from above.  Recall the picture of a spherical shell expanding from a spherical star. Inside the shell of width $D$, we are post-shock. Outside this expanding shell, we have pre-shock conditions.
+
+For strong shocks ($M_1 \gg1$ ), we had:
+
+$$
+\frac{v_1}{v_2} = \frac{\rho_2}{\rho_1} \rightarrow \gamma \sim \frac53 \rightarrow \frac{\gamma+1}{\gamma-1}
+$$
+
+And also 
+
+$$
+\frac{P_2}{P_1} \rightarrow \frac{2\gamma}{\gamma+1} M_1^2 \rightarrow M_1^2 = \frac{v_1^2 \rho_1}{\gamma P_1}
+$$
+We saw last time that the shell expands in the **Sedov Phase**:
+
+$$
+\boxed{R(t) = A \left(\frac{E}{\rho_1}\right)^{1/5} t^{2/5}}
+$$
+
+Usually, you don't enter this phase right away – typically at first, $v$ is constant. Then, we start to lose energy, and as we plow material into the shell, this scaling (called the Sedov-Taylor phase), takes over. 
+
+#### Examples of Blast Waves
+
+
+1\. Atomic Bomb
+
+We had around $6$ kg of plutonium in a $\sim 4000$ kg metal container. Let's estimate the explosion energy. The energy source in this case is nuclear fission:
+
+$$
+E \sim f_{fission} \cdot M_{plut.} c^2 \sim \left(10^{-4}\right) \cdot 6 \cdot 10^{3} \cdot (3 \cdot 10^{10})^2 \sim 10^{21} \text{ ergs}
+$$
+
+Initially, the ejecta are:
+
+$$
+E \sim \frac12 M v_{ejecta}^2 \rightarrow v_{esc} \sim \sqrt{\frac{2E}{m}} \sim \frac{2 \cdot 10^{21} \text{ ergs}}{4000 \text{ kg}} \sim 2 \times 10^{7} \frac{\text{cm}}{\text{s}}
+$$ 
+
+Now let's calculate the radius of the mushroom cloud (the shock-front!):
+
+$$
+R(t) \sim \left((1) \cdot \frac{E}{10^{21} \text{ ergs}} \cdot \frac{10^{-3} \frac{\text{g}}{\text{cm}^3}}{\rho_1} \cdot \left(\frac{t}{1 \text{ ms}}\right)^{2}\right)^{1/5} \cdot \left(\frac{10^{21}}{10^{-3}} \cdot 10^{-6}\right)^{1/5}
+$$
+
+And thus:
+
+$$
+R(t) \sim (30 \text{ m})\left( \frac{E}{10^{21} \text{ ergs}} \cdot \frac{10^{-3} \frac{\text{g}}{\text{cm}^3}}{\rho_1} \cdot \left(\frac{t}{1 \text{ ms}}\right)^{2}\right)^{1/5}
+$$
+
+2\. Supernova
+
+$$
+E_{SN} \sim 10^{51} \text{ ergs} \sim \frac12 M v_{ejecta}^2
+$$
+
+$M$ in this case, has $M\sim 10 M_\odot \sim 10^{34} \text{ g}$. Immediately, we can calculate:
+
+$$
+v_{ejec} \sim \sqrt{\frac{2\cdot 10^{51}}{10^{32}}} \sim 5\cdot 10^{8} \frac{\text{cm}}{\text{s}} \sim 5000 \frac{\text{km}}{\text{s}}
+$$
+
+Doing the exactly the same thing above, knowing $\rho_1 = \rho_{ISM} \sim 1 \frac{\text{H atom}}{\text{cm}^3}$:
+
+$$
+R(t) = \left(\frac{E}{10^{51} \text{ ergs}} \frac{10^{-24} \frac{g}{cm^3}}{\rho_1} \left(\frac{t}{1 \text{ year}}\right)^{2}\right)^{1/5}  \cdot 10^{18} \text{ cm} \sim 0.3 \text{ pc}
+$$
+
+Thus, $R\sim 0.3 \text{pc}$ at 1 year old. 
+
+### Sedov-Taylor Self-Similar Solution and the Strucutre of Blast Waves
+
+What if we want to know the radial profile of the blast wave? Let's examine the post-shock radial profile for a 1D spherical shock. What is $\rho(r,t), P(r,t), v(r,t)$ behind a shock front?
+
+In the Sedov phase, we can define a dimensionless radius $\xi\equiv \frac{r}{R(t)}$. In this case, we have $R(t)$ as a characteristic length scale for shocks in the explosion. We will now **look** for Ansatz for self-similar solution of the form:
+
+$$
+\rho(r,t) = \rho_2 \cdot \tilde \rho(\xi)
+$$
+
+$$
+P(r,t) = P_2 \cdot \tilde P(\xi)
+$$
+$$
+    \underbrace{v(r,t)}_\text{in unshocked gas rest frame} = v_2^\prime \tilde v(\xi)
+$$
+
+
+where the $\tilde$ functions are dimensionless. 
+
+These definitions allow us to change variables in the fluid equations, like:
+
+$$
+(\frac{\partial}{\partial t},\frac{\partial}{\partial r} \rightarrow \frac{\partial }{\partial \xi} )
+$$
+
+When we do this, our fluid equations become only functions of $\xi$ (since time is embedded in R(t)). After tons of algebra, we can find the solutions for these three functions. Here are what these look like:
+
+```{image} ../figures/fig12.png
+:alt: fig12
+:width: 600px
+:align: center
+```
+
+n 

@@ -298,6 +298,49 @@
     <a class="reference internal nav-link" href="#shocks-jump-conditions-rankine-hugoniot-relations">
      Shocks – Jump Conditions (Rankine-Hugoniot Relations)
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-adiabatic-ideal-gas">
+       Example: Adiabatic, Ideal Gas
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#checking-the-limits-and-the-physics">
+         Checking the Limits and the Physics
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#blast-waves">
+   Blast Waves
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#shell-of-shocked-gas">
+     Shell of Shocked Gas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-sedov-phase">
+     The Sedov Phase
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#examples-of-blast-waves">
+       Examples of Blast Waves
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sedov-taylor-self-similar-solution-and-the-strucutre-of-blast-waves">
+     Sedov-Taylor Self-Similar Solution and the Strucutre of Blast Waves
+    </a>
    </li>
   </ul>
  </li>
@@ -423,6 +466,49 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#shocks-jump-conditions-rankine-hugoniot-relations">
      Shocks – Jump Conditions (Rankine-Hugoniot Relations)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-adiabatic-ideal-gas">
+       Example: Adiabatic, Ideal Gas
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#checking-the-limits-and-the-physics">
+         Checking the Limits and the Physics
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#blast-waves">
+   Blast Waves
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#shell-of-shocked-gas">
+     Shell of Shocked Gas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-sedov-phase">
+     The Sedov Phase
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#examples-of-blast-waves">
+       Examples of Blast Waves
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sedov-taylor-self-similar-solution-and-the-strucutre-of-blast-waves">
+     Sedov-Taylor Self-Similar Solution and the Strucutre of Blast Waves
     </a>
    </li>
   </ul>
@@ -661,7 +747,7 @@ v_s = \sqrt{\gamma\frac{k_b T}{\mu m_p}} = \sqrt{gamma} v_s^\text{isothermal}
 \]</div>
 </div>
 <div class="admonition-euler-equation admonition">
-<p class="admonition-title">Euler Equation}</p>
+<p class="admonition-title">Euler Equation</p>
 <p>We have:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -907,7 +993,7 @@ P_1 + \vec \xi \cdot \vec \nabla P_0 = - T\frac{\partial^2 \xi_z}{\partial x^2}\
 <li><p><span class="math notranslate nohighlight">\(P_1 &lt; P_2\)</span></p></li>
 </ul>
 <p>In this box around the shock front, we have:</p>
-<p>1. Mass Conservation</p>
+<p>1. Mass Conservation (Starting with Continuity Equation)</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{\partial \rho}{\partial t}+ \frac{\partial}{\partial x} (\rho v_x) = 0
@@ -920,11 +1006,340 @@ P_1 + \vec \xi \cdot \vec \nabla P_0 = - T\frac{\partial^2 \xi_z}{\partial x^2}\
 <p>Thus:</p>
 <div class="admonition-jump-condition-1 admonition">
 <p class="admonition-title">Jump Condition 1</p>
+<p>Mass flux in is equal to the mass flux out.</p>
 <div class="math notranslate nohighlight">
 \[
 \boxed{\rho_2 v_2 = \rho_1 v_1}
 \]</div>
 </div>
+<p>2. Momentum Conservation (Conservative Form of Euler Equation)</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial}{\partial t} \left(\rho v_i\right)  = -\partial_j T_{ij} - \rho \partial_i \Phi
+\]</div>
+<p>The momentum flux <span class="math notranslate nohighlight">\(T_{ij}\)</span> term is:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{momentum flux} = T_{ij} \equiv P \delta_{ij} + \rho v_i v_j
+\]</div>
+<p>Momentum cannot accumulate at the boundary, so momentum flux in has to equal the momentum flux out. The one dimensional form of this is:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{P_2 + \rho_2 v_2^2 = P_1 + \rho_1v_1^2 }
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\text{sum of thermal and ram pressure in} = \text{sum of thermal and ram pressure out} 
+\]</div>
+<p><strong>Shocks convert ram pressure into thermal pressure, preserving the sum.</strong></p>
+<p>3. Energy Conservation ()</p>
+<p>We had:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial E}{\partial t} + \vec \nabla \underbrace{\cdot [\left(E+P\right)\vec v]}_{\vec f} = - \rho \dot Q_{cool} + \rho \frac{\partial \Phi}{\partial t}
+\]</div>
+<p>For adiabatic shocks <span class="math notranslate nohighlight">\(\dot{Q}_{cool}\sim 0\)</span>. When this is the case, we have</p>
+<div class="math notranslate nohighlight">
+\[
+\text{energy flux in} = \text{energy flux out}
+\]</div>
+<p>And thus:</p>
+<div class="math notranslate nohighlight">
+\[
+\left(\frac12 v_1^2 + \Phi_1 + \epsilon_1 + \frac{P_1}{\rho_1}\right)\rho_1 v_1 = \left(\frac12 v_2^2 + \Phi_2 + \epsilon_2 + \frac{P_2}{\rho_2}\right)\rho_2 v_2
+\]</div>
+<p>Note that our first equation tells us that the <span class="math notranslate nohighlight">\(\rho v\)</span> terms cancel out. Also, <span class="math notranslate nohighlight">\(\Phi_1 = \Phi_2\)</span>. This gives us:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac12 v_1^2 + \epsilon_1 + \frac{P_1}{\rho_1} = \frac12 v_2^2 + \epsilon_2 + \frac{P_2}{\rho_2} }
+\]</div>
+<p>Our three jump conditions are thus:</p>
+<div class="admonition-note admonition">
+<p class="admonition-title">Note</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\rho_2 v_2 = \rho_1 v_1}
+\]</div>
+</div>
+<div class="admonition-note admonition">
+<p class="admonition-title">Note</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{P_2 + \rho_2 v_2^2 = P_1 + \rho_1v_1^2 }
+\]</div>
+</div>
+<div class="admonition-note admonition">
+<p class="admonition-title">Note</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac12 v_1^2 + \epsilon_1 + \frac{P_1}{\rho_1} = \frac12 v_2^2 + \epsilon_2 + \frac{P_2}{\rho_2} }
+\]</div>
+</div>
+<p>Note that the internal energy is <span class="math notranslate nohighlight">\(\epsilon\)</span> in the above equations.</p>
+<div class="section" id="example-adiabatic-ideal-gas">
+<h4>Example: Adiabatic, Ideal Gas<a class="headerlink" href="#example-adiabatic-ideal-gas" title="Permalink to this headline">¶</a></h4>
+<p>Under these assumptions, recall the polytropic relation:</p>
+<div class="math notranslate nohighlight">
+\[
+P = K \rho^\gamma
+\]</div>
+<p>And the internal energy per unit mass:</p>
+<div class="math notranslate nohighlight">
+\[
+\epsilon = \frac{1}{\gamma-1}\frac{P}{\rho} \rightarrow \epsilon + \frac{P}{\rho} = \frac{\gamma}{\gamma-1}\frac{P}{\rho}
+\]</div>
+<p>And our sound speed:</p>
+<div class="math notranslate nohighlight">
+\[
+v_s^2 = \frac{\partial P}{\partial \rho} = \gamma\frac{P}{\rho}
+\]</div>
+<p>If we additionally assume that <span class="math notranslate nohighlight">\(\gamma\)</span> is constant across shocks, we can simplify the 3rd jump condition. This becomes (for adibatic ideal gases, remember):</p>
+<div class="math notranslate nohighlight">
+\[
+\frac12 v_1^2 + \frac{\gamma}{\gamma-1}\frac{P_1}{\rho_1} =\frac12 v_2^2 + \frac{\gamma}{\gamma-1}\frac{P_2}{\rho_2}  
+\]</div>
+<p>Re-writing this in terms of <span class="math notranslate nohighlight">\(v_s\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac12 v_1^2 + \frac{1}{\gamma-1}v_{s,1}^2 = \frac12 v_2^2 + \frac{1}{\gamma-1}v_{s,2}^2}
+\]</div>
+<p>Re-writing our jump conditions once more (which is very, very tedious) in a way which removes <span class="math notranslate nohighlight">\(v_1\)</span> and <span class="math notranslate nohighlight">\(v_2\)</span>. The trick that makes things much quicker is to define:</p>
+<div class="math notranslate nohighlight">
+\[
+j \equiv \rho_1 v_1 \equiv \rho_2 v_2
+\]</div>
+<p>Then, re-write the second jump condition as:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{j^2}{\rho_1} + P_1 = \frac{j^2}{\rho_2} + P_2  \rightarrow j^2 = \frac{P_2 - P_1}{\frac{1}{\rho_1} - \frac{1}{\rho_2}}
+\]</div>
+<p>We can now re-write the third jump condition in terms of <span class="math notranslate nohighlight">\(j\)</span>. Lots of tedious work leads to:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{\rho_2}{\rho_1} = \frac{v_1}{v_2} = \frac{(\gamma-1)P_1 + (\gamma+1)P_2}{(\gamma+1)P_1 + (\gamma-1)P_2}}
+\]</div>
+<p>Lastly, we want to express everything in terms of the pre-shock (upstream) Mach number since we often can’t measure post-shock (downstream) conditions. Recall that:</p>
+<div class="math notranslate nohighlight">
+\[
+M_1 \equiv \frac{v_1}{v_{s,1}} \underbrace{\rightarrow }_\text{adiabatic ideal gas} M_1^2 = \frac{v_1^2 \rho_1}{\gamma P_1}
+\]</div>
+<p>For convenience, let’s define <span class="math notranslate nohighlight">\(x \equiv \frac{v_2}{v_1} \equiv \frac{\rho_1}{\rho_2}\)</span> from jump condition 1. Using JC2:</p>
+<div class="math notranslate nohighlight">
+\[
+P_2 = P_1 + \rho v_1^2 - \underbrace{\rho_2 v_2^2}_{\underbrace{=\rho_1 v_1 v_2}_{\rho_1 v_1^2 x}}
+\]</div>
+<p>Thus:</p>
+<div class="math notranslate nohighlight">
+\[
+P_2 = P_1 + \underbrace{\rho_1 v_1^2}_{=\gamma M_1^2 P_1} (1-x)
+\]</div>
+<p>And thus:</p>
+<div class="math notranslate nohighlight">
+\[
+P_2 = P_1 \left[1+\gamma M_1^2 \left(1-x\right)\right]
+\]</div>
+<p>And thus:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{P_2}{P_1} = 1+\gamma M_1^2 (1-x)
+\]</div>
+<p>One last step – use this expression along with our most recently boxed equation (in class, we called this JC3’), which gives:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{v_1}{v_2} = \frac{1}{x} = \frac{(\gamma-1) + (\gamma+1)\left[1+\gamma M_1^2 (1-x)\right]}{(\gamma+1) + (\gamma-1)\left[1+\gamma M_1^2 (1-x)\right]}
+\]</div>
+<p>The right hand side can be simplified:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{x} = \frac{2 + (\gamma+1) M_1^2 (1-x)}{2+(\gamma-1)M_1^2(1-x)}
+\]</div>
+<p>And:</p>
+<div class="math notranslate nohighlight">
+\[
+2+(\gamma-1) M_1^2 (1-x) = 2x + (\gamma+1)M_1^2 (1-x)x
+\]</div>
+<p>Collecting terms:</p>
+<div class="math notranslate nohighlight">
+\[
+(1-x)\left(x\cdots\right) = 0
+\]</div>
+<p>which has solutions:</p>
+<div class="math notranslate nohighlight">
+\[
+x = 1 \rightarrow \text{ No shock solution!} \text{ (when } M_1 &lt; 1)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{v_1}{v_2} = \frac{\rho_2}{\rho_1} = \frac{\gamma + 1}{\gamma - 1 + \frac{2 }{M_1^2}}} \text{ (when } M_1 &gt; 1)
+\]</div>
+<p>We can also find, skipping the math, from Jump Condition 2:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{P_2}{P_1} = \frac{2\gamma M_1^2 - (\gamma-1)}{\gamma+1}}
+\]</div>
+<p>We can also derive the post-shock Mach number:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{M_2^2 = \frac{(\gamma-1)M_1^2 + 2}{2\gamma M_1^2 - (\gamma-1)}}
+\]</div>
+<p>We can show that, if <span class="math notranslate nohighlight">\(M_1&gt;1\)</span>, then <span class="math notranslate nohighlight">\(M_2 &lt;1\)</span>. The post-shock is always subsonic. For completeness, we can relate the temperatures as well:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{T_2}{T_1} = \frac{P_2}{P_1}\frac{\rho_1}{\rho_2} = \frac{\left(2\gamma M_1^2 - (\gamma-1)\right)\left(\gamma-1 +\frac{2}{M_1^2}\right)}{(\gamma+1)^2}}
+\]</div>
+<div class="section" id="checking-the-limits-and-the-physics">
+<h5>Checking the Limits and the Physics<a class="headerlink" href="#checking-the-limits-and-the-physics" title="Permalink to this headline">¶</a></h5>
+<p>Let’s take the (1) no shock limit (<span class="math notranslate nohighlight">\(x=1, v_1=v_2, P_1=P_2,....\)</span>) and the (2) strong shock limit (<span class="math notranslate nohighlight">\(M_1 \gg 1\)</span>).</p>
+<p>1. No shock – uninteresting.</p>
+<p>2. Strong Shock:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\rho_2}{\rho_1} = \frac{v_1}{v_2} \rightarrow \frac{\gamma+1}{\gamma-1} = 4 \text{ for } \gamma\equiv \frac53  \text{ or } 6 \text{ for } \gamma\equiv\frac75
+\]</div>
+<p>Let’s look at pressure, now. When <span class="math notranslate nohighlight">\(M_1 \gg 1\)</span>, we reach:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{P_2}{P_1} \rightarrow \frac{2\gamma M_1^2}{\gamma+1} \gg \gg 1
+\]</div>
+<p>Pressure is not capped! Note that for air:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{P_2}{P_1} = 1.2 M_1^2 \text{ for air}
+\]</div>
+<p>Temperature is also not capped, and we will see this on Problem Set 3.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="blast-waves">
+<h2>Blast Waves<a class="headerlink" href="#blast-waves" title="Permalink to this headline">¶</a></h2>
+<p>Here, we consider strong shocks generated by explosions. This is interesting because we have a self-similar solution, the <strong>Sedov-Taylor Similarity Solution</strong>, which was used in WWII by the Russians.</p>
+<p>Consider a star exploding isotropically with a shock front of thickness <span class="math notranslate nohighlight">\(D\)</span> traveling with velocity <span class="math notranslate nohighlight">\(v_1\)</span>. Outside the shock is <span class="math notranslate nohighlight">\(\rho_1\)</span>, and inside the thin shell, we will assume has <span class="math notranslate nohighlight">\(\rho_2\)</span> density, the same density internal to the shock.  We assume vacuum interior the shocked shell.</p>
+<a class="reference internal image-reference" href="../_images/fig10.png"><img alt="fig10" class="align-center" src="../_images/fig10.png" style="width: 600px;" /></a>
+<p>If we zoom in on the box, we basically have our pre and post-shock picture from above!</p>
+<a class="reference internal image-reference" href="../_images/fig11.png"><img alt="fig11" class="align-center" src="../_images/fig11.png" style="width: 600px;" /></a>
+<ul class="simple">
+<li><p>In the pre-shock fluid’s rest frame, the post-sock speed is <span class="math notranslate nohighlight">\(v_2^\prime \equiv v_1 - v_2 = v_1(1-\frac{\gamma-1}{\gamma+1}) = \frac{2}{\gamma + 1} v_1\)</span>.</p></li>
+<li><p>We also assume that most mass within <span class="math notranslate nohighlight">\(R\)</span> is swept into a shell of thickness <span class="math notranslate nohighlight">\(D\)</span>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\frac43 \pi R^3 \rho_1 = 4\pi R^2 D \rho_2
+\]</div>
+<p>And thus:</p>
+<div class="math notranslate nohighlight">
+\[
+D = \frac{R}{3}\frac{\rho_1}{\rho_2}
+\]</div>
+<p>Note that we actaully know the strong-shock ratio of densities:</p>
+<div class="math notranslate nohighlight">
+\[
+D = \frac{R}{3}\frac{\gamma-1}{\gamma+1} \underbrace{\approx}_{\gamma=5/3} 0.08 R \rightarrow D \ll R
+\]</div>
+<div class="section" id="shell-of-shocked-gas">
+<h3>Shell of Shocked Gas<a class="headerlink" href="#shell-of-shocked-gas" title="Permalink to this headline">¶</a></h3>
+<p>The shell of shocked gas is moving at speed <span class="math notranslate nohighlight">\(v_1 = \dot{R}(t)\)</span> in the frame of the pre-shock fluid. The shell’s kinetic energy is:</p>
+<div class="math notranslate nohighlight">
+\[
+E_{kin} = \frac12 mv_1^2 = \frac12 \left(\frac43 \pi R^3 \rho_1\right)\dot{R}^2 \rightarrow E \propto \rho_1 \frac{R^5}{t^2}
+\]</div>
+<p>The shell’s internal energy:</p>
+<div class="math notranslate nohighlight">
+\[
+E_{int} = \frac{1}{\gamma-1} P_{2} V_{shell} \rightarrow E \propto \frac{1}{\gamma-1}\frac{2}{\gamma+1} v_1^2 \rho_1 \frac43 \pi R^3\rightarrow E \propto \rho_1 \frac{R^5}{t^2}
+\]</div>
+<p>Both the internal energy and the kinetic energy thus give us:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{R = A \left(\frac{E}{\rho_1}\right)^{1/5} t^{2/5}}
+\]</div>
+<p><strong>This is the blast-wave scaling relationship. The radius doesn’t depend linearly on time, instead it scales with time to the 2-5ths. This only holds for adiabatic explosions, by the way. It also doesn’t hold in the very beginning of the explosion.</strong></p>
+</div>
+<div class="section" id="the-sedov-phase">
+<h3>The Sedov Phase<a class="headerlink" href="#the-sedov-phase" title="Permalink to this headline">¶</a></h3>
+<p>Let’s recall a few conditions we had from above.  Recall the picture of a spherical shell expanding from a spherical star. Inside the shell of width <span class="math notranslate nohighlight">\(D\)</span>, we are post-shock. Outside this expanding shell, we have pre-shock conditions.</p>
+<p>For strong shocks (<span class="math notranslate nohighlight">\(M_1 \gg1\)</span> ), we had:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{v_1}{v_2} = \frac{\rho_2}{\rho_1} \rightarrow \gamma \sim \frac53 \rightarrow \frac{\gamma+1}{\gamma-1}
+\]</div>
+<p>And also</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{P_2}{P_1} \rightarrow \frac{2\gamma}{\gamma+1} M_1^2 \rightarrow M_1^2 = \frac{v_1^2 \rho_1}{\gamma P_1}
+\]</div>
+<p>We saw last time that the shell expands in the <strong>Sedov Phase</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{R(t) = A \left(\frac{E}{\rho_1}\right)^{1/5} t^{2/5}}
+\]</div>
+<p>Usually, you don’t enter this phase right away – typically at first, <span class="math notranslate nohighlight">\(v\)</span> is constant. Then, we start to lose energy, and as we plow material into the shell, this scaling (called the Sedov-Taylor phase), takes over.</p>
+<div class="section" id="examples-of-blast-waves">
+<h4>Examples of Blast Waves<a class="headerlink" href="#examples-of-blast-waves" title="Permalink to this headline">¶</a></h4>
+<p>1. Atomic Bomb</p>
+<p>We had around <span class="math notranslate nohighlight">\(6\)</span> kg of plutonium in a <span class="math notranslate nohighlight">\(\sim 4000\)</span> kg metal container. Let’s estimate the explosion energy. The energy source in this case is nuclear fission:</p>
+<div class="math notranslate nohighlight">
+\[
+E \sim f_{fission} \cdot M_{plut.} c^2 \sim \left(10^{-4}\right) \cdot 6 \cdot 10^{3} \cdot (3 \cdot 10^{10})^2 \sim 10^{21} \text{ ergs}
+\]</div>
+<p>Initially, the ejecta are:</p>
+<div class="math notranslate nohighlight">
+\[
+E \sim \frac12 M v_{ejecta}^2 \rightarrow v_{esc} \sim \sqrt{\frac{2E}{m}} \sim \frac{2 \cdot 10^{21} \text{ ergs}}{4000 \text{ kg}} \sim 2 \times 10^{7} \frac{\text{cm}}{\text{s}}
+\]</div>
+<p>Now let’s calculate the radius of the mushroom cloud (the shock-front!):</p>
+<div class="math notranslate nohighlight">
+\[
+R(t) \sim \left((1) \cdot \frac{E}{10^{21} \text{ ergs}} \cdot \frac{10^{-3} \frac{\text{g}}{\text{cm}^3}}{\rho_1} \cdot \left(\frac{t}{1 \text{ ms}}\right)^{2}\right)^{1/5} \cdot \left(\frac{10^{21}}{10^{-3}} \cdot 10^{-6}\right)^{1/5}
+\]</div>
+<p>And thus:</p>
+<div class="math notranslate nohighlight">
+\[
+R(t) \sim (30 \text{ m})\left( \frac{E}{10^{21} \text{ ergs}} \cdot \frac{10^{-3} \frac{\text{g}}{\text{cm}^3}}{\rho_1} \cdot \left(\frac{t}{1 \text{ ms}}\right)^{2}\right)^{1/5}
+\]</div>
+<p>2. Supernova</p>
+<div class="math notranslate nohighlight">
+\[
+E_{SN} \sim 10^{51} \text{ ergs} \sim \frac12 M v_{ejecta}^2
+\]</div>
+<p><span class="math notranslate nohighlight">\(M\)</span> in this case, has <span class="math notranslate nohighlight">\(M\sim 10 M_\odot \sim 10^{34} \text{ g}\)</span>. Immediately, we can calculate:</p>
+<div class="math notranslate nohighlight">
+\[
+v_{ejec} \sim \sqrt{\frac{2\cdot 10^{51}}{10^{32}}} \sim 5\cdot 10^{8} \frac{\text{cm}}{\text{s}} \sim 5000 \frac{\text{km}}{\text{s}}
+\]</div>
+<p>Doing the exactly the same thing above, knowing <span class="math notranslate nohighlight">\(\rho_1 = \rho_{ISM} \sim 1 \frac{\text{H atom}}{\text{cm}^3}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+R(t) = \left(\frac{E}{10^{51} \text{ ergs}} \frac{10^{-24} \frac{g}{cm^3}}{\rho_1} \left(\frac{t}{1 \text{ year}}\right)^{2}\right)^{1/5}  \cdot 10^{18} \text{ cm} \sim 0.3 \text{ pc}
+\]</div>
+<p>Thus, <span class="math notranslate nohighlight">\(R\sim 0.3 \text{pc}\)</span> at 1 year old.</p>
+</div>
+</div>
+<div class="section" id="sedov-taylor-self-similar-solution-and-the-strucutre-of-blast-waves">
+<h3>Sedov-Taylor Self-Similar Solution and the Strucutre of Blast Waves<a class="headerlink" href="#sedov-taylor-self-similar-solution-and-the-strucutre-of-blast-waves" title="Permalink to this headline">¶</a></h3>
+<p>What if we want to know the radial profile of the blast wave? Let’s examine the post-shock radial profile for a 1D spherical shock. What is <span class="math notranslate nohighlight">\(\rho(r,t), P(r,t), v(r,t)\)</span> behind a shock front?</p>
+<p>In the Sedov phase, we can define a dimensionless radius <span class="math notranslate nohighlight">\(\xi\equiv \frac{r}{R(t)}\)</span>. In this case, we have <span class="math notranslate nohighlight">\(R(t)\)</span> as a characteristic length scale for shocks in the explosion. We will now <strong>look</strong> for Ansatz for self-similar solution of the form:</p>
+<div class="math notranslate nohighlight">
+\[
+\rho(r,t) = \rho_2 \cdot \tilde \rho(\xi)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+P(r,t) = P_2 \cdot \tilde P(\xi)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+    \underbrace{v(r,t)}_\text{in unshocked gas rest frame} = v_2^\prime \tilde v(\xi)
+\]</div>
+<p>where the <span class="math notranslate nohighlight">\(\tilde\)</span> functions are dimensionless.</p>
+<p>These definitions allow us to change variables in the fluid equations, like:</p>
+<div class="math notranslate nohighlight">
+\[
+(\frac{\partial}{\partial t},\frac{\partial}{\partial r} \rightarrow \frac{\partial }{\partial \xi} )
+\]</div>
+<p>When we do this, our fluid equations become only functions of <span class="math notranslate nohighlight">\(\xi\)</span> (since time is embedded in R(t)). After tons of algebra, we can find the solutions for these three functions. Here are what these look like:</p>
+<a class="reference internal image-reference" href="../_images/fig12.png"><img alt="fig12" class="align-center" src="../_images/fig12.png" style="width: 600px;" /></a>
+<p>n</p>
 </div>
 </div>
 </div>
