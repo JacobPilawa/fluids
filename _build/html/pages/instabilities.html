@@ -1,0 +1,636 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fluid Instabilities &#8212; Astrophysical Fluid Dynamics</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Waves" href="waves.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Astrophysical Fluid Dynamics</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="basicfluids.html">
+   Basic Things about Fluids
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="waves.html">
+   Waves
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Fluid Instabilities
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/pages/instabilities.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fpages/instabilities.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gravitational-instabilities-in-a-static-vs-expanding-medium">
+   Gravitational Instabilities in a Static vs. Expanding Medium
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#static-uniform-medium">
+     Static, Uniform Medium
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#two-regimes">
+       Two Regimes
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#regime-a">
+         Regime A
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#regime-b">
+         Regime B
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#an-side">
+       An Side
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#an-expanding-medium">
+     An Expanding Medium
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Fluid Instabilities</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gravitational-instabilities-in-a-static-vs-expanding-medium">
+   Gravitational Instabilities in a Static vs. Expanding Medium
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#static-uniform-medium">
+     Static, Uniform Medium
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#two-regimes">
+       Two Regimes
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#regime-a">
+         Regime A
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#regime-b">
+         Regime B
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#an-side">
+       An Side
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#an-expanding-medium">
+     An Expanding Medium
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="fluid-instabilities">
+<h1>Fluid Instabilities<a class="headerlink" href="#fluid-instabilities" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="gravitational-instabilities-in-a-static-vs-expanding-medium">
+<h2>Gravitational Instabilities in a Static vs. Expanding Medium<a class="headerlink" href="#gravitational-instabilities-in-a-static-vs-expanding-medium" title="Permalink to this headline">¶</a></h2>
+<p>Let’s recall two of the dispersion relations we have derived:</p>
+<div class="admonition-free-wave-dispersion-relation-sound-waves admonition">
+<p class="admonition-title">Free Wave Dispersion Relation: Sound Waves</p>
+<div class="math notranslate nohighlight">
+\[
+\omega = v_s k 
+\]</div>
+</div>
+<div class="admonition-surface-water-waves admonition">
+<p class="admonition-title">Surface Water Waves</p>
+<p>Here, we had gravity (constant), which gives a dispersive relation:</p>
+<div class="math notranslate nohighlight">
+\[
+\omega^2 = gk\tanh(kH)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(H\)</span> is the depth of the sea. Also note that here, we had <span class="math notranslate nohighlight">\(\vec \nabla \Phi = -\vec g\)</span>.</p>
+</div>
+<p>And also, recall our <strong>equations for linear perturbation theory</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\rho = \rho_0 + \rho_1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+P = P_0 + P_1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\vec v = \vec v_0 + \vec v_1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\Phi = \Phi_0 + \Phi_1
+\]</div>
+<p>Note that <span class="math notranslate nohighlight">\(\rho_1 \ll \rho_0\)</span>, and so forth. We also had things like the <strong>adiabatic sound speed</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+v_s^2 = \left(\frac{\partial P}{\partial \rho}\right)_\text{const. S} = \frac{P_1}{\rho_1}
+\]</div>
+<div class="section" id="static-uniform-medium">
+<h3>Static, Uniform Medium<a class="headerlink" href="#static-uniform-medium" title="Permalink to this headline">¶</a></h3>
+<p>For a static, uniform medium, we have <span class="math notranslate nohighlight">\(\rho_0 = \text{const.}\)</span>, <span class="math notranslate nohighlight">\(P_0 = \text{constant}\)</span>, and <span class="math notranslate nohighlight">\(\vec v_0 = 0\)</span>. The potential is interesting, though, which we will return to. The fluid equations are:</p>
+<div class="admonition-zeroth-order-continuity-equation admonition">
+<p class="admonition-title">Zeroth Order Continuity Equation</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \rho_0}{\partial t}  + \vec \nabla (\rho_0 \vec v_0) = 0
+\]</div>
+<p>This is trivially true.</p>
+</div>
+<div class="admonition-zeroth-order-euler-equation admonition">
+<p class="admonition-title">Zeroth Order Euler Equation</p>
+<p>The LHS is <span class="math notranslate nohighlight">\(0\)</span> since <span class="math notranslate nohighlight">\(\vec v_0 = 0\)</span>. The RHS of the Euler equation tells us that:</p>
+<div class="math notranslate nohighlight">
+\[
+-\frac{1}{\rho_0} \vec \nabla  P_0 - \vec \nabla \Phi_0 = 0 \rightarrow \vec \nabla \Phi_0 = 0
+\]</div>
+</div>
+<div class="admonition-zeroth-poisson-equation admonition">
+<p class="admonition-title">Zeroth Poisson Equation</p>
+<p>We have:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla^2 \Phi_0 = 4\pi G \rho_0 
+\]</div>
+<p>Since we are radially symmetric, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec \nabla \Phi_0 = \frac{4\pi}{3} G\rho_0 \vec{r}\]</div>
+</div>
+<p><strong>Hey! Wait a minute! The two zeroth order equations tell us that <span class="math notranslate nohighlight">\(\rho_0\)</span> has to be 0. This isconsistency is actually called the Jeans-Swindle.</strong> The reason we have an inconsistency is because we need our medium to be infinitely large. Thus, the Jean’s Swindle is a reflection of the unrealistic background we are considering.</p>
+<p>We now go to the perturbed equations:</p>
+<div class="admonition-first-order-continuity admonition">
+<p class="admonition-title">First Order Continuity</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \rho_1}{\partial t} + \rho_0 \vec \nabla \cdot \vec v = 0
+\]</div>
+</div>
+<div class="admonition-first-order-euler admonition">
+<p class="admonition-title">First Order Euler</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \vec v_1}{ \partial t} = - \frac{v_s^2}{\rho_0} \vec \nabla P_1 - \vec \nabla \Phi_1
+\]</div>
+</div>
+<div class="admonition-first-order-poisson admonition">
+<p class="admonition-title">First Order Poisson</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla^2 \Phi_1 = 4\pi G \rho_1
+\]</div>
+</div>
+<p>We can combine the first two equations, taking the time derivative of the first. Doing so, we get:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial^2 \rho_1 }{\partial t^2} + \rho_0 \left(-\frac{v_s^2}{\rho_0} \nabla^2 \rho_1 - \nabla^2 \Phi_1\right) = 0
+\]</div>
+<p>Now use the Poisson equation (equation 3), to give a <strong>wave’s equation with a driving term:</strong></p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{\partial^2 \rho_1}{\partial t^2} - v_s^2 \nabla^2 \rho_1 - 4\pi G\rho_0 \rho_1 = 0}
+\]</div>
+<p>We use Fourier analysis, turning a differential into algebraic equation, since the modes decouple. We do this by saying <span class="math notranslate nohighlight">\(\rho(\vec r, t) \propto \int e^{i (\vec k \cdot \vec r - \omega t)} \, c(\vec{k}) \, d^3 k\)</span> . However, if we had non-linear terms like <span class="math notranslate nohighlight">\(\rho_1^2\)</span>, all Hell breaks loose in Fourier space. This is because we have convolutions when things are non-linear, and that is ugly.</p>
+<p>Anyways, we get:</p>
+<div class="math notranslate nohighlight">
+\[
+-\omega^2 + v_s^2 k^2 - 4\pi G\rho_0 = 0 
+\]</div>
+<div class="admonition-dispersion-relation-for-jean-s-instability admonition">
+<p class="admonition-title">Dispersion Relation for Jean’s Instability</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\omega^2 = v_s^2 k^2 - 4\pi G \rho_0}
+\]</div>
+<p>This is a dispersive wave (since we are non-linear in <span class="math notranslate nohighlight">\(k\)</span>). We can also immediately see that <span class="math notranslate nohighlight">\(\omega\)</span> might be imaginary! If pressure wins, we have waves/oscillatory behavior! If gravity wins, we get exponential collapse.</p>
+<p>We can write this in a bit different way:</p>
+<div class="math notranslate nohighlight">
+\[
+\omega^2 = v_s^2 \left(k^2 - k_J^2\right)
+\]</div>
+<p>where:</p>
+<div class="math notranslate nohighlight">
+\[
+k_J \equiv \sqrt{\frac{4\pi G \rho_0}{v_s^2}}
+\]</div>
+<p>is the <strong>Jean’s wavenumber</strong>. We also often see:</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda_J \equiv \frac{2\pi}{k_J}
+\]</div>
+<p>And Jean’s mass (the mass enclosed within <span class="math notranslate nohighlight">\(\lambda_J\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[
+M_J = \frac{4\pi}{3} \lambda_J^3 \rho_0
+\]</div>
+<p>And we often say things like ``what is the Jean’s mass/Jean’s length at a time in cosmic history?’’ Here, we compare the density to the sound speed, more or less, through the definition of Jean’s wavenumber.</p>
+<p>Note that pre-CMB, the Jean’s Length is huge. After free electrons combine with ionized hydrogen (forming neutral hydrogen), photons free stream. Thus, the Jean’s Mass drops tremendously. The Jean’s Mass post-recombination is of order <span class="math notranslate nohighlight">\(10^{6}\)</span> solar masses. <strong>This is when structure formation takes off!</strong></p>
+</div>
+<div class="section" id="two-regimes">
+<h4>Two Regimes<a class="headerlink" href="#two-regimes" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="regime-a">
+<h5>Regime A<a class="headerlink" href="#regime-a" title="Permalink to this headline">¶</a></h5>
+<p>We consider here <span class="math notranslate nohighlight">\(k &gt; k_J\)</span> or <span class="math notranslate nohighlight">\(\lambda &lt; \lambda_J\)</span>. In this case, we have <span class="math notranslate nohighlight">\(\omega^2 &gt; 0\)</span>, and thus <span class="math notranslate nohighlight">\(\omega\)</span> is real. <span class="math notranslate nohighlight">\(\rho_1\)</span> oscillates like sound waves. This is a <strong>stable solution</strong>.</p>
+</div>
+<div class="section" id="regime-b">
+<h5>Regime B<a class="headerlink" href="#regime-b" title="Permalink to this headline">¶</a></h5>
+<p>Here <span class="math notranslate nohighlight">\(\omega^2&lt;0\)</span>, and thus <span class="math notranslate nohighlight">\(\omega\)</span> is imaginary. This implies:</p>
+<div class="math notranslate nohighlight">
+\[
+\rho_1 \propto e^{\pm |\omega| t}
+\]</div>
+<p><strong>The growing solution is exponential!</strong></p>
+</div>
+</div>
+<div class="section" id="an-side">
+<h4>An Side<a class="headerlink" href="#an-side" title="Permalink to this headline">¶</a></h4>
+<p>Note that the dispersion relation for Jean’s instability is very similar to the <strong>plasma frequency</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\omega^2 = v_s^2 k^2 + \frac{4\pi n_e e^2}{m_e} &gt; 0
+\]</div>
+<p>Thus the plasma frequency is always oscillatory!</p>
+</div>
+</div>
+<div class="section" id="an-expanding-medium">
+<h3>An Expanding Medium<a class="headerlink" href="#an-expanding-medium" title="Permalink to this headline">¶</a></h3>
+<p>In this case, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\rho_0 = \rho_0(t)
+\]</div>
+<p>We can define a <span class="math notranslate nohighlight">\(\delta\)</span> such that:</p>
+<div class="math notranslate nohighlight">
+\[
+\delta \equiv \frac{\rho_1}{\rho_0} = \frac{\rho - \rho_0}{\rho_0} = \left(\delta \rho\right)
+\]</div>
+<p>The overdensity can be as large as can be, but the underdensity can only get as negative as <span class="math notranslate nohighlight">\(-1\)</span>. This negative overdensity regions of the Universe are called <strong>voids</strong>. Thus <span class="math notranslate nohighlight">\((-1 \leq \delta &lt; \infty)\)</span>.</p>
+<p>Also note that our fluid velocity is no longer <span class="math notranslate nohighlight">\(0\)</span>. Instead, we have <span class="math notranslate nohighlight">\(\vec v_0 = H \vec r\)</span> (Hubble expansion). This is also <span class="math notranslate nohighlight">\(\vec v = \frac{\dot{a}}{a}\vec r\)</span>. By convection, we choose <span class="math notranslate nohighlight">\(a=1\)</span> today, and <span class="math notranslate nohighlight">\(a&lt;1\)</span> before today. Note that taking:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec \nabla \cdot \vec v_0 = 3 \frac{\dot{a}}{a}
+\]</div>
+<p>And note that</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{v}_1 = \text{ peculiar velocity}
+\]</div>
+<p>We now go to our fluid equations:</p>
+<div class="admonition-zeroth-order-continuity admonition">
+<p class="admonition-title">Zeroth Order Continuity</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \rho_0}{\partial t} + \rho_0 \vec \nabla \cdot \vec v_0 = \frac{\partial \rho_0}{\partial t} + \frac{3\dot{a}}{a} \rho_0 = 0 \rightarrow \rho_0(t) \propto \frac{1}{a(t)^3} \propto \frac{1}{\text{volume}}
+\]</div>
+<p>This is nice and in accordance with our intuition.</p>
+</div>
+<div class="admonition-first-order-continuity admonition">
+<p class="admonition-title">First Order Continuity</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \rho_1}{\partial t} + \rho_0 \vec \nabla \cdot \vec v + \vec \nabla (\rho_1 \vec v) = 0 
+\]</div>
+</div>
+<p>We’ll now want to go to <span class="math notranslate nohighlight">\(\delta\)</span> coordinates in our first order continuity equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\rho_1 = \rho_0 \delta \rightarrow \rho_0 \dot{\delta}  +\delta \dot{\rho}_0 + \rho_0 \vec \nabla \cdot \vec v_1 + \rho_0 \vec v_0 \cdot \vec \nabla \delta + \rho_0 \delta \vec \nabla \cdot \vec v = 0 
+\]</div>
+<p>Also note that <span class="math notranslate nohighlight">\(\dot{\rho}_0 = -3\frac{\dot{a}}{a}\)</span> from the continuity equation, and we know that <span class="math notranslate nohighlight">\(\vec \nabla \cdot \vec v_0 = 3\frac{\dot{a}}{a}\)</span>. This cancels nicely:</p>
+<p>Dividing through by <span class="math notranslate nohighlight">\(\rho_0\)</span>, we get the <strong>linearized Continuity Equation for an expanding Universe</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\dot \delta + \vec \nabla \cdot \vec v_1 + \frac{\dot a}{a} \rho_0 \vec r\cdot \vec \nabla \delta = 0
+\]</div>
+<p>where we have replace <span class="math notranslate nohighlight">\(v_0\)</span> with Hubble’s Law.</p>
+<div class="admonition-zeroth-order-euler-equation admonition">
+<p class="admonition-title">Zeroth Order Euler Equation</p>
+<p>Again, <span class="math notranslate nohighlight">\(\vec v_0\)</span> is not zero, and so we just get a constra:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partital \vec v_0}{\partial t} + (\vec v_) \cdot \vec \nabla) \vec v_0 = - \vec \nabla \Phi_0
+\]</div>
+</div>
+<div class="admonition-first-order-euler-equation admonition">
+<p class="admonition-title">First Order Euler Equation</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \vec v_1}{\partial t} + (\vec v_0 \cdot \vec \nabla) + (\vec v_1 \cdot \vec \nabla) \vec v_0 = -\frac{v_s^2}{\rho_0} \vec \nabla \rho_1 - \vec \nabla \Phi_1
+\]</div>
+</div>
+<p>Let’s simplify the ugly term:</p>
+<div class="math notranslate nohighlight">
+\[
+(\vec v_1 \cdot \vec \nabla) \vec v_0 = \frac{\dot a}{a} (\vec v_1 \cdot \vec \nabla) \vec r
+\]</div>
+<p>And note that:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec v_1 \cdot \vec \nabla = v_{1x} \partial_x + v_{1y} \partial_y + v_{1z} \partial_z 
+\]</div>
+<p>And so acting on <span class="math notranslate nohighlight">\(\vec{r}\)</span>, we get: <span class="math notranslate nohighlight">\((\vec v_1 \cdot \vec \nabla) \vec r = \frac{\dot a}{a} \vec{v}_1\)</span>.</p>
+<p>This makes our First Order Euler equation;</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial v_1}{\partial t} + \frac{\dot{a}}{a}(\vec r \cdot \vec \nabla) \vec v_1 + \frac{\dot a}{a} \vec v_1 = -v_s^2 \vec \nabla \delta - \vec \nabla \Phi_1
+\]</div>
+<p>And finally, our Poisson:</p>
+<div class="admonition-zeroth-and-first-order-poission admonition">
+<p class="admonition-title">Zeroth and First Order Poission</p>
+<p>We get:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla^2 \Phi_0 = 4\pi G \rho_0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\nabla^2 \Phi_1 = 4\pi G \rho_0 \delta
+\]</div>
+</div>
+<p>We no longer have Jean’s Swingle, by the way!</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./pages"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="waves.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Waves</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Jacob Pilawa<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
