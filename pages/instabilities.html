@@ -238,8 +238,32 @@
     <a class="reference internal nav-link" href="#an-expanding-medium">
      An Expanding Medium
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#static-case-pressure-vs-gravity">
+       Static Case: Pressure vs. Gravity
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#expanding-case">
+     Expanding Case
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#examine-k-k-j-regime">
+       Examine k &lt; k_J regime:
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gravitational-instability-of-a-rotating-self-gravitating-disk">
+   Gravitational Instability of a Rotating (Self-Gravitating) Disk
+  </a>
  </li>
 </ul>
 
@@ -299,8 +323,32 @@
     <a class="reference internal nav-link" href="#an-expanding-medium">
      An Expanding Medium
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#static-case-pressure-vs-gravity">
+       Static Case: Pressure vs. Gravity
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#expanding-case">
+     Expanding Case
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#examine-k-k-j-regime">
+       Examine k &lt; k_J regime:
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gravitational-instability-of-a-rotating-self-gravitating-disk">
+   Gravitational Instability of a Rotating (Self-Gravitating) Disk
+  </a>
  </li>
 </ul>
 
@@ -528,7 +576,7 @@ M_J = \frac{4\pi}{3} \lambda_J^3 \rho_0
 <p>Dividing through by <span class="math notranslate nohighlight">\(\rho_0\)</span>, we get the <strong>linearized Continuity Equation for an expanding Universe</strong>:</p>
 <div class="math notranslate nohighlight">
 \[
-\dot \delta + \vec \nabla \cdot \vec v_1 + \frac{\dot a}{a} \rho_0 \vec r\cdot \vec \nabla \delta = 0
+\dot \delta + \vec \nabla \cdot \vec v_1 + \frac{\dot a}{a} \vec r\cdot \vec \nabla \delta = 0
 \]</div>
 <p>where we have replace <span class="math notranslate nohighlight">\(v_0\)</span> with Hubble’s Law.</p>
 <div class="admonition-zeroth-order-euler-equation admonition">
@@ -576,7 +624,241 @@ M_J = \frac{4\pi}{3} \lambda_J^3 \rho_0
 \]</div>
 </div>
 <p>We no longer have Jean’s Swingle, by the way!</p>
+<hr class="docutils" />
+<p>Here, we continue from last week. Let’s recall a few things:</p>
+<div class="section" id="static-case-pressure-vs-gravity">
+<h4>Static Case: Pressure vs. Gravity<a class="headerlink" href="#static-case-pressure-vs-gravity" title="Permalink to this headline">¶</a></h4>
+<p>In this case, we derived:</p>
+<div class="math notranslate nohighlight">
+\[
+\omega^2 = v_s^2 k ^2 - 4\pi G \rho_0
+\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[
+\omega^2 = v_s^2 \left(k^2 - k_J^2\right)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(k_J\)</span> is the <strong>Jeans Wavenumber</strong>, defined as:</p>
+<div class="math notranslate nohighlight">
+\[
+k_J \equiv \sqrt{\frac{4\pi G\rho_0}{v_s^2}}
+\]</div>
+<p>We got this by perturbing our fluid equations in the limit where the sub-0 pieces do not depend on time, nor space. We then moved into the contracting or expanding medium.</p>
 </div>
+</div>
+<div class="section" id="expanding-case">
+<h3>Expanding Case<a class="headerlink" href="#expanding-case" title="Permalink to this headline">¶</a></h3>
+<p>The linearized fluid equations were dervied last time. These were:</p>
+<p>From the continuity equation:
+$<span class="math notranslate nohighlight">\(
+\dot{\delta} + \vec \nabla \cdot \vec v_1 + \frac{\dot a}{a}\left(\vec r \cdot \vec \nabla\right) \delta = 0
+\)</span>$</p>
+<p>From the Euler equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \vec v_1}{\partial t} + \frac{\dot a}{a}\left(\vec r \cdot \vec \nabla\right)\vec v_1 + \frac{\dot a}{a} \vec v_1 = -v_s^2 \vec \nabla \delta - \vec \nabla \Phi
+\]</div>
+<p>Note that we might have had this expression wrong last time. We had an extra <span class="math notranslate nohighlight">\(\rho_0\)</span> somewhere.</p>
+<p>And from the Poisson equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla^2 \Phi_1 = 4\pi G \rho_0 \delta
+\]</div>
+<p>To solve these equations, we go into Fourier space. Also, we will go into the co-moving coordinate system which will cancel out many of the terms. First, doing the Fourier Transform:</p>
+<p>To go to co-moving coordinates:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec r = a(t) \vec x 
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\vec r\)</span> is physical and <span class="math notranslate nohighlight">\(\vec x\)</span> are the co-moving coordinates. Note that <span class="math notranslate nohighlight">\(a(\text{today}) = 1\)</span>. Correpsondingly, our co-moving wave number <span class="math notranslate nohighlight">\(\vec k\)</span> will be paried with <span class="math notranslate nohighlight">\(\vec x\)</span> and not <span class="math notranslate nohighlight">\(\vec r\)</span>. Go to Fourier Space:</p>
+<div class="math notranslate nohighlight">
+\[
+\delta(\vec r, t) 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\vec v_1 (\vec r, t)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\Phi_1(\vec r, t)
+\]</div>
+<p>These three quanities are:</p>
+<div class="math notranslate nohighlight">
+\[
+= \int \mathrm{d}^3 \, k \, e^{i\frac{\vec k \cdot \vec r}{a(t)}} f_k(t)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(f_k(t)\)</span> are the Fourier transformed functions. In one shot, we will do a lot of algebra here. We will calculate <span class="math notranslate nohighlight">\(\dot{\delta}\)</span> in real space:</p>
+<div class="math notranslate nohighlight">
+\[
+\dot \delta(\vec r, t) = \int d^3\,k\, e^{i\frac{\vec k \cdot \vec r}{a(t)}} \left(\dot{\delta}_k - \frac{\dot a}{a} i \frac{\vec k \cdot \vec r}{a(t)} \delta_k\right)
+\]</div>
+<p>And</p>
+<div class="math notranslate nohighlight">
+\[
+\vec \nabla \delta(\vec r, t) =  \cdots \frac{i \vec k}{a(t)}\delta_k
+\]</div>
+<p>And</p>
+<div class="math notranslate nohighlight">
+\[
+\vec \nabla \cdot \vec v_1(\vec r,t) = \cdots i \frac{\vec k}{a}\vec v_k
+\]</div>
+<p>Now, with these, our <strong>CONTINUITY EQUATION</strong> becomes:</p>
+<div class="math notranslate nohighlight">
+\[
+\dot{\delta}_k - \frac{\dot a}{a} \frac{i \vec k \cdot \vec r}{a} \delta_k + i \frac{\vec k \cdot \vec v_k}{a} + \frac{\dot a}{a} \left(\vec r \cdot i \frac{\vec{k}}{a}\right)\delta_k = 0
+\]</div>
+<p>We get cancellations, and thus:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\dot \delta_k + i \frac{\vec k \cdot \vec v_k}{a} = 0}
+\]</div>
+<p>Our Euler equation is:</p>
+<div class="math notranslate nohighlight">
+\[
+\dot{\vec v}_k - \frac{\dot a}{a} i \frac{\vec k \cdot \vec r}{a}\vec v_k + \frac{\dot a}{a}\left(\vec r \cdot \frac{i \vec k}{a}\right)\vec v_k + \frac{\dot a}{a}\vec v_k = -v_s^2 \frac{i \vec k}{a}\delta_k - i\frac{\vec k}{a}\Phi_k
+\]</div>
+<p>We get cancellations and combinations (with total derivatives), giving the <strong>linearized euler equation</strong>!</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{\partial}{\partial t} \left(a \vec v_k\right) + i v_s^2 \vec k \delta_k + i \vec k \Phi_k = 0}
+\]</div>
+<p>And our Poisson equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{k^2}{a^2} \Phi_k = - 4\pi G \rho_0 \delta_k}
+\]</div>
+<p>And we now combine our three boxed equations in the most efficient way possible for an equation for <span class="math notranslate nohighlight">\(\delta\)</span>. How do we do that?</p>
+<p>1. We begin by getting rid of <span class="math notranslate nohighlight">\(\vec v\)</span>. We do this by multiplying our <strong>first</strong> equation by <span class="math notranslate nohighlight">\(a^2\)</span>. Doing so, this becomes:</p>
+<div class="math notranslate nohighlight">
+\[
+a^2 \dot{\delta}_k + i \vec k \cdot \left(a \vec v_k\right) = 0
+\]</div>
+<p>2. And we now take <span class="math notranslate nohighlight">\(\partial_t\)</span>, and use the second equation to replace the first term. This gives, using the second equation above:</p>
+<div class="math notranslate nohighlight">
+\[
+a^2 \ddot{\delta}_k + 2a \dot{a} \dot{\delta}_k + i \vec k \cdot (-i v_s^2 \vec k \delta_k - i \vec k \Phi_k) = 0
+\]</div>
+<p>3. Divide by <span class="math notranslate nohighlight">\(a^2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\ddot{\delta}_k + 2 \frac{\dot{a}}{a}\dot{\delta}_k + \frac{v_s^2 k^2}{a^2} \delta_k - \underbrace{4\pi G \rho_0 \delta_k}_\text{using Poisson from above} = 0
+\]</div>
+<p>And now we have one equation!</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\ddot{\delta}_k + 2\frac{\dot a}{a} \dot{\delta}_k + \frac{v_s^2}{a^2}\left(k^2 - k_J^2\right)\delta_k = 0}
+\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{k_J^2 \equiv \frac{4\pi G \rho_0 a^2}{v_s^2}}
+\]</div>
+<p>Note that this is the <strong>co-moving Jeans wavenumber</strong>, and since <span class="math notranslate nohighlight">\(\vec r = a \vec x\)</span>, the <span class="math notranslate nohighlight">\(a\)</span> cancels out in the physical Jeans wavenumber. The key difference in the above equation is the <span class="math notranslate nohighlight">\(\dot{a}/a\)</span> term, by the way, which makes sense for our intuition. Let’s look at some regimes.</p>
+<div class="section" id="examine-k-k-j-regime">
+<h4>Examine k &lt; k_J regime:<a class="headerlink" href="#examine-k-k-j-regime" title="Permalink to this headline">¶</a></h4>
+<p>In this case, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\ddot{\delta}_k + 2\frac{\dot a}{a} \dot{\delta}_k - 4\pi G \rho_0 \delta_k = 0
+\]</div>
+<p>In order to go further, we need to specify our Universe. The simplest case is a flat Universe (Einstein-de Sitter) model. In this case, <span class="math notranslate nohighlight">\(\Omega_{m} = 1\)</span> (non-relativistic matter, no curvature, no Cosmological Constant, etc). Recall (or derive), and remember that <span class="math notranslate nohighlight">\(a \propto t^{2/3}\)</span> for EdS Universe:</p>
+<div class="math notranslate nohighlight">
+\[
+4\pi G \rho  = \frac32 H^2(t) = \frac{\dot{a}^2}{a^2} = \frac{2}{3t^2}
+\]</div>
+<p>And lastly, our equation for <span class="math notranslate nohighlight">\(\ddot{\delta}\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[
+\ddot{\delta}_k + \frac{4}{3t} \dot{\delta}_k - \frac{2}{3t^2} \delta_k = 0
+\]</div>
+<p>Our Ansatz is: <span class="math notranslate nohighlight">\(\delta_k \propto t^{\alpha}\)</span>. This makes our expression:</p>
+<div class="math notranslate nohighlight">
+\[
+\alpha(\alpha-1) + \frac43 \alpha - \frac23 = 0 \rightarrow \alpha^2 + \frac{\alpha}{3} = \frac23
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+(\alpha -\frac23)(\alpha+1) = 0  \rightarrow \boxed{\alpha = \frac23 , -1}
+\]</div>
+<p>What did we find here? <strong>We found that</strong> <span class="math notranslate nohighlight">\(\delta \propto t^{2/3} \propto a\)</span> or <span class="math notranslate nohighlight">\(\delta \propto t^{-1}\)</span>. These represents the growing and decaying mode respectively. We can compare these with the static Universe, in which <span class="math notranslate nohighlight">\(\delta\)</span> is exponential <span class="math notranslate nohighlight">\(\propto e^{\pm \omega t}\)</span>, and not a power law. The thing that slows the exponential growth is the drag term due to the expansion of the Universe.</p>
+<p><strong>The expansion slows to a power-law form, from an exponential form in the static case.</strong> All these different modes, by the way, decouple and have the same behavior. Density perturbations grow like the scale factor in the flat Universe case.</p>
+<p><strong>Take a look into the dark matter power spectrum, by the way!</strong> We derived the time-growth of the power spectrum! The power spectrum of dark matter grows with <span class="math notranslate nohighlight">\(a^2\)</span>.</p>
+<p>Note that we only solved these expressions for the pertubration growth, but we can do the same with the <span class="math notranslate nohighlight">\(\vec v\)</span> and <span class="math notranslate nohighlight">\(\Phi\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="gravitational-instability-of-a-rotating-self-gravitating-disk">
+<h2>Gravitational Instability of a Rotating (Self-Gravitating) Disk<a class="headerlink" href="#gravitational-instability-of-a-rotating-self-gravitating-disk" title="Permalink to this headline">¶</a></h2>
+<p>Consider a uniformly rotating sheet of zero thickness with constant angular velocity <span class="math notranslate nohighlight">\(\vec \Omega = \Omega \hat{z}\)</span>. We assume a constant surface density <span class="math notranslate nohighlight">\(\Sigma_0\)</span>. We also assume the sheet is in the <span class="math notranslate nohighlight">\((x,y)\)</span> plane at <span class="math notranslate nohighlight">\(z=0\)</span>. Usually, it’s easier to go into the moving frame. Thus, we go into the rotating frame.</p>
+<p>In the frame that rotates with the unperturbed sheet, consider small perturbations in the <span class="math notranslate nohighlight">\((x,y)\)</span> plane.</p>
+<div class="math notranslate nohighlight">
+\[
+\Sigma(x,y,t) = \Sigma_0 + \Sigma_1 (x,y,t)
+\]</div>
+<p>And note that our 3D density, knowing that our disk is razor thin, is:</p>
+<div class="math notranslate nohighlight">
+\[
+\rho = \Sigma \cdot \delta(z)
+\]</div>
+<p>We have a fluid moving in the disk with velocity:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec v(x,y,t) = \vec v_0 + \vec v_1(x,y,t)
+\]</div>
+<p>In the rotating frame, <span class="math notranslate nohighlight">\(\vec v_0 = 0\)</span>, and thus:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec v(x,y,t) = \vec v_1(x,y,t)
+\]</div>
+<p>As a consequence of going into the rotating frame, we will have to deal with fictitious forces later.</p>
+<p>Our pressure is:</p>
+<div class="math notranslate nohighlight">
+\[
+P(x,y,t) = P_0 + P_1(x,y,t)
+\]</div>
+<p>Note that, because we are in 2D, our sound speed is defined a bit differently, such that:</p>
+<div class="math notranslate nohighlight">
+\[
+v_s^2 = \frac{\partial P}{\partial \Sigma} = \frac{P_1}{\Sigma_1}
+\]</div>
+<p>Which is a statement saying that pressure acts only in the plane, and not upward or donward.</p>
+<p>And potential:</p>
+<div class="math notranslate nohighlight">
+\[
+\Phi(x,y,t) = \Phi_0 + \Phi_1(x,y,t)
+\]</div>
+<p><strong>The fluid equations take the following form.</strong></p>
+<div class="admonition-continuity-in-2javascript admonition">
+<p class="admonition-title">Continuity in 2javascript</p>
+<p>\frac{\partial \Sigma}{\partial t} + \vec \nabla (\Sigma \vec v)= 0 \rightarrow \text{ Perturbed } \rightarrow \boxed{\frac{\partial \Sigma_1}{\partial t} + \Sigma_0 \vec \nabla \cdot \vec v = 0 }</p>
+</div>
+<div class="admonition-euler-equation admonition">
+<p class="admonition-title">Euler Equation</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \vec v}{\partial t} + (\vec v \cdot \vec \nabla) \vec v = -\frac{1}{\Sigma} \vec \nabla P - \vec \Phi \underbrace{- 2\vec \Omega \times \vec v}_\text{Coriolis} + \underbrace{\Omega^2 \left(x\hat{x} + y\hat{y}\right)}_\text{centrifugal force}
+\]</div>
+<p>Note that this is where we have to pay the price of going to the rotating frame. Those extra terms might look ugly, but they’re not all that bad.</p>
+<p>We can write down our perturbed pieces:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{\partial \vec v_1}{\partial t} = -\frac{v_s^2}{\Sigma_0} \vec \nabla \Sigma_1 - \vec \nabla \Phi_1 - 2\vec \Omega \times \vec v}
+\]</div>
+</div>
+<div class="admonition-poisson admonition">
+<p class="admonition-title">Poisson</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla^2 \Phi = 4\pi G \Sigma \delta(z)
+\]</div>
+<p>Perturbing this, we find:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\nabla^2 \Phi_1 = 4\pi G \Sigma_1 \delta(z)}
+\]</div>
+</div>
+<p>Note that the boxed equations are the perturbed equations. This is pretty similar to what we had before, but we have a nasty coriolis term which prevents our usual tricks.</p>
 </div>
 </div>
 
