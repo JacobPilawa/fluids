@@ -639,3 +639,315 @@ $$
 ```
 
 Note that the boxed equations are the perturbed equations. This is pretty similar to what we had before, but we have a nasty coriolis term which prevents our usual tricks.
+
+
+
+
+
+---
+
+
+Let's continue. Recall from last time that:
+
+$$
+\frac{\partial \Sigma_1}{\partial t} + \Sigma_0 \vec \nabla \cdot \vec v_1 = 0
+$$
+
+$$
+\frac{\partial \vec v_1}{\partial t} = - \frac{v_s^2}{\Sigma_0}\vec \nabla \Sigma_0 - \vec \nabla \Phi_1 - 2\vec \Omega \times \vec v_1
+$$
+$$
+\nabla^2 \Phi_1 = 4\pi G \Sigma_1 \delta(z)
+$$
+from the Continuity equation, Euler's equation, and Poisson equation, respectively. The coriolis force restricts us from doing our normal trick. Still, though, we will do a Fourier Transform since we have linearized equations. In this case, we have $(x,y)\rightarrow(k_x,k_y)$. But, we can choose our orientation such that $\vec k = k \hat{x}$, i.e., $k_y = k_z = 0$. Additionally, we have: $\vec k \cdot \vec r = kx$. 
+
+Doing so:
+
+$$
+\Sigma_1(x,y,t) = \int d^3\,k \Sigma_1(k) e^{i(kx-\omega t)}
+$$
+
+And the same form for velocities $v_{1x}$ and $v_{1y}$:
+
+$$
+v_{1x}(x,y,t) = \int \, d^3\,k v_{1x}(k) e^{i(kx-\omega t)}
+$$
+
+$$
+v_{1y}(x,y,t) = \int \, d^3\,k v_{1y}(k) e^{i(kx-\omega t)}
+$$
+$$
+\Phi_1(x,y,t)  = \int \, d^3\,k \Phi_{1}(k) e^{i(kx-\omega t)}  \text{ at z=0}
+$$
+
+$$
+\Phi_1(x,y,z,t)  = \int \, d^3\,k \Phi_{1}(k) e^{i(\vec k \cdot \vec r-\omega t)}  \text{ at z not 0}
+$$
+We will start with the Poisson equation first, keeping in mind it depends on where in $z$ we are:
+
+
+At $z=0$, we have:
+
+$$
+\nabla^2 \Phi_1 = 4\pi G \Sigma_1
+$$
+
+At $z\neq 0$:
+
+$$
+\nabla^2 \Phi_1 = 0 
+$$
+
+This is the Laplace equation, which we have solved before when solving for water waves. For $z\neq 0$, that is – above or below the plane – we have:
+
+$$
+\Phi_1 (x,y,z,t) \propto e^{i(kx-\omega t)} \mathcal{f}(z) \Phi_1(k)
+$$
+
+Recall that the vertical structure $\mathcal{f}(z)$, we had:
+
+$$
+-k^2 \mathcal{f} + \frac{d^2 \mathcal{f}}{dz^2} = 0 \rightarrow \mathcal{f}(z) \propto e^{\pm kz}
+$$
+
+To have $\mathcal{f}$ be $0$ at infinity, we need:
+
+$$
+\mathcal{f} \propto e^{-k|z|}
+$$
+
+For $z \approx 0$: we can integarte the Poisson equation from slightly below $-\epsilon$ to slightly above $+\epsilon$:
+
+$$
+\lim_{\epsilon \rightarrow 0 } \int_{-\epsilon}^{\epsilon} \mathrm{d}z \, \frac{\partial^2 \Phi_1}{\partial z^2} = 4\pi G \Sigma_1 \underbrace{\int_{-\epsilon}^{\epsilon} \delta(z) \mathrm{d}\,z}_{=1}
+$$
+
+And thus:
+
+$$
+\lim_{\epsilon \rightarrow 0} \left(\frac{\partial \Phi_1}{\partial z} \Bigg\vert_{z=+\epsilon} - \frac{\partial \Phi_1}{\partial z} \Bigg\vert_{z=-\epsilon}\right) = 4\pi G\Sigma_1
+$$
+
+We now go into $k$ space:
+
+$$
+\lim_{\epsilon \rightarrow 0} \left(-ke^{-k|z|} \Phi_1\Big\vert_{z=+\epsilon} - k e^{k|z|}\Phi_1 \Big\vert_{z=-\epsilon}\right) = 4\pi G \Sigma_1
+$$
+
+$$
+-2k \Phi_1 = 4\pi G \Sigma_1
+$$
+
+We thus just showed that:
+
+$$
+\boxed{\Phi_1 = -\frac{2\pi G}{k} \Sigma_1} \text{ in } k \text{ space}
+$$
+
+We have used equation 3 from above to get this result. We now return to equations 1 and 2 from the Continuity and Euler's equation. 
+
+From the first equation (continuity), we have:
+
+$$
+- i \omega \Sigma_1 + \Sigma_0 i k v_{1x} = 0 \rightarrow \boxed{v_{1x} = \frac{\omega}{k}\frac{\Sigma_1}{\Sigma_0}}
+$$
+
+From the Euler's equation, let's look at $\hat{y}$ first:
+
+$$
+\hat{y}: -i\omega v_{1y} = -2(\vec \Omega \times \vec v_1)_{y} = -2\Omega v_{1x}  \rightarrow v_{1y} = \frac{2\Omega}{i\omega} v_{1x}
+$$
+
+Note that the $\Sigma_1$ and $\Phi_1$ terms vanished since we chose $\vec k = k \hat{x}$. Our Fourier Transform by choice has no y-dependence, so taking the gradient gives $0$ in non-x directions.
+
+
+And now the $\hat{x}$ component:
+
+$$
+\hat{x} : -i \omega v_{1x} = -\frac{v_s^2}{\Sigma_0} i k\Sigma_1 - ik\Phi_1 - \underbrace{2(\vec \Omega \times \vec v_1)_{x}}_{-\Omega v_{1y}}
+$$
+
+Now, let's combine our three linearized equations, getting rid of $\Phi_1$ and the $v$'s, writing in terms of $\Sigma_1$. We will start with the epxression for $\hat{x}$ direction:
+
+$$
+-i \frac{\omega^2}{k}\frac{\Sigma_1}{\Sigma_0} = -\frac{ik v_s^2 \Sigma_1}{\Sigma_0} + i2\pi G \Sigma_1 + 2 \Omega (- i\frac{2\Omega}{k}\frac{\Sigma_1}{\Sigma_0}) 
+$$
+
+
+Simplifying things a bit, we get:
+
+$$
+\boxed{\omega^2 = v_s^2 k^2 - 2\pi G k \Sigma_0 + 4\Omega^2}
+$$
+
+```{admonition} Dispersion Relation for Self-Gravitating, Rotating Disk
+
+$$
+\omega^2 = \underbrace{v_s^2 k^2}_\text{pressure (stable)} - \underbrace{2\pi G k \Sigma_0}_\text{gravity (unstable)} + \underbrace{4\Omega^2}_\text{rotation (stable)}
+$$
+
+
+Note that statements of stability are based on the sign of the term. 
+```
+
+Let's compare the above result with the spherical Jean's dispersion relation:
+
+$$
+\omega^2 = v_s^2 k^2 - 4\pi G\rho_0
+$$
+
+### Some Comments 
+
+#### If gravity dominates:
+
+$$
+\omega^2 \approx -2 \pi G k \Sigma_0 < 0 \rightarrow \text{ always unstable}
+$$
+
+#### Gravity and Pressure dominate ($\Omega \sim 0$):
+
+$$
+\omega^2 = v_s^2 k^2 - 2\pi G k \Sigma_0 \rightarrow \omega^2 < 0 \text{ iff } \boxed{k<\frac{2\pi G\Sigma_0}{v_s^2} \equiv k_J}
+$$
+
+**Long-$\lambda$ perturbations are unstable.**
+
+
+#### Gravity and Rotation dominate ($v_s^2 \sim 0$):
+
+$$
+\omega^2 < 0 \text{ iff } \boxed{k > \frac{2\Omega^2}{\pi G \Sigma_0}}
+$$
+
+**Hey! Look at that! The two regimes have different equality signs.** In this case, **short-$\lambda$ perturbations are unstable.** This kinda of makes sense – its the overall rotation that stabilizes the system. 
+
+
+#### In general
+
+Let's complete the square
+
+$$
+\omega^2 = v_s^2 \left(k - \frac{\pi G \Sigma_0}{v_s^2}\right)^2 + 4\Omega^2 - \left(\frac{\pi G \Sigma_0}{v_s}\right)^{2}
+$$
+
+When do we have stable conditions? This is when $\omega > 0$ if:
+
+$$
+2\Omega > \frac{\pi G \Sigma_0}{v_s} 
+$$
+
+Or, we can combine things:
+
+$$
+\boxed{\frac{v_s \Omega}{G \Sigma_0} > \frac{\pi}{2} \sim 1.571}
+$$
+
+```{admonition} Stability Criterion for Self-Gravitating Disk
+
+$$
+\frac{v_s \Omega}{G \Sigma_0} > \frac{\pi}{2}
+$$
+
+
+
+```
+
+
+#### For a thin disk of (collisionless) stars rather than (collisional) fluid…
+
+In this case, the sound speed $v_s$ is replaced by the characterstic speed of the stars (the velocity dispersion). In this case, we have a stable disk of stars if:
+
+$$
+\boxed{\frac{\sigma \Omega}{G \Sigma_0} > 1.68}
+$$
+
+for a Maxwellian velocity distribution of the stars.
+
+This is the **Toomre (1964)** relation. Thus, 
+
+
+
+
+
+
+
+
+
+### An Aside on the Jeans Instability
+
+We are continuing from last time, and we are starting with a back of the envelope calculation for the Jean's length. The key result is the dispersion relation:
+
+$$
+\omega^2 = k^2 v_s^2 - 4\pi G \rho_0 = v_s^2 (k^2 - k_J^2)
+$$
+
+Well, we know that:
+
+$$
+k_J \equiv \sqrt{\frac{4\pi G\rho_0}{v_s^2}}
+$$
+
+Dimensionally, we can do the same thing to tease out $G\rho / v_s^2$ dependence. 
+
+
+#### Back of the Envelope Analysis
+
+The underyling physics is the balance of pressure and gravity. Let's compare the forces, or more concretely, the timescale over which they act. Instability occurs if gravity wins over pressure. 
+
+**1\. Option 1: Comparing the Forces (per volume)**
+
+Consider a fluid of density $\rho$ , total mass $M$, and radius $R$. The fluid elements in this fluid has volume $V$. Thus:
+
+$$
+\text{Gravity} \sim \frac{F_g}{V} \sim \frac{GM \rho}{r^2} \sim G\rho^2 R
+$$
+
+Outward pressure is:
+
+$$
+\text{Pressure} \sim \frac{F_p}{V} \sim \nabla P \sim v_s^2 \nabla \rho \sim \frac{v_s^2 \rho}{R}
+$$
+
+
+Gravity wins if:
+
+$$
+G \rho^2 R > \frac{v_s^2 \rho}{R} \rightarrow \boxed{R > \sqrt{\frac{v_s^2}{G \rho}}} \sim \lambda_J
+$$
+
+**2\.Option 2: Comparing the Timescales**
+
+We have the timescale of gravity, the **free-fall timescale**, which is the time it takes to fall $R$:
+
+$$
+R \sim a t_g^2 \sim \frac{GM}{R^2} t_g^2 \sim G\rho R t_g^2 \rightarrow t_g \sim \sqrt{\frac{R}{a}} \sim \boxed{\frac{1}{\sqrt{G\rho}}}
+$$
+
+And the timescale for pressure is the sound-crossing time:
+
+$$
+t_p \sim \frac{R}{v_s} 
+$$
+
+Gravity wins when $t_g < t_P$:
+
+$$
+\frac{1}{\sqrt{G\rho}} < \frac{R}{v_s^2} \rightarrow R > \sqrt{\frac{v_s^2}{G\rho}}
+$$
+
+which is exactly the same as we found above!
+
+ 
+### An Aside: The Coriolis Force
+
+A quick physical insight! Recall that the Coriolis force is:
+
+$$
+-2 \vec \Omega \times \vec v
+$$
+
+Consider walking outward radially from a spinning disk and the forces! 
+
+
+
+

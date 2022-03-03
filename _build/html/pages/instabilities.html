@@ -264,6 +264,65 @@
   <a class="reference internal nav-link" href="#gravitational-instability-of-a-rotating-self-gravitating-disk">
    Gravitational Instability of a Rotating (Self-Gravitating) Disk
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-comments">
+     Some Comments
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#if-gravity-dominates">
+       If gravity dominates:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#gravity-and-pressure-dominate-omega-sim-0">
+       Gravity and Pressure dominate (
+       <span class="math notranslate nohighlight">
+        \(\Omega \sim 0\)
+       </span>
+       ):
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#gravity-and-rotation-dominate-v-s-2-sim-0">
+       Gravity and Rotation dominate (
+       <span class="math notranslate nohighlight">
+        \(v_s^2 \sim 0\)
+       </span>
+       ):
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#in-general">
+       In general
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#for-a-thin-disk-of-collisionless-stars-rather-than-collisional-fluid">
+       For a thin disk of (collisionless) stars rather than (collisional) fluid…
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#an-aside-on-the-jeans-instability">
+     An Aside on the Jeans Instability
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#back-of-the-envelope-analysis">
+       Back of the Envelope Analysis
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#an-aside-the-coriolis-force">
+     An Aside: The Coriolis Force
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -349,6 +408,65 @@
   <a class="reference internal nav-link" href="#gravitational-instability-of-a-rotating-self-gravitating-disk">
    Gravitational Instability of a Rotating (Self-Gravitating) Disk
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-comments">
+     Some Comments
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#if-gravity-dominates">
+       If gravity dominates:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#gravity-and-pressure-dominate-omega-sim-0">
+       Gravity and Pressure dominate (
+       <span class="math notranslate nohighlight">
+        \(\Omega \sim 0\)
+       </span>
+       ):
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#gravity-and-rotation-dominate-v-s-2-sim-0">
+       Gravity and Rotation dominate (
+       <span class="math notranslate nohighlight">
+        \(v_s^2 \sim 0\)
+       </span>
+       ):
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#in-general">
+       In general
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#for-a-thin-disk-of-collisionless-stars-rather-than-collisional-fluid">
+       For a thin disk of (collisionless) stars rather than (collisional) fluid…
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#an-aside-on-the-jeans-instability">
+     An Aside on the Jeans Instability
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#back-of-the-envelope-analysis">
+       Back of the Envelope Analysis
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#an-aside-the-coriolis-force">
+     An Aside: The Coriolis Force
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -859,6 +977,255 @@ v_s^2 = \frac{\partial P}{\partial \Sigma} = \frac{P_1}{\Sigma_1}
 \]</div>
 </div>
 <p>Note that the boxed equations are the perturbed equations. This is pretty similar to what we had before, but we have a nasty coriolis term which prevents our usual tricks.</p>
+<hr class="docutils" />
+<p>Let’s continue. Recall from last time that:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \Sigma_1}{\partial t} + \Sigma_0 \vec \nabla \cdot \vec v_1 = 0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \vec v_1}{\partial t} = - \frac{v_s^2}{\Sigma_0}\vec \nabla \Sigma_0 - \vec \nabla \Phi_1 - 2\vec \Omega \times \vec v_1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\nabla^2 \Phi_1 = 4\pi G \Sigma_1 \delta(z)
+\]</div>
+<p>from the Continuity equation, Euler’s equation, and Poisson equation, respectively. The coriolis force restricts us from doing our normal trick. Still, though, we will do a Fourier Transform since we have linearized equations. In this case, we have <span class="math notranslate nohighlight">\((x,y)\rightarrow(k_x,k_y)\)</span>. But, we can choose our orientation such that <span class="math notranslate nohighlight">\(\vec k = k \hat{x}\)</span>, i.e., <span class="math notranslate nohighlight">\(k_y = k_z = 0\)</span>. Additionally, we have: <span class="math notranslate nohighlight">\(\vec k \cdot \vec r = kx\)</span>.</p>
+<p>Doing so:</p>
+<div class="math notranslate nohighlight">
+\[
+\Sigma_1(x,y,t) = \int d^3\,k \Sigma_1(k) e^{i(kx-\omega t)}
+\]</div>
+<p>And the same form for velocities <span class="math notranslate nohighlight">\(v_{1x}\)</span> and <span class="math notranslate nohighlight">\(v_{1y}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+v_{1x}(x,y,t) = \int \, d^3\,k v_{1x}(k) e^{i(kx-\omega t)}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+v_{1y}(x,y,t) = \int \, d^3\,k v_{1y}(k) e^{i(kx-\omega t)}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\Phi_1(x,y,t)  = \int \, d^3\,k \Phi_{1}(k) e^{i(kx-\omega t)}  \text{ at z=0}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\Phi_1(x,y,z,t)  = \int \, d^3\,k \Phi_{1}(k) e^{i(\vec k \cdot \vec r-\omega t)}  \text{ at z not 0}
+\]</div>
+<p>We will start with the Poisson equation first, keeping in mind it depends on where in <span class="math notranslate nohighlight">\(z\)</span> we are:</p>
+<p>At <span class="math notranslate nohighlight">\(z=0\)</span>, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla^2 \Phi_1 = 4\pi G \Sigma_1
+\]</div>
+<p>At <span class="math notranslate nohighlight">\(z\neq 0\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla^2 \Phi_1 = 0 
+\]</div>
+<p>This is the Laplace equation, which we have solved before when solving for water waves. For <span class="math notranslate nohighlight">\(z\neq 0\)</span>, that is – above or below the plane – we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\Phi_1 (x,y,z,t) \propto e^{i(kx-\omega t)} \mathcal{f}(z) \Phi_1(k)
+\]</div>
+<p>Recall that the vertical structure <span class="math notranslate nohighlight">\(\mathcal{f}(z)\)</span>, we had:</p>
+<div class="math notranslate nohighlight">
+\[
+-k^2 \mathcal{f} + \frac{d^2 \mathcal{f}}{dz^2} = 0 \rightarrow \mathcal{f}(z) \propto e^{\pm kz}
+\]</div>
+<p>To have <span class="math notranslate nohighlight">\(\mathcal{f}\)</span> be <span class="math notranslate nohighlight">\(0\)</span> at infinity, we need:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{f} \propto e^{-k|z|}
+\]</div>
+<p>For <span class="math notranslate nohighlight">\(z \approx 0\)</span>: we can integarte the Poisson equation from slightly below <span class="math notranslate nohighlight">\(-\epsilon\)</span> to slightly above <span class="math notranslate nohighlight">\(+\epsilon\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{\epsilon \rightarrow 0 } \int_{-\epsilon}^{\epsilon} \mathrm{d}z \, \frac{\partial^2 \Phi_1}{\partial z^2} = 4\pi G \Sigma_1 \underbrace{\int_{-\epsilon}^{\epsilon} \delta(z) \mathrm{d}\,z}_{=1}
+\]</div>
+<p>And thus:</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{\epsilon \rightarrow 0} \left(\frac{\partial \Phi_1}{\partial z} \Bigg\vert_{z=+\epsilon} - \frac{\partial \Phi_1}{\partial z} \Bigg\vert_{z=-\epsilon}\right) = 4\pi G\Sigma_1
+\]</div>
+<p>We now go into <span class="math notranslate nohighlight">\(k\)</span> space:</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{\epsilon \rightarrow 0} \left(-ke^{-k|z|} \Phi_1\Big\vert_{z=+\epsilon} - k e^{k|z|}\Phi_1 \Big\vert_{z=-\epsilon}\right) = 4\pi G \Sigma_1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+-2k \Phi_1 = 4\pi G \Sigma_1
+\]</div>
+<p>We thus just showed that:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\Phi_1 = -\frac{2\pi G}{k} \Sigma_1} \text{ in } k \text{ space}
+\]</div>
+<p>We have used equation 3 from above to get this result. We now return to equations 1 and 2 from the Continuity and Euler’s equation.</p>
+<p>From the first equation (continuity), we have:</p>
+<div class="math notranslate nohighlight">
+\[
+- i \omega \Sigma_1 + \Sigma_0 i k v_{1x} = 0 \rightarrow \boxed{v_{1x} = \frac{\omega}{k}\frac{\Sigma_1}{\Sigma_0}}
+\]</div>
+<p>From the Euler’s equation, let’s look at <span class="math notranslate nohighlight">\(\hat{y}\)</span> first:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{y}: -i\omega v_{1y} = -2(\vec \Omega \times \vec v_1)_{y} = -2\Omega v_{1x}  \rightarrow v_{1y} = \frac{2\Omega}{i\omega} v_{1x}
+\]</div>
+<p>Note that the <span class="math notranslate nohighlight">\(\Sigma_1\)</span> and <span class="math notranslate nohighlight">\(\Phi_1\)</span> terms vanished since we chose <span class="math notranslate nohighlight">\(\vec k = k \hat{x}\)</span>. Our Fourier Transform by choice has no y-dependence, so taking the gradient gives <span class="math notranslate nohighlight">\(0\)</span> in non-x directions.</p>
+<p>And now the <span class="math notranslate nohighlight">\(\hat{x}\)</span> component:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{x} : -i \omega v_{1x} = -\frac{v_s^2}{\Sigma_0} i k\Sigma_1 - ik\Phi_1 - \underbrace{2(\vec \Omega \times \vec v_1)_{x}}_{-\Omega v_{1y}}
+\]</div>
+<p>Now, let’s combine our three linearized equations, getting rid of <span class="math notranslate nohighlight">\(\Phi_1\)</span> and the <span class="math notranslate nohighlight">\(v\)</span>’s, writing in terms of <span class="math notranslate nohighlight">\(\Sigma_1\)</span>. We will start with the epxression for <span class="math notranslate nohighlight">\(\hat{x}\)</span> direction:</p>
+<div class="math notranslate nohighlight">
+\[
+-i \frac{\omega^2}{k}\frac{\Sigma_1}{\Sigma_0} = -\frac{ik v_s^2 \Sigma_1}{\Sigma_0} + i2\pi G \Sigma_1 + 2 \Omega (- i\frac{2\Omega}{k}\frac{\Sigma_1}{\Sigma_0}) 
+\]</div>
+<p>Simplifying things a bit, we get:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\omega^2 = v_s^2 k^2 - 2\pi G k \Sigma_0 + 4\Omega^2}
+\]</div>
+<div class="admonition-dispersion-relation-for-self-gravitating-rotating-disk admonition">
+<p class="admonition-title">Dispersion Relation for Self-Gravitating, Rotating Disk</p>
+<div class="math notranslate nohighlight">
+\[
+\omega^2 = \underbrace{v_s^2 k^2}_\text{pressure (stable)} - \underbrace{2\pi G k \Sigma_0}_\text{gravity (unstable)} + \underbrace{4\Omega^2}_\text{rotation (stable)}
+\]</div>
+<p>Note that statements of stability are based on the sign of the term.</p>
+</div>
+<p>Let’s compare the above result with the spherical Jean’s dispersion relation:</p>
+<div class="math notranslate nohighlight">
+\[
+\omega^2 = v_s^2 k^2 - 4\pi G\rho_0
+\]</div>
+<div class="section" id="some-comments">
+<h3>Some Comments<a class="headerlink" href="#some-comments" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="if-gravity-dominates">
+<h4>If gravity dominates:<a class="headerlink" href="#if-gravity-dominates" title="Permalink to this headline">¶</a></h4>
+<div class="math notranslate nohighlight">
+\[
+\omega^2 \approx -2 \pi G k \Sigma_0 &lt; 0 \rightarrow \text{ always unstable}
+\]</div>
+</div>
+<div class="section" id="gravity-and-pressure-dominate-omega-sim-0">
+<h4>Gravity and Pressure dominate (<span class="math notranslate nohighlight">\(\Omega \sim 0\)</span>):<a class="headerlink" href="#gravity-and-pressure-dominate-omega-sim-0" title="Permalink to this headline">¶</a></h4>
+<div class="math notranslate nohighlight">
+\[
+\omega^2 = v_s^2 k^2 - 2\pi G k \Sigma_0 \rightarrow \omega^2 &lt; 0 \text{ iff } \boxed{k&lt;\frac{2\pi G\Sigma_0}{v_s^2} \equiv k_J}
+\]</div>
+<p><strong>Long-<span class="math notranslate nohighlight">\(\lambda\)</span> perturbations are unstable.</strong></p>
+</div>
+<div class="section" id="gravity-and-rotation-dominate-v-s-2-sim-0">
+<h4>Gravity and Rotation dominate (<span class="math notranslate nohighlight">\(v_s^2 \sim 0\)</span>):<a class="headerlink" href="#gravity-and-rotation-dominate-v-s-2-sim-0" title="Permalink to this headline">¶</a></h4>
+<div class="math notranslate nohighlight">
+\[
+\omega^2 &lt; 0 \text{ iff } \boxed{k &gt; \frac{2\Omega^2}{\pi G \Sigma_0}}
+\]</div>
+<p><strong>Hey! Look at that! The two regimes have different equality signs.</strong> In this case, <strong>short-<span class="math notranslate nohighlight">\(\lambda\)</span> perturbations are unstable.</strong> This kinda of makes sense – its the overall rotation that stabilizes the system.</p>
+</div>
+<div class="section" id="in-general">
+<h4>In general<a class="headerlink" href="#in-general" title="Permalink to this headline">¶</a></h4>
+<p>Let’s complete the square</p>
+<div class="math notranslate nohighlight">
+\[
+\omega^2 = v_s^2 \left(k - \frac{\pi G \Sigma_0}{v_s^2}\right)^2 + 4\Omega^2 - \left(\frac{\pi G \Sigma_0}{v_s}\right)^{2}
+\]</div>
+<p>When do we have stable conditions? This is when <span class="math notranslate nohighlight">\(\omega &gt; 0\)</span> if:</p>
+<div class="math notranslate nohighlight">
+\[
+2\Omega &gt; \frac{\pi G \Sigma_0}{v_s} 
+\]</div>
+<p>Or, we can combine things:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{v_s \Omega}{G \Sigma_0} &gt; \frac{\pi}{2} \sim 1.571}
+\]</div>
+<div class="admonition-stability-criterion-for-self-gravitating-disk admonition">
+<p class="admonition-title">Stability Criterion for Self-Gravitating Disk</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{v_s \Omega}{G \Sigma_0} &gt; \frac{\pi}{2}
+\]</div>
+</div>
+</div>
+<div class="section" id="for-a-thin-disk-of-collisionless-stars-rather-than-collisional-fluid">
+<h4>For a thin disk of (collisionless) stars rather than (collisional) fluid…<a class="headerlink" href="#for-a-thin-disk-of-collisionless-stars-rather-than-collisional-fluid" title="Permalink to this headline">¶</a></h4>
+<p>In this case, the sound speed <span class="math notranslate nohighlight">\(v_s\)</span> is replaced by the characterstic speed of the stars (the velocity dispersion). In this case, we have a stable disk of stars if:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{\sigma \Omega}{G \Sigma_0} &gt; 1.68}
+\]</div>
+<p>for a Maxwellian velocity distribution of the stars.</p>
+<p>This is the <strong>Toomre (1964)</strong> relation. Thus,</p>
+</div>
+</div>
+<div class="section" id="an-aside-on-the-jeans-instability">
+<h3>An Aside on the Jeans Instability<a class="headerlink" href="#an-aside-on-the-jeans-instability" title="Permalink to this headline">¶</a></h3>
+<p>We are continuing from last time, and we are starting with a back of the envelope calculation for the Jean’s length. The key result is the dispersion relation:</p>
+<div class="math notranslate nohighlight">
+\[
+\omega^2 = k^2 v_s^2 - 4\pi G \rho_0 = v_s^2 (k^2 - k_J^2)
+\]</div>
+<p>Well, we know that:</p>
+<div class="math notranslate nohighlight">
+\[
+k_J \equiv \sqrt{\frac{4\pi G\rho_0}{v_s^2}}
+\]</div>
+<p>Dimensionally, we can do the same thing to tease out <span class="math notranslate nohighlight">\(G\rho / v_s^2\)</span> dependence.</p>
+<div class="section" id="back-of-the-envelope-analysis">
+<h4>Back of the Envelope Analysis<a class="headerlink" href="#back-of-the-envelope-analysis" title="Permalink to this headline">¶</a></h4>
+<p>The underyling physics is the balance of pressure and gravity. Let’s compare the forces, or more concretely, the timescale over which they act. Instability occurs if gravity wins over pressure.</p>
+<p><strong>1. Option 1: Comparing the Forces (per volume)</strong></p>
+<p>Consider a fluid of density <span class="math notranslate nohighlight">\(\rho\)</span> , total mass <span class="math notranslate nohighlight">\(M\)</span>, and radius <span class="math notranslate nohighlight">\(R\)</span>. The fluid elements in this fluid has volume <span class="math notranslate nohighlight">\(V\)</span>. Thus:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{Gravity} \sim \frac{F_g}{V} \sim \frac{GM \rho}{r^2} \sim G\rho^2 R
+\]</div>
+<p>Outward pressure is:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{Pressure} \sim \frac{F_p}{V} \sim \nabla P \sim v_s^2 \nabla \rho \sim \frac{v_s^2 \rho}{R}
+\]</div>
+<p>Gravity wins if:</p>
+<div class="math notranslate nohighlight">
+\[
+G \rho^2 R &gt; \frac{v_s^2 \rho}{R} \rightarrow \boxed{R &gt; \sqrt{\frac{v_s^2}{G \rho}}} \sim \lambda_J
+\]</div>
+<p><strong>2.Option 2: Comparing the Timescales</strong></p>
+<p>We have the timescale of gravity, the <strong>free-fall timescale</strong>, which is the time it takes to fall <span class="math notranslate nohighlight">\(R\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+R \sim a t_g^2 \sim \frac{GM}{R^2} t_g^2 \sim G\rho R t_g^2 \rightarrow t_g \sim \sqrt{\frac{R}{a}} \sim \boxed{\frac{1}{\sqrt{G\rho}}}
+\]</div>
+<p>And the timescale for pressure is the sound-crossing time:</p>
+<div class="math notranslate nohighlight">
+\[
+t_p \sim \frac{R}{v_s} 
+\]</div>
+<p>Gravity wins when <span class="math notranslate nohighlight">\(t_g &lt; t_P\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{\sqrt{G\rho}} &lt; \frac{R}{v_s^2} \rightarrow R &gt; \sqrt{\frac{v_s^2}{G\rho}}
+\]</div>
+<p>which is exactly the same as we found above!</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="an-aside-the-coriolis-force">
+<h3>An Aside: The Coriolis Force<a class="headerlink" href="#an-aside-the-coriolis-force" title="Permalink to this headline">¶</a></h3>
+<p>A quick physical insight! Recall that the Coriolis force is:</p>
+<div class="math notranslate nohighlight">
+\[
+-2 \vec \Omega \times \vec v
+\]</div>
+<p>Consider walking outward radially from a spinning disk and the forces!</p>
+</div>
 </div>
 </div>
 
