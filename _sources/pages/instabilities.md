@@ -866,11 +866,71 @@ for a Maxwellian velocity distribution of the stars.
 This is the **Toomre (1964)** relation. Thus, 
 
 
+#### For a disk with a more realistic vertical structure (say, exponentially stratified instead of razor thin)
+
+Then you can show that the gas disk is stable if:
+
+$$
+\boxed{\frac{v_s \Omega}{G \Sigma_0} > 1.06}
+$$
+
+This also assumes an isothermal equation of state. 
+
+#### For a differentially rotating disk of gas…
+
+In this case, $\Omega$ is not a constant but has a radial profile $\Omega(R)$. Often, we replace $\Omega(R)$ with $\Omega$ with the **epicycle frequency**:
+
+$$
+\kappa^2 = R \frac{\partial (\Omega)^2}{\partial R} + 4 \Omega^2
+$$
+
+This makes the dispersion relation:
+
+$$
+\omega^2 = k^2 v_s^2 - 2\pi G k \Sigma_0 + \kappa^2
+$$
+And the disk is stable if:
+
+```{admonition} Toomre Q Parameter
+$$
+\boxed{Q \equiv \frac{v_s \kappa}{\pi G \Sigma_0} > 1 }
+$$
+
+Note that we use $\sigma_R$ if we are talking about stars (radial velocity dispersion). Also note that we can teaase out a timescale, which is bascially the dynamical time. Think in terms of free-fall timescale. 
+```
+
+This is called the **Toomre's Q parameter:**
+
+If you're curious, check out Binney & Tremaine, Section 3.2. Epicycling is actually important in axisymmetric systems. This is because slightly elliptical orbits can be approximated as epicycling (to first-order Taylor expansions). 
 
 
+##### Examples of kappa:
 
 
+$$
+\Omega(R) = \frac{V_{circ}(R)}{R} \rightarrow V_{circ} \equiv \sqrt{\frac{GM(<R)}{R}} 
+$$
 
+**1\. Point Mass:**
+
+Here, we have Keplerian orbits, and so:
+
+$$
+V_{circ} \propto \sqrt{1/R} \rightarrow \Omega \propto R^{-3/2} \rightarrow \kappa^2 = \Omega^2
+$$
+
+Thus, in the Keplerian case, there is just one frequency – the orbital frequency!
+
+**2\. Flat Rotation Curves**
+
+
+For velocity to be constant, we need $M(<R)\propto R$, and thus $\rho \propto r^{-2}$. Note that $V_{c} = R \Omega \rightarrow \Omega \propto R^{-1}$, and finally, $\kappa = \sqrt{2}\Omega$. 
+
+**3\. Solid Body Rotation**
+
+Here, we have a rigid sheet with $\rho = \text{ constant}$. In this case, $M \propto R^{3}$ and $V_{c} \propto R$. This also makes $\Omega = \text{ constant}$, and we recover that $\kappa = 2\Omega$, which we started with. 
+
+Thus $\kappa$ ranges from roughly $\Omega$ to $2\Omega$ for reasonable galaxy shapes.
 
 
 ### An Aside on the Jeans Instability
@@ -949,5 +1009,258 @@ $$
 Consider walking outward radially from a spinning disk and the forces! 
 
 
+### Some final thoughts 
+
+We continue here from last time. Recall that, for a self-gravitating disk, we have:
+
+$$
+\omega^2 = k^2 v_s^2 - 2\pi G k \Sigma_0 + 4 \Omega^2
+$$
+
+Note that rotation and pressure are stabilizing, whereas gravity causes instabilities. 
 
 
+
+
+## Rayleigh-Taylor Instability
+
+
+This instability occurs when we have two fluids in a consatnt gravitational field $\vec{g}$. We will call the top fluid $\rho_+$ and the bottom fluid as $\rho_{-}$. What happens to perturbations traveling along the boundary?
+
+```{image} ../figures/fig13.png
+:alt: fig13
+:width: 600px
+:align: center
+```
+
+Recall too that we defined $\xi_{z}$ which is a displacement of the perturbed fluid velocities.
+
+In the top fluid, we have $\rho_+$, $v_+$, and $\vec v_+$. With subscript minus for the lower fluid. We begin with our zeroth order equations:
+
+```{admonition} Zeroth Order Equations
+
+In the single fluid case (surface water waves), we had:
+
+$$
+\vec v_0 = 0
+$$
+
+$$
+\frac{1}{\rho_0} \frac{\partial P_0}{\partial z} = - g
+$$
+
+We found, for water waves, that:
+
+$$
+P_0 = -\rho_0 g z + \mathcal{C}
+$$
+
+**We can easily generalize this to two fluids!** In the top fluid, we will have:
+
+$$
+P_{+0} = - \rho_{+0} g z + \mathcal{C}_{+}
+$$
+
+In the bottom fluid, we have
+
+$$
+P_{-0} = - \rho_{-0} g z + \mathcal{C}_{-}
+$$
+
+
+```
+
+Our first order equations are:
+
+```{admonition} First Order Equations
+
+For the **single fluid case**, recall that we had:
+
+$$
+\vec \nabla \cdot \vec v_1 = 0 \text{ (incompressible)}
+$$
+
+And the Euler's equation gave us:
+
+$$
+\frac{\partial \vec v_1}{\partial t} = -\frac{1}{\rho_0} \vec \nabla P_1
+$$
+
+Which, together, gave: $\nabla^2 P = 0$. 
+
+The perturbed pressure became:
+
+$$
+P_1(x,z,t) = Ae^{i(kx-\omega t)} \left(e^{kz} + B e^{-kz}\right)
+$$
+
+And the perturbed velocity was:
+
+$$
+v_{1z} = \frac{Ak}{\rho_0 i \omega} e^{i(kx-\omega t)} \left(e^{kz} - B e^{-kz}\right)
+$$
+
+Again, **let us generalize to the two fluid case.** The top fluid has to be finite, so:
+
+$$
+P_{+1} \propto e^{-kz} \text{ z}>0
+$$
+
+The top fluid has:
+
+$$
+P_{-1} \propto e^{+kz} \text{ z}<0
+$$
+
+in order to be finite. 
+
+$$
+\frac{\partial v_{\pm 1 z}}{\partial t} = - i \omega v_{\pm 1z}
+$$
+
+We now use the second equation in this note block. This gives, for the top fluid:
+
+$$
+-i\omega v_{+1z} = k \frac{P_{+1}}{\rho_{+0}}
+$$
+
+And the bottom fluid:
+
+$$
+-i\omega v_{-1z} = -k \frac{P_{-1}}{\rho_{-0}}
+$$
+
+We will now apply the boundary conditions at the surface of the two fluids. 
+
+```
+
+```{admonition} Boundary Conditions
+
+**1\.** Fluid displacements are continuous at $z=0$. Remember that we defined the fluid displacement such that:
+
+$$
+\frac{d\vec \xi}{dt} = \vec v_1 \rightarrow \frac{d\xi_z}{dt} = v_{1z} \propto e^{-i\omega t}
+$$
+
+We integrate this, giving:
+
+$$
+\xi_z = \frac{i}{\omega} v_{1z}
+$$
+
+and this is true for both $\pm$ fluids at $z=0$ since this is continuous. 
+
+**And we bring all of our work from above together for boundary condition 2**:
+
+**2\.** Force of Top Fluid on Bottom = Force of Bottom Fluid on Top
+
+**a\.** without surface tension:
+
+$$
+P_{+1,L} = P_{-1,L} \leftarrow \text{ Lagrangian perturbation}
+$$
+
+**b\.** with surface tension:
+
+$$
+P_{+1,L} \underbrace{- T \frac{d^2 \xi_z}{dx^2}}_\text{downward} = \underbrace{P_{-1,L}}_\text{upward} \text{ at z}=0
+$$
+
+
+```
+
+```{admonition} Combining things...
+
+Recall we had:
+
+$$
+P_{1L} = P_1 + \vec \xi \cdot \vec \nabla P_0
+$$
+
+in the single fluid case. In the top fluid:
+
+$$
+P_{+1L} = P_{+1} + \xi_z \frac{\partial P_{+0}}{\partial z}  = -\frac{i\omega}{k} \rho_{+0} v_{+1z} + \frac{i}{\omega}v_{+1z} \cdot (-g\rho_{+0}) = -i v_{+1z} \rho_{+0}\frac{\omega}{k}\left(1+\frac{gk}{\omega^2}\right)
+$$
+
+And the bottom fluid has:
+
+$$
+P_{-1L} = P_{-1} + \xi_z \frac{\partial P_{-0}}{\partial z}  = +\frac{i\omega}{k} \rho_{-0} v_{-1z} + \frac{i}{\omega}v_{1z} \cdot (-g\rho_{+0}) = i v_{1z} \rho_{-0}\frac{\omega}{k}\left(1-\frac{gk}{\omega^2}\right)
+$$
+
+And lastly, we use the equation where we consider surface tension. From this, we get:
+
+$$
+T \frac{\partial^2 \xi_z}{\partial z^2} = \frac{i}{\omega}T \frac{\partial^2 v_{1z}}{\partial x^2} = -\frac{ik^2}{\omega} T v_{1z}
+$$
+
+Using BC#2, we get:
+
+$$
+-\rho_{+0} \frac{\omega}{k}(1+\frac{gk}{\omega^2}) + \frac{k^2}{\omega} T = \rho_{-0}\frac{\omega}{k}(1-\frac{gk}{\omega^2})
+$$
+
+Let us re-arrange, multiplying by $\omega k$:
+
+$$
+\boxed{\omega^2 \left(\rho_{+0} + \rho_{-0}\right) = gk\left(\rho_{-0} - \rho_{+0}\right) + k^3 T}
+$$
+
+```
+
+```{admonition} Rayleigh-Taylor Dispersion Relation
+
+The dispersion relation for two fluids in a gravitational field for waves traveling on the boundary is thus:
+
+$$
+\boxed{\omega^2 \left(\rho_{+0} + \rho_{-0}\right) = gk\left(\rho_{-0} - \rho_{+0}\right) + k^3 T}
+$$
+
+```
+
+We will now look at some different cases. 
+
+### For denser fluids on bottom…
+
+Here, $\rho_{-0} > \rho_{+0}$, $\omega^2>0$ always, and thus the perturbations/waves oscillate and travel as $e^{-i\omega t}$ waves.
+
+
+### For extremely dense fluids on top…
+
+Here, $\rho_{-0} \gg \rho_{+0}$ (like ocean waves!). In this limit:
+
+$$
+\omega^2 = gk+ \frac{T}{\rho_{-0}}k^3 > 0
+$$
+
+And thus we have stable waves! More importantly, let's recall the water wave lecture result which has $\omega^2 = (gk + \frac{Tk^3}{\rho_0})\tanh(kH)$. For $kH \ll 1$, $\tanh \rightarrow 1$ (deep-water limit). Thus, we recover the deep-water limit!
+
+
+### When the bottom fluid is less dense…
+
+This is the quintessential Rayleigh-Taylor instability. We want to know when $\omega^2<0$. This implies:
+
+$$
+\boxed{k^2 < \frac{g (\rho_{+0} - \rho_{-0})}{T} \equiv k_{crit}^2}
+$$
+
+The perturbation is exponentially-unstable. Wavelengths larger than the critical wavelength are unstable. **Longer wavelengths are more unstable in the Rayleigh-Taylor instability.** Surface tension helps to stabilize the instability. 
+
+
+### When surface tension is negligible…
+
+In this case, $T \approx 0$, and:
+
+$$
+\omega^2 = gk\frac{\rho_{-0} - \rho_{+0}}{\rho_{-0} + \rho_{+0}}
+$$
+which has $\omega < 0$ is always unstable if we are top-heavy. 
+
+
+### In astrophysics…
+
+In astrophysics, a downward $\vec g$ is the same as an upward $\vec a$. In the case of a supernova remnant, this might be an astrophysical wind moving into the ISM. When the blast wave happens, less dense material moves into a more dense material, and we get RT instabilities!
+
+
+## Kelvin-Helmholtz Instability
