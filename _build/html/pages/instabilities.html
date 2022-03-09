@@ -395,6 +395,23 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#thermal-instabilities">
+   Thermal Instabilities
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#an-example">
+     An Example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comments">
+     Comments
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -606,6 +623,23 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
      In Astrophysics:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#thermal-instabilities">
+   Thermal Instabilities
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#an-example">
+     An Example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comments">
+     Comments
     </a>
    </li>
   </ul>
@@ -1647,6 +1681,83 @@ k &gt; \frac{(\rho_{-0}^2 - \rho_{+0}^2) g }{\rho_{-0}\rho_{+0}(v_{+0} - v_{-0})
 <div class="section" id="id1">
 <h3>In Astrophysics:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>AGN jets, or stellar jets, moving at high speed relative to the surrounding medium often display KH instabilities.</p>
+</div>
+</div>
+<div class="section" id="thermal-instabilities">
+<h2>Thermal Instabilities<a class="headerlink" href="#thermal-instabilities" title="Permalink to this headline">¶</a></h2>
+<p>First, heat conduction – the transportation of heat (i.e., thermal energy) from hot to cold regions. In the simplest case, there is no mass motion, unlike convection. An <strong>empirical</strong> relation has been found, but it’s hard to derive from first principles. This relation is called <strong>Fourier’s Law of Heat Conduction.</strong></p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\underbrace{\vec F}_\text{heat flux} = -\underbrace{k}_\text{thermal conductivity} \underbrace{\vec \nabla T}_\text{temperature gradient}}
+\]</div>
+<p>Note that <em>heat flux</em> has units of <span class="math notranslate nohighlight">\(\text{energy}/(\text{Area} \cdot \text{ time})\)</span>, and thus thermal conductivity has units of <span class="math notranslate nohighlight">\(\text{Watts}/(\text{m}\cdot \text{ Kelvin})\)</span>. Here are some example values:</p>
+<ul class="simple">
+<li><p>Air : <span class="math notranslate nohighlight">\(k = 0.024 \text{ W } \text{ m}^{-1} \text{K}^{-1}\)</span></p></li>
+<li><p>Aluminum has <span class="math notranslate nohighlight">\(k=200\)</span></p></li>
+<li><p>Copper has <span class="math notranslate nohighlight">\(k=400\)</span></p></li>
+<li><p>Diamond has <span class="math notranslate nohighlight">\(k=1000\)</span> or so…</p></li>
+<li><p>Nano tubes/graphene sheets  are a bit more special.</p></li>
+</ul>
+<p>For our fluid equations, we will:</p>
+<p>1. Turn on Thermal Conduction &amp; Cooling/Heating.
+2. Ignore gravity.</p>
+<p>Our fluid equations become:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \rho}{\partial t} + \vec \nabla \cdot (\rho \vec v) = 0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \vec v}{\partial t} + (\vec v \cdot \vec \nabla) \vec v = -\frac{1}{\rho} \vec \nabla P
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \varepsilon}{\partial t} + \vec \nabla \cdot \vec F = \dot{Q}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\dot{Q}\)</span> represents other heating rates (per volume) and <span class="math notranslate nohighlight">\(\varepsilon\)</span> is the thermal energy density. The third equation can be re-written:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \varepsilon}{\partial t} = \vec \nabla (k \vec \nabla T) + \dot{Q}
+\]</div>
+<p>We can perturb the three equations above, which we won’t do here (see Pringle &amp; King Ch. 8, or Clarke &amp; Carswell Ch. 9, or Field (1965, ApJ)).</p>
+<p>Skipping the math, we can quote <em>the result:</em></p>
+<p><strong>For thermal instability to occur, we need:</strong></p>
+<div class="math notranslate nohighlight">
+\[
+\left(\frac{\partial \dot{Q}}{\partial T}\right)\Bigg\vert_\text{const. P} &gt; 0 \rightarrow \text{ The Field Criterion}
+\]</div>
+<p>This makes sense since, as <span class="math notranslate nohighlight">\(T\)</span> increases slightly, net <span class="math notranslate nohighlight">\(\dot{Q}\)</span> increases, meaning that we heat the material even more! This is the instability.</p>
+<div class="section" id="an-example">
+<h3>An Example<a class="headerlink" href="#an-example" title="Permalink to this headline">¶</a></h3>
+<p>Consider the interstellar medium (ISM). We will write heating/cooling rates as:</p>
+<div class="math notranslate nohighlight">
+\[
+\dot{Q} = \underbrace{\dot{Q}_{+}}_\text{heating} - \underbrace{\dot{Q}_{-}}_\text{cooling}
+\]</div>
+<p>The typical cooling curve looks something like this:</p>
+<p><strong>NEED IMAGE FROM NOTES HERE</strong></p>
+<p>We thus have three phases of the ISM. When the ISM is near <span class="math notranslate nohighlight">\(T_{1}\)</span> (cool phase) in some regions. <span class="math notranslate nohighlight">\(T_{3}\)</span> (hot phase) is stable in other regions. This gives rise to multiphase ISM!</p>
+</div>
+<div class="section" id="comments">
+<h3>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h3>
+<p>1. There is an E&amp;M analogy to Fourier’s Law – this is <strong>Ohm’s Law!</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec J = \sigma \vec E
+\]</div>
+<p>since the electric field can be written as the gradient of the electric potential.</p>
+<p>2. Thermal Energy Conservation:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \varepsilon}{\partial t} + \vec \nabla \cdot \vec F = 0
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\varepsilon\)</span> is the energy density. and <span class="math notranslate nohighlight">\(\vec F\)</span> is the heat flux we introduced above. Note that <span class="math notranslate nohighlight">\(\varepsilon \propto T\)</span> most of the time, and thus we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial T}{\partial t} \propto \nabla^2 T
+\]</div>
+<p>which is a diffusion equation. We diffuse heat transfer due to <span class="math notranslate nohighlight">\(e^{-}\)</span>-nuclei collisions.</p>
+<p>3. This is hard to derive from first principles since this is a non-equilibrium process. But, people work on that!</p>
 </div>
 </div>
 </div>

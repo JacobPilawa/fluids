@@ -1334,6 +1334,111 @@ AGN jets, or stellar jets, moving at high speed relative to the surrounding medi
 
 
 
+## Thermal Instabilities
+
+First, heat conduction – the transportation of heat (i.e., thermal energy) from hot to cold regions. In the simplest case, there is no mass motion, unlike convection. An **empirical** relation has been found, but it's hard to derive from first principles. This relation is called **Fourier's Law of Heat Conduction.** 
+
+$$
+\boxed{\underbrace{\vec F}_\text{heat flux} = -\underbrace{k}_\text{thermal conductivity} \underbrace{\vec \nabla T}_\text{temperature gradient}}
+$$
+
+Note that _heat flux_ has units of $\text{energy}/(\text{Area} \cdot \text{ time})$, and thus thermal conductivity has units of $\text{Watts}/(\text{m}\cdot \text{ Kelvin})$. Here are some example values:
+
+* Air : $k = 0.024 \text{ W } \text{ m}^{-1} \text{K}^{-1}$
+* Aluminum has $k=200$ 
+* Copper has $k=400$
+* Diamond has $k=1000$ or so…
+* Nano tubes/graphene sheets  are a bit more special.
+
+
+For our fluid equations, we will:
+
+1\. Turn on Thermal Conduction & Cooling/Heating.
+2\. Ignore gravity.
+
+
+Our fluid equations become:
+
+$$
+\frac{\partial \rho}{\partial t} + \vec \nabla \cdot (\rho \vec v) = 0
+$$
+
+$$
+\frac{\partial \vec v}{\partial t} + (\vec v \cdot \vec \nabla) \vec v = -\frac{1}{\rho} \vec \nabla P
+$$
+
+$$
+\frac{\partial \varepsilon}{\partial t} + \vec \nabla \cdot \vec F = \dot{Q}
+$$
+
+where $\dot{Q}$ represents other heating rates (per volume) and $\varepsilon$ is the thermal energy density. The third equation can be re-written:
+
+
+$$
+\frac{\partial \varepsilon}{\partial t} = \vec \nabla (k \vec \nabla T) + \dot{Q}
+$$
+
+We can perturb the three equations above, which we won't do here (see Pringle & King Ch. 8, or Clarke & Carswell Ch. 9, or Field (1965, ApJ)). 
+
+Skipping the math, we can quote _the result:_
+
+**For thermal instability to occur, we need:**
+
+$$
+\left(\frac{\partial \dot{Q}}{\partial T}\right)\Bigg\vert_\text{const. P} > 0 \rightarrow \text{ The Field Criterion}
+$$
+
+This makes sense since, as $T$ increases slightly, net $\dot{Q}$ increases, meaning that we heat the material even more! This is the instability. 
+
+### An Example
+
+Consider the interstellar medium (ISM). We will write heating/cooling rates as:
+
+$$
+\dot{Q} = \underbrace{\dot{Q}_{+}}_\text{heating} - \underbrace{\dot{Q}_{-}}_\text{cooling}
+$$
+
+The typical cooling curve looks something like this:
+
+
+
+**NEED IMAGE FROM NOTES HERE**
+
+
+
+
+We thus have three phases of the ISM. When the ISM is near $T_{1}$ (cool phase) in some regions. $T_{3}$ (hot phase) is stable in other regions. This gives rise to multiphase ISM! 
+
+
+### Comments
+
+1\. There is an E&M analogy to Fourier's Law – this is **Ohm's Law!**:
+
+$$
+\vec J = \sigma \vec E
+$$
+
+since the electric field can be written as the gradient of the electric potential.
+
+2\. Thermal Energy Conservation:
+
+$$
+\frac{\partial \varepsilon}{\partial t} + \vec \nabla \cdot \vec F = 0
+$$
+where $\varepsilon$ is the energy density. and $\vec F$ is the heat flux we introduced above. Note that $\varepsilon \propto T$ most of the time, and thus we have:
+
+$$
+\frac{\partial T}{\partial t} \propto \nabla^2 T
+$$
+
+which is a diffusion equation. We diffuse heat transfer due to $e^{-}$-nuclei collisions.
+
+3\. This is hard to derive from first principles since this is a non-equilibrium process. But, people work on that!
+
+
+
+
+
 
 
 
