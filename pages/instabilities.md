@@ -1025,6 +1025,15 @@ Note that rotation and pressure are stabilizing, whereas gravity causes instabil
 ## Rayleigh-Taylor Instability
 
 
+```{image} ../figures/fig15.png
+:alt: fig15
+:width: 600px
+:align: center
+```
+
+
+
+
 This instability occurs when we have two fluids in a consatnt gravitational field $\vec{g}$. We will call the top fluid $\rho_+$ and the bottom fluid as $\rho_{-}$. What happens to perturbations traveling along the boundary?
 
 ```{image} ../figures/fig13.png
@@ -1255,6 +1264,7 @@ In this case, $T \approx 0$, and:
 $$
 \omega^2 = gk\frac{\rho_{-0} - \rho_{+0}}{\rho_{-0} + \rho_{+0}}
 $$
+
 which has $\omega < 0$ is always unstable if we are top-heavy. 
 
 
@@ -1263,4 +1273,70 @@ which has $\omega < 0$ is always unstable if we are top-heavy.
 In astrophysics, a downward $\vec g$ is the same as an upward $\vec a$. In the case of a supernova remnant, this might be an astrophysical wind moving into the ISM. When the blast wave happens, less dense material moves into a more dense material, and we get RT instabilities!
 
 
+
+---
+
+
+
 ## Kelvin-Helmholtz Instability
+
+
+```{image} ../figures/fig16.png
+:alt: fig16
+:width: 600px
+:align: center
+```
+
+
+We have a very similar setup to last time. This is the picture to have in mind:
+
+```{image} ../figures/fig14.png
+:alt: fig14
+:width: 600px
+:align: center
+```
+
+
+The key difference, however, is that the two fluids are moving at different speeds, $v_+$ and $v_{-}$. This relative velocity gives rise to a vertical sheer. Modifying the Rayleigh-Taylor disperion relation, we get:
+
+$$
+(\omega - k v_{+0})^2 \rho_{+0} + (\omega - kv_{-0})^2\rho_{-0} = gk \left(\rho_{-0}-\rho_{+0}\right) + k^3 T
+$$
+And we skip some math to show when $\omega$ is imaginary. **Assuming that $T$ is negligible, $\omega$ is imaginary (i.e., unstable waves) if:**
+
+$$
+k > \frac{(\rho_{-0}^2 - \rho_{+0}^2) g }{\rho_{-0}\rho_{+0}(v_{+0} - v_{-0})^2} \equiv k_{crit}
+$$
+
+
+There are some important things to note:
+
+### Notes
+
+1\. **Modes with short wavelengths are thus Kelvin-Helmholtz unstable.** If surface tensions $T$ is important, $T$ helps to stabilize short wavelength modes.
+
+
+2\. We can also **turn off gravity** by setting $g=0$. In this case, $k_{crit}$ is $0$, and **all modes are unstable. Gravity is helping us maintain stability!** 
+
+3\. If the densities are very disparate, i.e., $\rho_{-0} \gg \rho_{+0}$, then $k_{crit}$ is very large. Thus, only very small wavelenghts are unstable.
+
+4\. If $\rho_{-0} \gtrsim \rho_{+0}$, $k_{crit} \approx 0$, and KH is very common in these systems. There are many applications of this case, but on important one is fast moving dry air over slower moving, water-laden air over the ocean. This gives rise to billow clouds. 
+
+```{image} ../figures/fig17.png
+:alt: fig17
+:width: 600px
+:align: center
+```
+
+### In Astrophysics:
+
+AGN jets, or stellar jets, moving at high speed relative to the surrounding medium often display KH instabilities.
+
+
+
+
+
+
+
+
+
