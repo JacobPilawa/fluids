@@ -1,0 +1,508 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Viscous Flows &#8212; Astrophysical Fluid Dynamics</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Fluid Instabilities" href="instabilities.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Astrophysical Fluid Dynamics</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="basicfluids.html">
+   Basic Things about Fluids
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="waves.html">
+   Waves
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="instabilities.html">
+   Fluid Instabilities
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Viscous Flows
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/pages/viscosity.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fpages/viscosity.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#viscous-stress-tensor-and-the-viscous-force">
+   Viscous Stress Tensor and the Viscous Force
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#heuristic-miscroscopic-molecular-origin-of-viscosity">
+     Heuristic: Miscroscopic/Molecular Origin of Viscosity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#constructing-the-viscous-stress-tensor">
+     Constructing the Viscous Stress Tensor
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#navier-stokes-equation-and-reynold-s-number">
+   Navier-Stokes Equation and Reynold’s Number
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Viscous Flows</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#viscous-stress-tensor-and-the-viscous-force">
+   Viscous Stress Tensor and the Viscous Force
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#heuristic-miscroscopic-molecular-origin-of-viscosity">
+     Heuristic: Miscroscopic/Molecular Origin of Viscosity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#constructing-the-viscous-stress-tensor">
+     Constructing the Viscous Stress Tensor
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#navier-stokes-equation-and-reynold-s-number">
+   Navier-Stokes Equation and Reynold’s Number
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="viscous-flows">
+<h1>Viscous Flows<a class="headerlink" href="#viscous-flows" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="viscous-stress-tensor-and-the-viscous-force">
+<h2>Viscous Stress Tensor and the Viscous Force<a class="headerlink" href="#viscous-stress-tensor-and-the-viscous-force" title="Permalink to this headline">¶</a></h2>
+<p>Viscosity is a measure of of fluid “friction” – the resistance a material has to being deformed by sheer stress. Shear stresses can be pointing in every direction, but has a spatial gradient.</p>
+<p>Water is wet. What does this mean? It really means that it’s viscous at the molecular level! Without viscosity, you would come out of a swimming pool totally dry. Can we “derive” viscosity from first principles? Kinda of.…</p>
+<div class="section" id="heuristic-miscroscopic-molecular-origin-of-viscosity">
+<h3>Heuristic: Miscroscopic/Molecular Origin of Viscosity<a class="headerlink" href="#heuristic-miscroscopic-molecular-origin-of-viscosity" title="Permalink to this headline">¶</a></h3>
+<p>Viscosity arises from <em>diffusive</em> momentum transfer due to particle scattering. Consider a shear flow <span class="math notranslate nohighlight">\(\vec v = v_y(x)\hat{y}\)</span>. Note in the diagram below, the axes are labelled wrong. Rotate by 90 degrees. Consider the forces on  a volume element <span class="math notranslate nohighlight">\(A \cdot \Delta x\)</span>.</p>
+<p>Consider sitting at <span class="math notranslate nohighlight">\(x\)</span>, which is one of the flow arrows in the diagram below. At location <span class="math notranslate nohighlight">\(x\)</span>, particles receive momentum transfer from those at <span class="math notranslate nohighlight">\(x - \frac{l}{2}\)</span> and <span class="math notranslate nohighlight">\(x+\frac{l}{2}\)</span> where <span class="math notranslate nohighlight">\(l\)</span> is the mean free path, and adjacent fluid elements are spearated by <span class="math notranslate nohighlight">\(\Delta x \gg l\)</span>.</p>
+<a class="reference internal image-reference" href="../_images/fig19.png"><img alt="fig19" class="align-center" src="../_images/fig19.png" style="width: 600px;" /></a>
+<p>Now consider particles at <span class="math notranslate nohighlight">\(x+ \frac{l}{2}\)</span>, which have <span class="math notranslate nohighlight">\(\hat{y}\)</span>-momentum of: <span class="math notranslate nohighlight">\(mv_y\left(l+\frac{l}{2}\right)\)</span>.</p>
+<p>Now consider particles at <span class="math notranslate nohighlight">\(x- \frac{l}{2}\)</span>, which have <span class="math notranslate nohighlight">\(\hat{y}\)</span>-momentum of: <span class="math notranslate nohighlight">\(mv_y\left(l-\frac{l}{2}\right)\)</span>.</p>
+<p>1. Thus the net <span class="math notranslate nohighlight">\(\hat{y}\)</span>-momentum transfer per particle across the boundary <span class="math notranslate nohighlight">\(x\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[
+p_y(x) \approx m \frac{\partial v_y}{\partial x} \cdot l
+\]</div>
+<p>2. We want to consider the flux, now. We need the number of particles per unit time passing through <span class="math notranslate nohighlight">\(x\)</span>. This is simpy:</p>
+<div class="math notranslate nohighlight">
+\[
+n \cdot v_{th} \cdot A \text{ where } v_{th} \sim \sqrt{\frac{kT}{m}}
+\]</div>
+<p>is the typical thermal speed of these particles.</p>
+<p>Together, these two points give the net momentum transfer through <span class="math notranslate nohighlight">\(\hat{x}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\dot{p}_y(x) \approx m \frac{\partial v_y}{\partial x} l \cdot n v_{th} A
+\]</div>
+<p>Remind yourself what the time derivative of momentum is – it’s a force! We can now consider the net force between adjacent fluid elements.</p>
+<p><strong>The viscous force is the net force on element <span class="math notranslate nohighlight">\(A \cdot \Delta x\)</span> by surrounding fluids.</strong> Thus,</p>
+<div class="math notranslate nohighlight">
+\[
+F_y = \dot{P}_y (x+\Delta x) - \dot{p}_y(x) \approx \frac{\partial \dot{p}}{\partial x} \Delta x 
+\]</div>
+<p>We can use our expression for <span class="math notranslate nohighlight">\(p_y(x)\)</span> from above. This gives:</p>
+<div class="math notranslate nohighlight">
+\[
+F_y \approx A \cdot \Delta x \frac{\partial}{\partial x} \left(m \cdot n \cdot l \cdot v_{th} \cdot \frac{\partial v_y}{\partial x}\right)
+\]</div>
+<p>And now the viscous force per unit volume can be written as:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{F_y}{A \cdot \Delta x} \approx \frac{\partial}{\partial x} \left(\rho \cdot \nu \frac{\partial v_y}{\partial x}\right)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\rho = mn\)</span> is the mass density, and <span class="math notranslate nohighlight">\(\nu = l v_{th}\)</span> is the <strong>kinematic viscosity</strong> and has units of <span class="math notranslate nohighlight">\(\text{cm}^{2} \text{ s}^{-1}\)</span>. Sometimes, we combine terms even more:</p>
+<div class="math notranslate nohighlight">
+\[
+\eta \equiv \rho \nu \equiv m\cdot n \cdot l \cdot v_{th}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\eta\)</span> is called the <strong>dynamic viscosity</strong>. In this re-arrangment, we can write:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{F_y}{A \cdot \Delta x} \approx \frac{\partial }{\partial x}\left(\eta \frac{\partial v_y}{\partial x}\right)
+\]</div>
+<p>And lastly, we can group together the parentheses, giving:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{F_y}{A \cdot \Delta x} \approx \frac{\partial }{\partial x}\left(\sigma_{yx}\right)}
+\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\sigma_{yx} \equiv \eta \frac{\partial v_y}{\partial x} }
+\]</div>
+<p>is called the <strong>viscous/shear stress “tensor.”</strong></p>
+<p>This derivation is almost correct, but not quite the whole story.</p>
+</div>
+<div class="section" id="constructing-the-viscous-stress-tensor">
+<h3>Constructing the Viscous Stress Tensor<a class="headerlink" href="#constructing-the-viscous-stress-tensor" title="Permalink to this headline">¶</a></h3>
+<p>Let’s try to contrusct the tensor from the start, with the condition that it is linear in the velocity gradient. This means:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial v_i}{\partial x_j} = \partial_j v_i \text{ for } i =1,2,3
+\]</div>
+<p>The most general form is thus:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_{ij} \equiv \eta \left(\partial_j v_i  + \alpha \partial_i v_j + \beta \delta_{ij} \underbrace{\partial_k v^k}_\text{divergence term}\right)
+\]</div>
+<p>We can now apply some conditions to constraing <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
+<p>1. We know that <span class="math notranslate nohighlight">\(\sigma_{ij} = 0\)</span> for a uniform, solid-body under rotation, i.e., no shearing/viscous force. For uniform rotation, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec v = \Omega R \hat{\phi}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\phi\)</span> is the polar-coordinate direction in the <span class="math notranslate nohighlight">\(x,y\)</span> plane. Recall as well that: <span class="math notranslate nohighlight">\(\hat{r} = \cos \phi \hat{x} + \sin \phi \hat{y}\)</span> and <span class="math notranslate nohighlight">\(\hat{\phi} = -\sin \phi \hat{x} + \cos \phi \hat{y}\)</span>. Let’s use this:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec v = \Omega R \left(-\sin \phi \hat{x} + \cos \phi \hat{y}\right) = -\Omega \left(y\hat{x} - x\hat{y}\right)
+\]</div>
+<p>Let’s now look at the component <span class="math notranslate nohighlight">\(\sigma_{xy}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_{xy} \propto \partial_y v_x + \alpha \partial_x v_y \propto -1+\alpha = 0 \rightarrow \alpha = 1
+\]</div>
+<p>2. Isotropically expanding fluid (Hubble Flow). In this case, we ALSO know that <span class="math notranslate nohighlight">\(\sigma_{ij} = 0\)</span>. The flow is radially outward, and thus we have no shear. In this case, we have <span class="math notranslate nohighlight">\(\vec v \propto \vec r \propto x \hat x + y \hat y + z \hat z\)</span>. We can immediately see that the ineresting case has <span class="math notranslate nohighlight">\(\sigma_{xx}\)</span> or the like. All other terms vanish. We have:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_{xx} \propto 1 + \alpha + 3\beta = 0 (\text{ no shear })
+\]</div>
+<p>And thus:</p>
+<div class="math notranslate nohighlight">
+\[
+\beta = -\frac{1 + \alpha}{3} \rightarrow \beta = -\frac{2}{3}
+\]</div>
+<p>3. We are finished! Let’s collect our results. We just showed that:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_{ij} = \eta \left(\partial_j v_i + \partial_i v_j - \frac{2}{3} \delta_{ij} \partial_k v^k\right)
+\]</div>
+<p>Note that this is a <strong>traceless</strong> tensor of rank 2.</p>
+</div>
+</div>
+<div class="section" id="navier-stokes-equation-and-reynold-s-number">
+<h2>Navier-Stokes Equation and Reynold’s Number<a class="headerlink" href="#navier-stokes-equation-and-reynold-s-number" title="Permalink to this headline">¶</a></h2>
+<p>Recall the stress tensor:</p>
+<div class="math notranslate nohighlight">
+\[
+T_{ij} = \underbrace{P \delta_{ij} }_\text{ thermal pressure } + \underbrace{\rho v_i v_j}_\text{ram pressure} \underbrace{- \sigma_{ij}}_\text{viscous term}
+\]</div>
+<p>Remember that momentum conservation (Euler’s Equation) tells us that:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial}{\partial t} (\rho v_i) = - \partial_j T_{ij} - \rho \partial_i \Phi
+\]</div>
+<p>With our new viscosity term (per unit volume), we get a new piece to this equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial}{\partial t} (\rho v_i) = - \partial_j T_{ij} - \rho \partial_i \Phi + \partial_j \sigma_{ij}
+\]</div>
+<p>And using our form for <span class="math notranslate nohighlight">\(\sigma_{ij}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial }{\partial t}\left(\rho v_i\right) = \eta \left(\nabla^2 v_i + \partial_i \left(\vec \nabla \cdot \vec v\right) - \frac23 \partial_{i} (\vec \nabla \cdot \vec v )\right) = \eta \left(\nabla^2 v_i + \frac13 \partial_i \left(\vec\nabla\cdot \vec v\right)\right)
+\]</div>
+<p><strong>Our momentum equation in our original form thus becomes the Navier-Stokes Equation:</strong></p>
+<div class="admonition-navier-stokes-equation admonition">
+<p class="admonition-title">Navier Stokes Equation</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \vec v}{\partial t} + (\vec v \cdot \vec \nabla) \vec v = -\frac{1}{\rho}\vec \nabla P - \vec \nabla \Phi \underbrace{+ \underbrace{\nu}_\text{kinematic viscos.}\left(\nabla^2 \vec v + \frac13 \vec \nabla (\vec \nabla \cdot \vec v)\right)}_\text{viscous force per unit mass}
+\]</div>
+</div>
+<div class="admonition-some-comments admonition">
+<p class="admonition-title">Some comments….</p>
+<p>1. For incompressible fluids, <span class="math notranslate nohighlight">\(\vec \nabla (\vec \nabla \cdot \vec v) = 0\)</span>.</p>
+<p>2. Viscosity shows up in the momentum equation as a diffusion term, e.g.:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \vec v}{\partial t} = \nu \nabla^2 \vec v
+\]</div>
+<p>This should remind us of the drunkard’s walk, which makes sense since this comes from molecular momentum transfer. The typical form of the solution for 1D diffusion is:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec v(x,t) \propto \frac{1}{\sqrt{\nu t}}e^{-\frac{x^2}{4\nu t}}
+\]</div>
+<p>3. You can add a traceful term into <span class="math notranslate nohighlight">\(\sigma_{ij}\)</span> which manifests as a <strong>bulk-viscosity</strong>. We do this by:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_{ij} \rightarrow \sigma_{ij} + \gamma \delta_{ij} \partial_k v^k
+\]</div>
+<p>for some phenomenonological forces.</p>
+<p>4. Kinematic Viscosity <span class="math notranslate nohighlight">\(\nu\)</span> (diffusion coefficient with units of length squared over time) for some materials at room temperature:</p>
+<ul class="simple">
+<li><p>Water has <span class="math notranslate nohighlight">\(\nu = 0.01 \text{ cm}^2 \text{ s}^{-1}\)</span></p></li>
+<li><p>Air has <span class="math notranslate nohighlight">\(\nu = 0.01 \text{ cm}^2 \text{ s}^{-1}\)</span></p></li>
+<li><p>Oil has <span class="math notranslate nohighlight">\(\nu = 1\text{ cm}^2 \text{ s}^{-1}\)</span></p></li>
+<li><p>Syrup has <span class="math notranslate nohighlight">\(\nu \sim 1000\text{ cm}^2 \text{ s}^{-1}\)</span></p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./pages"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="instabilities.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Fluid Instabilities</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Jacob Pilawa<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
