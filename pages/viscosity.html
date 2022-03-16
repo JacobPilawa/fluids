@@ -227,6 +227,35 @@
    Navier-Stokes Equation and Reynold’s Number
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-navier-stokes-equation-and-reynold-s-number">
+   The Navier-Stokes Equation and Reynold’s Number
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#applications-examples-of-viscous-flows">
+   Applications: Examples of Viscous Flows
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-1-poiseuille-flow">
+     Example 1: Poiseuille Flow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-2-stokes-flow-creeping-flow">
+     Example 2: Stokes Flow/”Creeping” Flow
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#an-aisde">
+       An Aisde
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -268,6 +297,35 @@
   <a class="reference internal nav-link" href="#navier-stokes-equation-and-reynold-s-number">
    Navier-Stokes Equation and Reynold’s Number
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-navier-stokes-equation-and-reynold-s-number">
+   The Navier-Stokes Equation and Reynold’s Number
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#applications-examples-of-viscous-flows">
+   Applications: Examples of Viscous Flows
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-1-poiseuille-flow">
+     Example 1: Poiseuille Flow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-2-stokes-flow-creeping-flow">
+     Example 2: Stokes Flow/”Creeping” Flow
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#an-aisde">
+       An Aisde
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -448,6 +506,178 @@ T_{ij} = \underbrace{P \delta_{ij} }_\text{ thermal pressure } + \underbrace{\rh
 <li><p>Oil has <span class="math notranslate nohighlight">\(\nu = 1\text{ cm}^2 \text{ s}^{-1}\)</span></p></li>
 <li><p>Syrup has <span class="math notranslate nohighlight">\(\nu \sim 1000\text{ cm}^2 \text{ s}^{-1}\)</span></p></li>
 </ul>
+</div>
+</div>
+<div class="section" id="the-navier-stokes-equation-and-reynold-s-number">
+<h2>The Navier-Stokes Equation and Reynold’s Number<a class="headerlink" href="#the-navier-stokes-equation-and-reynold-s-number" title="Permalink to this headline">¶</a></h2>
+<p>Recall the Navier-Stokes equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \vec v}{\partial t} + (\vec v \cdot \vec \nabla) \vec v = -\frac{1}{\rho} \vec \nabla P - \vec \nabla \Phi + \nu\left(\nabla^2 \vec v+  \frac13 \vec \nabla (\vec \nabla \cdot \vec v)\right)
+\]</div>
+<p>This motivates the Reynold’s number. <strong>The Reynold’s number is a dimensionless quantity which tells us if viscosity is relevant.</strong></p>
+<div class="admonition-reynold-s-number admonition">
+<p class="admonition-title">Reynold’s Number</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\mathcal{R} \equiv \frac{vL}{\nu}}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(v\)</span> is the typical flow speed, <span class="math notranslate nohighlight">\(L\)</span> is the typical length scale, and <span class="math notranslate nohighlight">\(\nu\)</span> is the viscosity. What are some typical values?</p>
+<p>Well, consider stirring a cup of tea: <span class="math notranslate nohighlight">\(v\sim 5 \text{cm } \text{s}^{-1}\)</span>, <span class="math notranslate nohighlight">\(L \sim 5 \text{cm } \text{s}^{-1}\)</span>, <span class="math notranslate nohighlight">\(\nu \sim 0.01 \text{ cm}^{2} \text{ s}^{-1}\)</span>. This gives a Reynold’s <span class="math notranslate nohighlight">\(\mathcal{R} \sim 2500\)</span>.</p>
+<p>But what does this number mean physically? Well, <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> is measuring the ratio of “inertial forces” to “viscous forces.” The inertial force is <span class="math notranslate nohighlight">\(\sim (\vec v \cdot \vec \nabla) \vec v \sim \frac{v^2}{L}\)</span>. The viscous force is <span class="math notranslate nohighlight">\(\sim \nu \nabla^2 \vec v \sim \frac{\nu \cdot v}{L}\)</span>, and <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> is sort-of like the ratio of these two terms – the inertial force over the viscous force.</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{R} \sim \frac{|(\vec v \cdot \vec \nabla) \vec v|}{|\nu \nabla^2 \vec v|} \sim \frac{vL}{\nu}
+\]</div>
+<ul class="simple">
+<li><p>When <span class="math notranslate nohighlight">\(\mathcal{R} \ll 1\)</span>, we say that viscosity is important.</p></li>
+<li><p>When <span class="math notranslate nohighlight">\(\mathcal{R} \gg 1\)</span>, we say that the fluid is “inviscid,” meaning non-viscous.</p></li>
+</ul>
+<p>At low <span class="math notranslate nohighlight">\(\mathcal{R}\)</span>, flows tend to be <strong>laminar</strong>. At high <span class="math notranslate nohighlight">\(\mathcal{R}\)</span>, flows tend to be <strong>turbulent.</strong></p>
+</div>
+</div>
+<div class="section" id="applications-examples-of-viscous-flows">
+<h2>Applications: Examples of Viscous Flows<a class="headerlink" href="#applications-examples-of-viscous-flows" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="example-1-poiseuille-flow">
+<h3>Example 1: Poiseuille Flow<a class="headerlink" href="#example-1-poiseuille-flow" title="Permalink to this headline">¶</a></h3>
+<p>This describes laminar, non-turbulent, constant flow of an incompressible uniform viscous fluid through a tube of constant cross section. An example of this would be blood flow in veins.</p>
+<p>We start with the Navier-Stokes equation.</p>
+<div class="math notranslate nohighlight">
+\[
+\underbrace{\frac{\partial \vec v}{\partial t}}_{0 \text{ bc const. flow} } + (\vec v \cdot \vec \nabla) \vec v = -\frac{1}{\rho} \vec \nabla P - \underbrace{\vec \nabla \Phi}_\text{ignore for now} + \nu\left(\nabla^2 \vec v+  \frac13 \vec \nabla (\underbrace{\vec \nabla \cdot \vec v}_\text{0 bc incompressible})\right)
+\]</div>
+<p>Thus, our equation to solve is:</p>
+<div class="math notranslate nohighlight">
+\[
+(\vec v \cdot \vec \nabla) \vec v = -\frac{1}{\rho} \vec \nabla P + \nu \nabla^2 \vec v
+\]</div>
+<p>Let’s take the flow to be along the z-direction <span class="math notranslate nohighlight">\(\hat{z}\)</span>. Let’s let the velocity depend on <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, though. Thus:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec v = v(x,y) \hat{z} \rightarrow \text{ constant flow along } \hat{z}
+\]</div>
+<a class="reference internal image-reference" href="../_images/fig20.png"><img alt="fig20" class="align-center" src="../_images/fig20.png" style="width: 600px;" /></a>
+<p>By constuction, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial v}{\partial z} = 0
+\]</div>
+<p>but</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial v}{\partial x} \text{ and }\frac{\partial v}{\partial y} \text{ need not be } 0 
+\]</div>
+<p>The left-hand side of the N.S. equation becomes:</p>
+<div class="math notranslate nohighlight">
+\[
+v \frac{\partial }{\partial z}v = 0
+\]</div>
+<p>Thus, the right-hand side of the N.S. equation must be <span class="math notranslate nohighlight">\(0\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla^2 v = \frac{1}{\rho \nu} \frac{\partial }{\partial z}P
+\]</div>
+<p>Remember that <span class="math notranslate nohighlight">\(\rho \nu\)</span> is the same thing as the <strong>kinematic viscosity</strong> <span class="math notranslate nohighlight">\(\eta\)</span>. Thus:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla^2 v = \frac{1}{\eta}\frac{\partial}{\partial z}P
+\]</div>
+<p>This is the same as:</p>
+<div class="math notranslate nohighlight">
+\[
+(\partial_x^2 + \partial_y^2) v = \frac{1}{\eta} \frac{\partial}{\partial z} P
+\]</div>
+<p>Notice that the left-hand side has no <span class="math notranslate nohighlight">\(z\)</span> dependence. Thus, <span class="math notranslate nohighlight">\(\partial_z P\)</span> has to be a constant!</p>
+<div class="math notranslate nohighlight">
+\[
+\partial_z P = \text{const.} \equiv -\underbrace{\frac{\Delta P }{\Delta L}}_{\text{ pressure difference over length }\Delta L}
+\]</div>
+<p>The right-hand side has no <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(y\)</span> dependence since <span class="math notranslate nohighlight">\(v_x\)</span> and <span class="math notranslate nohighlight">\(v_y\)</span> are zero by construction. Thus:</p>
+<div class="math notranslate nohighlight">
+\[
+\partial_x P = \partial_y P = 0
+\]</div>
+<p>We now look at the cross-section of the tube, and want to solve for the velocity profile.</p>
+<p>We thus have:</p>
+<div class="math notranslate nohighlight">
+\[
+(\partial_x^2 + \partial_y^2)v = \frac{1}{R}\frac{d}{dR} \left(R\frac{dv}{dR}\right) = -\frac{1}{\eta}\frac{\Delta P}{\Delta L}
+\]</div>
+<p>Thus:</p>
+<div class="math notranslate nohighlight">
+\[
+R \frac{dv}{dR} = -\frac{1}{\eta} \frac{\Delta P}{\Delta L} \left(\frac{R^2}{2} + a\right)
+\]</div>
+<p>Simplifying and integrating one more time:</p>
+<div class="math notranslate nohighlight">
+\[
+v(R) = -\frac{1}{\eta} \frac{\Delta P}{\Delta L} \left(\frac{R^2}{4} + a\ln R + b\right)
+\]</div>
+<p>We now impose boundary conditions – one at the center and one at the boundary of the tube.</p>
+<p>1. At <span class="math notranslate nohighlight">\(v(R=0)\)</span>, we want <span class="math notranslate nohighlight">\(v\)</span> to be finite. This implies that <span class="math notranslate nohighlight">\(a=0\)</span> since <span class="math notranslate nohighlight">\(\ln R\)</span> grows to infinity.</p>
+<p>2. At <span class="math notranslate nohighlight">\(v(R=R)\)</span>, we want the fluid to have no velocity. The only way for this to work out is for:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{V(R) = \frac{\Delta P}{4\eta \Delta L}\left(R_0^2-R^2\right)}
+\]</div>
+<p>What does this mean, actually?</p>
+<ul class="simple">
+<li><p>We have a parabolic velocity profile!</p></li>
+<li><p>The maximum velocity is at the center of the tube.</p></li>
+<li><p>The maximum speed depends on the width of the tube. We have <span class="math notranslate nohighlight">\(V_{MAX} \propto R_0^2\)</span>. The wider the tube, the faster the flow.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/fig21.png"><img alt="fig21" class="align-center" src="../_images/fig21.png" style="width: 600px;" /></a>
+<p>Lastly, we can calculate the mass flux through the tube. To do this, we calculate:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{Mass flux through tube} = \int v\rho \, \mathrm{d}A
+\]</div>
+<p>We have:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{mass flux } = 2\pi \rho \int_0^{R_0} v R \,\mathrm{d}R = 2\pi \rho \int_0^{R_0} \frac{\Delta P}{4\eta \Delta L} (R_0^2 -R^2) R \,\mathrm{d}R
+\]</div>
+<p>Thus:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{ mass flux } = 2\pi \rho \frac{\Delta P}{4\eta \Delta L}\left(R_0^2\frac{R^2}{2}-\frac{R^4}{4}\right)\Bigg\vert_{0^{R_0}}
+\]</div>
+<p>And thus:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{ mass flux } = \frac{\pi}{8}\frac{\Delta P}{\nu \Delta L} R_0^4
+\]</div>
+<p>This is interesting! Because our speed is not constant, we have the mass flux scaling with <span class="math notranslate nohighlight">\(R_0^4\)</span>, whereas we would expect it to scale with <span class="math notranslate nohighlight">\(R_0^2\)</span>. The extra factors of <span class="math notranslate nohighlight">\(R\)</span> come from the velocity profile. <strong>The wider the tube, the less the flow at the center is affected by flow at the boundary.</strong></p>
+<p>What’s the lesson here? <strong>The lesson is to keep your arteries open.</strong></p>
+</div>
+<div class="section" id="example-2-stokes-flow-creeping-flow">
+<h3>Example 2: Stokes Flow/”Creeping” Flow<a class="headerlink" href="#example-2-stokes-flow-creeping-flow" title="Permalink to this headline">¶</a></h3>
+<p>In this case, we are measuring the drag force on a sphere of radius <span class="math notranslate nohighlight">\(a\)</span> moving through a viscous fluid at low <span class="math notranslate nohighlight">\(\mathcal{R}\)</span>. This looks like:</p>
+<a class="reference internal image-reference" href="../_images/fig22.png"><img alt="fig22" class="align-center" src="../_images/fig22.png" style="width: 600px;" /></a>
+<p>Consider a sphere of density <span class="math notranslate nohighlight">\(\rho_s\)</span> and fluid of density <span class="math notranslate nohighlight">\(\rho_f\)</span>. The viscosity is given by <span class="math notranslate nohighlight">\(\nu = \rho_f \eta\)</span>. The Stoke’s Law gives us the drag force in terms of these parameters:</p>
+<div class="math notranslate nohighlight">
+\[
+F_\text{drag} = 6\pi \eta v a
+\]</div>
+<p>In a gravitational field <span class="math notranslate nohighlight">\(\vec g\)</span>, a falling sphere can reach <strong>terminal velocity</strong>. The terminal speed is:</p>
+<div class="math notranslate nohighlight">
+\[
+v_\text{terminal} = \frac{2}{9}\frac{ga^2}{\nu}\left(\frac{\rho_s}{\rho_f}-1\right)
+\]</div>
+<p>We can also show that:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla^2 P = 0
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla^2 \vec \omega = \nabla^2(\vec \nabla \times \vec v)=  0 
+\]</div>
+<div class="section" id="an-aisde">
+<h4>An Aisde<a class="headerlink" href="#an-aisde" title="Permalink to this headline">¶</a></h4>
+<p>Millikan had oil dropping in air, allowing the oil to fall between two metal plates. We can reach the terminal velocity with the oil, and the electric field will accelerate the oil drops upward. By applying a known <span class="math notranslate nohighlight">\(\vec E\)</span>, Millikan can calculate the electric charge-to-mass ratio of the electron!</p>
+</div>
 </div>
 </div>
 </div>

@@ -210,3 +210,235 @@ for some phenomenonological forces.
 
 ```
 
+## The Navier-Stokes Equation and Reynold's Number
+
+Recall the Navier-Stokes equation:
+
+$$
+\frac{\partial \vec v}{\partial t} + (\vec v \cdot \vec \nabla) \vec v = -\frac{1}{\rho} \vec \nabla P - \vec \nabla \Phi + \nu\left(\nabla^2 \vec v+  \frac13 \vec \nabla (\vec \nabla \cdot \vec v)\right)
+$$
+
+This motivates the Reynold's number. **The Reynold's number is a dimensionless quantity which tells us if viscosity is relevant.**
+
+
+```{admonition} Reynold's Number
+$$
+\boxed{\mathcal{R} \equiv \frac{vL}{\nu}}
+$$
+
+where $v$ is the typical flow speed, $L$ is the typical length scale, and $\nu$ is the viscosity. What are some typical values?
+
+Well, consider stirring a cup of tea: $v\sim 5 \text{cm } \text{s}^{-1}$, $L \sim 5 \text{cm } \text{s}^{-1}$, $\nu \sim 0.01 \text{ cm}^{2} \text{ s}^{-1}$. This gives a Reynold's $\mathcal{R} \sim 2500$. 
+
+But what does this number mean physically? Well, $\mathcal{R}$ is measuring the ratio of "inertial forces" to "viscous forces." The inertial force is $\sim (\vec v \cdot \vec \nabla) \vec v \sim \frac{v^2}{L}$. The viscous force is $\sim \nu \nabla^2 \vec v \sim \frac{\nu \cdot v}{L}$, and $\mathcal{R}$ is sort-of like the ratio of these two terms -- the inertial force over the viscous force.
+
+$$
+\mathcal{R} \sim \frac{|(\vec v \cdot \vec \nabla) \vec v|}{|\nu \nabla^2 \vec v|} \sim \frac{vL}{\nu}
+$$
+
+* When $\mathcal{R} \ll 1$, we say that viscosity is important.
+* When $\mathcal{R} \gg 1$, we say that the fluid is "inviscid," meaning non-viscous. 
+
+At low $\mathcal{R}$, flows tend to be **laminar**. At high $\mathcal{R}$, flows tend to be **turbulent.**
+
+```
+
+## Applications: Examples of Viscous Flows
+
+### Example 1: Poiseuille Flow
+
+This describes laminar, non-turbulent, constant flow of an incompressible uniform viscous fluid through a tube of constant cross section. An example of this would be blood flow in veins. 
+
+We start with the Navier-Stokes equation. 
+
+
+$$
+\underbrace{\frac{\partial \vec v}{\partial t}}_{0 \text{ bc const. flow} } + (\vec v \cdot \vec \nabla) \vec v = -\frac{1}{\rho} \vec \nabla P - \underbrace{\vec \nabla \Phi}_\text{ignore for now} + \nu\left(\nabla^2 \vec v+  \frac13 \vec \nabla (\underbrace{\vec \nabla \cdot \vec v}_\text{0 bc incompressible})\right)
+$$
+
+
+
+
+
+Thus, our equation to solve is:
+
+$$
+(\vec v \cdot \vec \nabla) \vec v = -\frac{1}{\rho} \vec \nabla P + \nu \nabla^2 \vec v
+$$
+
+Let's take the flow to be along the z-direction $\hat{z}$. Let's let the velocity depend on $x$ and $y$, though. Thus:
+
+$$
+\vec v = v(x,y) \hat{z} \rightarrow \text{ constant flow along } \hat{z}
+$$
+
+```{image} ../figures/fig20.png
+:alt: fig20
+:width: 600px
+:align: center
+```
+
+
+By constuction, we have:
+
+$$
+\frac{\partial v}{\partial z} = 0
+$$
+but 
+
+$$
+\frac{\partial v}{\partial x} \text{ and }\frac{\partial v}{\partial y} \text{ need not be } 0 
+$$
+
+The left-hand side of the N.S. equation becomes:
+
+$$
+v \frac{\partial }{\partial z}v = 0
+$$
+
+Thus, the right-hand side of the N.S. equation must be $0$:
+
+$$
+\nabla^2 v = \frac{1}{\rho \nu} \frac{\partial }{\partial z}P
+$$
+
+Remember that $\rho \nu$ is the same thing as the **kinematic viscosity** $\eta$. Thus:
+
+$$
+\nabla^2 v = \frac{1}{\eta}\frac{\partial}{\partial z}P
+$$
+
+This is the same as:
+
+$$
+(\partial_x^2 + \partial_y^2) v = \frac{1}{\eta} \frac{\partial}{\partial z} P
+$$
+
+Notice that the left-hand side has no $z$ dependence. Thus, $\partial_z P$ has to be a constant! 
+
+$$
+\partial_z P = \text{const.} \equiv -\underbrace{\frac{\Delta P }{\Delta L}}_{\text{ pressure difference over length }\Delta L}
+$$
+
+The right-hand side has no $x$ or $y$ dependence since $v_x$ and $v_y$ are zero by construction. Thus:
+
+$$
+\partial_x P = \partial_y P = 0
+$$
+
+We now look at the cross-section of the tube, and want to solve for the velocity profile.
+
+We thus have:
+
+$$
+(\partial_x^2 + \partial_y^2)v = \frac{1}{R}\frac{d}{dR} \left(R\frac{dv}{dR}\right) = -\frac{1}{\eta}\frac{\Delta P}{\Delta L}
+$$
+Thus:
+
+$$
+R \frac{dv}{dR} = -\frac{1}{\eta} \frac{\Delta P}{\Delta L} \left(\frac{R^2}{2} + a\right)
+$$
+
+Simplifying and integrating one more time:
+
+$$
+v(R) = -\frac{1}{\eta} \frac{\Delta P}{\Delta L} \left(\frac{R^2}{4} + a\ln R + b\right)
+$$
+
+We now impose boundary conditions – one at the center and one at the boundary of the tube. 
+
+1\. At $v(R=0)$, we want $v$ to be finite. This implies that $a=0$ since $\ln R$ grows to infinity.
+
+2\. At $v(R=R)$, we want the fluid to have no velocity. The only way for this to work out is for:
+
+$$
+\boxed{V(R) = \frac{\Delta P}{4\eta \Delta L}\left(R_0^2-R^2\right)}
+$$
+
+What does this mean, actually? 
+
+* We have a parabolic velocity profile! 
+* The maximum velocity is at the center of the tube. 
+* The maximum speed depends on the width of the tube. We have $V_{MAX} \propto R_0^2$. The wider the tube, the faster the flow. 
+
+```{image} ../figures/fig21.png
+:alt: fig21
+:width: 600px
+:align: center
+```
+
+Lastly, we can calculate the mass flux through the tube. To do this, we calculate:
+
+$$
+\text{Mass flux through tube} = \int v\rho \, \mathrm{d}A
+$$
+
+We have:
+
+$$
+\text{mass flux } = 2\pi \rho \int_0^{R_0} v R \,\mathrm{d}R = 2\pi \rho \int_0^{R_0} \frac{\Delta P}{4\eta \Delta L} (R_0^2 -R^2) R \,\mathrm{d}R
+$$
+
+Thus:
+
+$$
+\text{ mass flux } = 2\pi \rho \frac{\Delta P}{4\eta \Delta L}\left(R_0^2\frac{R^2}{2}-\frac{R^4}{4}\right)\Bigg\vert_{0^{R_0}}
+$$
+
+And thus:
+
+$$
+\text{ mass flux } = \frac{\pi}{8}\frac{\Delta P}{\nu \Delta L} R_0^4
+$$
+
+This is interesting! Because our speed is not constant, we have the mass flux scaling with $R_0^4$, whereas we would expect it to scale with $R_0^2$. The extra factors of $R$ come from the velocity profile. **The wider the tube, the less the flow at the center is affected by flow at the boundary.**
+
+What's the lesson here? **The lesson is to keep your arteries open.** 
+
+### Example 2: Stokes Flow/"Creeping" Flow
+
+In this case, we are measuring the drag force on a sphere of radius $a$ moving through a viscous fluid at low $\mathcal{R}$. This looks like:
+
+
+```{image} ../figures/fig22.png
+:alt: fig22
+:width: 600px
+:align: center
+```
+
+Consider a sphere of density $\rho_s$ and fluid of density $\rho_f$. The viscosity is given by $\nu = \rho_f \eta$. The Stoke's Law gives us the drag force in terms of these parameters:
+
+$$
+F_\text{drag} = 6\pi \eta v a
+$$
+
+In a gravitational field $\vec g$, a falling sphere can reach **terminal velocity**. The terminal speed is:
+
+$$
+v_\text{terminal} = \frac{2}{9}\frac{ga^2}{\nu}\left(\frac{\rho_s}{\rho_f}-1\right)
+$$
+
+We can also show that:
+
+$$
+\nabla^2 P = 0
+$$
+
+and 
+
+$$
+\nabla^2 \vec \omega = \nabla^2(\vec \nabla \times \vec v)=  0 
+$$
+
+#### An Aisde
+
+Millikan had oil dropping in air, allowing the oil to fall between two metal plates. We can reach the terminal velocity with the oil, and the electric field will accelerate the oil drops upward. By applying a known $\vec E$, Millikan can calculate the electric charge-to-mass ratio of the electron! 
+
+
+
+
+
+
+
+
+
