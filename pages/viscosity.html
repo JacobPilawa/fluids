@@ -256,6 +256,30 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accretion-disks">
+   Accretion Disks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solving-the-problem">
+     Solving the problem…
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#continuity">
+       Continuity
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#momentum-equation-navier-stokes-equation">
+       Momentum Equation (Navier-Stokes Equation)
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -321,6 +345,30 @@
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#an-aisde">
        An Aisde
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accretion-disks">
+   Accretion Disks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solving-the-problem">
+     Solving the problem…
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#continuity">
+       Continuity
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#momentum-equation-navier-stokes-equation">
+       Momentum Equation (Navier-Stokes Equation)
       </a>
      </li>
     </ul>
@@ -677,6 +725,147 @@ v_\text{terminal} = \frac{2}{9}\frac{ga^2}{\nu}\left(\frac{\rho_s}{\rho_f}-1\rig
 <div class="section" id="an-aisde">
 <h4>An Aisde<a class="headerlink" href="#an-aisde" title="Permalink to this headline">¶</a></h4>
 <p>Millikan had oil dropping in air, allowing the oil to fall between two metal plates. We can reach the terminal velocity with the oil, and the electric field will accelerate the oil drops upward. By applying a known <span class="math notranslate nohighlight">\(\vec E\)</span>, Millikan can calculate the electric charge-to-mass ratio of the electron!</p>
+</div>
+</div>
+</div>
+<div class="section" id="accretion-disks">
+<h2>Accretion Disks<a class="headerlink" href="#accretion-disks" title="Permalink to this headline">¶</a></h2>
+<p><strong>Astrophysical disks are ubiquitous.</strong> This is primarily because of angular momentum. The locations of these disks can be found:</p>
+<ul class="simple">
+<li><p>around planets</p></li>
+<li><p>around stars</p></li>
+<li><p>around black holes</p></li>
+<li><p>around neutron stars</p></li>
+</ul>
+<p>When accreted gas has a non-zero <span class="math notranslate nohighlight">\(\vec L\)</span>, it generally forms an accretion disk. How does the gas inside this disk redistribute itself? <strong>If the gas loses angular momentum, the gas migrates inward.</strong> We can lose angular momentum via, for example, radiating energy away with photons, viscous torques, etc.</p>
+<p>The goal of today is to get to the time-evolution equation for a flattened, idealized, axisymmetric disk. How does a ring of gas evolve in the presence of viscosity?</p>
+<p>Consider an axisymmetric, thin disk (i.e., symmetry about <span class="math notranslate nohighlight">\(\varphi\)</span>). We will use cylindrical coordinates, with <span class="math notranslate nohighlight">\(\hat z\)</span> out of the disk plane. The disk rotation is thus: <span class="math notranslate nohighlight">\(\vec \Omega  = \Omega \hat{z}\)</span>. Axisymmetry tells us that:</p>
+<div class="math notranslate nohighlight">
+\[
+\partial_\varphi \left(\text{anything}\right) = 0 
+\]</div>
+<p>We will also ignore the vertical spread (i.e., we have a razor thin disk) (we can thus ignore <span class="math notranslate nohighlight">\(v_z\)</span>). We are intersted in:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec v = v_\varphi \hat{\varphi} + v_R \hat{R}
+\]</div>
+<p>The orbital motion is <span class="math notranslate nohighlight">\(v_\varphi\)</span> and the radial motion is <span class="math notranslate nohighlight">\(v_R\)</span>, but subject to viscous forces, do these to decay?</p>
+<p>We will also asssume that the central object (whatever it may be) is already in place, and thus we can ignore self-gravity.</p>
+<div class="section" id="solving-the-problem">
+<h3>Solving the problem…<a class="headerlink" href="#solving-the-problem" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="continuity">
+<h4>Continuity<a class="headerlink" href="#continuity" title="Permalink to this headline">¶</a></h4>
+<p>Let’s start with the continuity equation. We did this before for a disk, and we get:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \rho}{\partial t} + \vec \nabla (\rho \vec v) = 0 \rightarrow \frac{\partial \Sigma}{\partial t} + \vec \nabla (\Sigma \vec v) = 0
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(\Sigma = \int \rho dz\)</span>.</p>
+<p>We can show that:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{\partial \Sigma}{\partial t} + \frac{1}{R}\frac{\partial}{\partial R} (\Sigma R v_R) = 0 }
+\]</div>
+<p>We want to know a few things:</p>
+<ul class="simple">
+<li><p>Inward mass accretion rate (across R) of a ring at distance <span class="math notranslate nohighlight">\(R\)</span> onto central object</p></li>
+</ul>
+<p>The mass of this ring is <span class="math notranslate nohighlight">\(\Delta M = \rho 2\pi R \Delta R \Delta z\)</span>. The mass rate moving across <span class="math notranslate nohighlight">\(R\)</span> is thus:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\Delta M}{\Delta t} = \rho \cdot 2\pi R \underbrace{\frac{\Delta R}{\Delta T}}_{v_R}\Delta z
+\]</div>
+<p>And so:</p>
+<div class="math notranslate nohighlight">
+\[
+\dot{M} = - \int \rho \cdot 2\pi R v_r \cdot dz
+\]</div>
+<p>And we know that <span class="math notranslate nohighlight">\(\rho \cdot dz\)</span> is just <span class="math notranslate nohighlight">\(\Sigma\)</span>, so:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\dot{M} = - 2\pi R \Sigma v_R}
+\]</div>
+<p>Note that we have chosen our sign such that <span class="math notranslate nohighlight">\(\dot{M} &gt; 0\)</span> for inflow (the <span class="math notranslate nohighlight">\(v_R\)</span> is less than <span class="math notranslate nohighlight">\(0\)</span>). Thus all the action is going to be solving for <span class="math notranslate nohighlight">\(v_R\)</span>!</p>
+</div>
+<div class="section" id="momentum-equation-navier-stokes-equation">
+<h4>Momentum Equation (Navier-Stokes Equation)<a class="headerlink" href="#momentum-equation-navier-stokes-equation" title="Permalink to this headline">¶</a></h4>
+<p>Recall the Navier-Stokes equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\underbrace{\frac{\partial \vec v}{\partial t}}_{0 \text{ bc const. flow} } + (\vec v \cdot \vec \nabla) \vec v = -\frac{1}{\rho} \vec \nabla P - \underbrace{\vec \nabla \Phi}_\text{ignore for now} + \nu\left(\nabla^2 \vec v+  \frac13 \vec \nabla (\underbrace{\vec \nabla \cdot \vec v}_\text{0 bc incompressible})\right)
+\]</div>
+<p>The key portion of this is the <span class="math notranslate nohighlight">\(\varphi\)</span> component.</p>
+<p>We know <span class="math notranslate nohighlight">\(\partial_\varphi P = 0\)</span> due to axisymmetry. We skip a bunch of tedious math here….and just quote the result:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{
+\Sigma \frac{\partial v_\varphi}{\partial t} + \Sigma \frac{V_R}{R} \frac{\partial }{\partial R}\left(R v_\varphi\right) = \frac{\partial}{\partial R} \left(\Sigma \nu \frac{\partial v_\varphi}{\partial R}\right) + \frac{1}{R} \frac{\partial}{\partial R}\left(\Sigma \nu v_\varphi\right) - \Sigma \nu \frac{v_\varphi}{R^2}}\]</div>
+<p>We want to combine this equation above with the mass conservation equation we boxed above! To do this,</p>
+<ul class="simple">
+<li><p>Take <span class="math notranslate nohighlight">\(1 \times R v_\varphi + 2\times R\)</span>. where <span class="math notranslate nohighlight">\(1\)</span> is the top equation and <span class="math notranslate nohighlight">\(2\)</span> is the bottom equation.</p></li>
+</ul>
+<p>All together, combining all our terms, we get a <strong>key equation</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial}{\partial t}\left(\Sigma R^2 \Omega\right) + \frac{1}{R} \frac{\partial}{\partial R} \left(\Sigma R^3  \Omega v_R\right) = \frac{1}{R}\frac{\partial}{\partial R} \left(\nu \Sigma R^3 \frac{\partial \Omega}{\partial R}\right)
+\]</div>
+<p>We will call this equation <span class="math notranslate nohighlight">\(3\)</span>.</p>
+<ul class="simple">
+<li><p>It looks scary, but let’s examine this. Recall that <span class="math notranslate nohighlight">\(v_\varphi = R \Omega\)</span>. Recognizing this fact, the first term is <strong>simply the Eulerian rate of change of the angular momentum of an annulus of gas at radius <span class="math notranslate nohighlight">\(R\)</span></strong> (per unit area). <em>This is basically just a conservation of angular momentum equation!</em></p></li>
+<li><p>The second term is just the <strong>net rate of angular momentum loss from this unit area due to advection of <span class="math notranslate nohighlight">\(L\)</span> with radial flow</strong>.</p></li>
+<li><p>The right-hand side is the source term. <strong>This is the net viscous torque exerted on the annulus.</strong></p></li>
+</ul>
+<p>Why is the right hand side a torque? Let’s examine this a bit more. We can say:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{R}\frac{\partial}{\partial R} \left(\nu \Sigma R^3 \frac{\partial \Omega}{\partial R}\right) \equiv \frac{1}{2\pi R}\frac{\partial T}{\partial R}
+\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[
+T \equiv 2\pi \nu \Sigma R^3 \frac{\partial \Omega}{\partial R}
+\]</div>
+<p>Note that <span class="math notranslate nohighlight">\(T&lt;0\)</span> is <span class="math notranslate nohighlight">\(\frac{d\Omega}{dR} &lt; 0\)</span>. And also note that <span class="math notranslate nohighlight">\(T=0\)</span> if we have rigid body rotation (<span class="math notranslate nohighlight">\(\frac{\partial \Omega}{\partial R} = 0\)</span>). The torque thus comes from particles traveling with viscosity (differential rotation).</p>
+<ul class="simple">
+<li><p>For most reasonable mass profiles, <span class="math notranslate nohighlight">\(\frac{\partial \Omega}{\partial R} &lt; 0\)</span>. <strong>The inner parts are faster than the outer parts!</strong> Thus the inner gas moves faster (angularly) than outer gas. Viscosity exerts a negative torque <span class="math notranslate nohighlight">\(T\)</span>, slowing it down.</p></li>
+</ul>
+<p>We need a bit more massaging of our equations to get an expression for <span class="math notranslate nohighlight">\(\partial_t \Sigma\)</span>. Here, we combine equations <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(3\)</span>. We also assume that <span class="math notranslate nohighlight">\(\dot{\Omega} = 0\)</span>. We can take <span class="math notranslate nohighlight">\(3 \times R - 1 \times R^3 \Omega\)</span>. Doing this to our equations, we get a very general equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{\partial \Sigma}{\partial t} =  - \frac{1}{2\pi R} \frac{\partial}{\partial R} \left(\frac{1}{\left(R^2 \Omega\right)^\prime }\frac{\partial T}{\partial R}\right)}
+\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[
+(R^2 \Omega)^\prime \equiv \frac{\partial }{\partial R}(R^2 \Omega)
+\]</div>
+<p>is just a shorthand.</p>
+<p>Let’s take the equation above and look at a Keplerian disk case (central point source). In this case, we have: <span class="math notranslate nohighlight">\(v_\varphi = R\Omega\)</span> by definition. This is also:</p>
+<div class="math notranslate nohighlight">
+\[
+v_\varphi = R\Omega =  \sqrt{\frac{GM}{R}}
+\]</div>
+<p><span class="math notranslate nohighlight">\(\Omega\)</span> in our case is:</p>
+<div class="math notranslate nohighlight">
+\[
+\Omega = A R^{-3/2}
+\]</div>
+<p>for Keplerian orbits, where <span class="math notranslate nohighlight">\(A\)</span> is just some amplitude. This means that <span class="math notranslate nohighlight">\((R^2 \Omega)^\prime = \frac{A}{2}R^{-1/2}\)</span>.  The torque term becomes:</p>
+<div class="math notranslate nohighlight">
+\[
+T = 2\pi \nu \Sigma R^3 \frac{\partial \Omega}{\partial R} = -3\pi\nu\Sigma R^3 \cdot \left(AR\right)^{-5/2} 
+\]</div>
+<p>We can now calculate <span class="math notranslate nohighlight">\(\partial T / \partial R\)</span>, and we get:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{(R^2 \Omega)^\prime} \frac{\partial T}{\partial R} = -6\pi R^{1/2} \frac{\partial}{\partial R}(\nu \Sigma R^{1/2})
+\]</div>
+<p>And we get our final equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{\partial \Sigma}{\partial t} = \frac{3}{R}\frac{\partial}{\partial R}\left(R^{1/2} \frac{\partial}{\partial R} \left(\nu \Sigma R^{1/2}\right)\right)}
+\]</div>
+<p><strong>This is the basic equation for the time-evolution of surface density in a Keplerian accretion disk!!</strong></p>
 </div>
 </div>
 </div>
