@@ -1034,4 +1034,6 @@ When we do this, our fluid equations become only functions of $\xi$ (since time 
 :align: center
 ```
 
-n 
+
+
+

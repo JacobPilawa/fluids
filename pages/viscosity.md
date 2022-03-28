@@ -437,8 +437,182 @@ Millikan had oil dropping in air, allowing the oil to fall between two metal pla
 
 
 
+## Accretion Disks
+
+**Astrophysical disks are ubiquitous.** This is primarily because of angular momentum. The locations of these disks can be found:
+
+* around planets
+* around stars
+* around black holes
+* around neutron stars
+
+When accreted gas has a non-zero $\vec L$, it generally forms an accretion disk. How does the gas inside this disk redistribute itself? **If the gas loses angular momentum, the gas migrates inward.** We can lose angular momentum via, for example, radiating energy away with photons, viscous torques, etc. 
+
+The goal of today is to get to the time-evolution equation for a flattened, idealized, axisymmetric disk. How does a ring of gas evolve in the presence of viscosity?
+
+
+Consider an axisymmetric, thin disk (i.e., symmetry about $\varphi$). We will use cylindrical coordinates, with $\hat z$ out of the disk plane. The disk rotation is thus: $\vec \Omega  = \Omega \hat{z}$. Axisymmetry tells us that:
+
+$$
+\partial_\varphi \left(\text{anything}\right) = 0 
+$$
+
+We will also ignore the vertical spread (i.e., we have a razor thin disk) (we can thus ignore $v_z$). We are intersted in:
+
+$$
+\vec v = v_\varphi \hat{\varphi} + v_R \hat{R}
+$$
+
+The orbital motion is $v_\varphi$ and the radial motion is $v_R$, but subject to viscous forces, do these to decay? 
+
+We will also asssume that the central object (whatever it may be) is already in place, and thus we can ignore self-gravity. 
+
+
+### Solving the problem…
+
+
+#### Continuity
+
+Let's start with the continuity equation. We did this before for a disk, and we get:
+
+$$
+\frac{\partial \rho}{\partial t} + \vec \nabla (\rho \vec v) = 0 \rightarrow \frac{\partial \Sigma}{\partial t} + \vec \nabla (\Sigma \vec v) = 0
+$$
+
+Where $\Sigma = \int \rho dz$. 
+
+We can show that:
+
+
+$$
+\boxed{\frac{\partial \Sigma}{\partial t} + \frac{1}{R}\frac{\partial}{\partial R} (\Sigma R v_R) = 0 }
+$$
+
+We want to know a few things:
+
+* Inward mass accretion rate (across R) of a ring at distance $R$ onto central object
+
+The mass of this ring is $\Delta M = \rho 2\pi R \Delta R \Delta z$. The mass rate moving across $R$ is thus:
+
+$$
+\frac{\Delta M}{\Delta t} = \rho \cdot 2\pi R \underbrace{\frac{\Delta R}{\Delta T}}_{v_R}\Delta z
+$$
+
+And so:
+
+$$
+\dot{M} = - \int \rho \cdot 2\pi R v_r \cdot dz
+$$
+And we know that $\rho \cdot dz$ is just $\Sigma$, so:
+
+$$
+\boxed{\dot{M} = - 2\pi R \Sigma v_R}
+$$
+
+Note that we have chosen our sign such that $\dot{M} > 0$ for inflow (the $v_R$ is less than $0$). Thus all the action is going to be solving for $v_R$!
+
+
+#### Momentum Equation (Navier-Stokes Equation)
+
+Recall the Navier-Stokes equation: 
 
 
 
+$$
+\underbrace{\frac{\partial \vec v}{\partial t}}_{0 \text{ bc const. flow} } + (\vec v \cdot \vec \nabla) \vec v = -\frac{1}{\rho} \vec \nabla P - \underbrace{\vec \nabla \Phi}_\text{ignore for now} + \nu\left(\nabla^2 \vec v+  \frac13 \vec \nabla (\underbrace{\vec \nabla \cdot \vec v}_\text{0 bc incompressible})\right)
+$$
+
+The key portion of this is the $\varphi$ component. 
+
+We know $\partial_\varphi P = 0$ due to axisymmetry. We skip a bunch of tedious math here....and just quote the result:
+
+$$
+\boxed{
+\Sigma \frac{\partial v_\varphi}{\partial t} + \Sigma \frac{V_R}{R} \frac{\partial }{\partial R}\left(R v_\varphi\right) = \frac{\partial}{\partial R} \left(\Sigma \nu \frac{\partial v_\varphi}{\partial R}\right) + \frac{1}{R} \frac{\partial}{\partial R}\left(\Sigma \nu v_\varphi\right) - \Sigma \nu \frac{v_\varphi}{R^2}}
+
+$$
+We want to combine this equation above with the mass conservation equation we boxed above! To do this,
+
+* Take $1 \times R v_\varphi + 2\times R$. where $1$ is the top equation and $2$ is the bottom equation.
+
+All together, combining all our terms, we get a **key equation**:
+
+$$
+\frac{\partial}{\partial t}\left(\Sigma R^2 \Omega\right) + \frac{1}{R} \frac{\partial}{\partial R} \left(\Sigma R^3  \Omega v_R\right) = \frac{1}{R}\frac{\partial}{\partial R} \left(\nu \Sigma R^3 \frac{\partial \Omega}{\partial R}\right)
+$$
+
+We will call this equation $3$. 
+
+* It looks scary, but let's examine this. Recall that $v_\varphi = R \Omega$. Recognizing this fact, the first term is **simply the Eulerian rate of change of the angular momentum of an annulus of gas at radius $R$** (per unit area). _This is basically just a conservation of angular momentum equation!_
+* The second term is just the **net rate of angular momentum loss from this unit area due to advection of $L$ with radial flow**.
+* The right-hand side is the source term. **This is the net viscous torque exerted on the annulus.**
+
+
+
+Why is the right hand side a torque? Let's examine this a bit more. We can say:
+
+$$
+\frac{1}{R}\frac{\partial}{\partial R} \left(\nu \Sigma R^3 \frac{\partial \Omega}{\partial R}\right) \equiv \frac{1}{2\pi R}\frac{\partial T}{\partial R}
+$$
+
+where 
+
+$$
+T \equiv 2\pi \nu \Sigma R^3 \frac{\partial \Omega}{\partial R}
+$$
+
+Note that $T<0$ is $\frac{d\Omega}{dR} < 0$. And also note that $T=0$ if we have rigid body rotation ($\frac{\partial \Omega}{\partial R} = 0$). The torque thus comes from particles traveling with viscosity (differential rotation). 
+
+* For most reasonable mass profiles, $\frac{\partial \Omega}{\partial R} < 0$. **The inner parts are faster than the outer parts!** Thus the inner gas moves faster (angularly) than outer gas. Viscosity exerts a negative torque $T$, slowing it down. 
+
+
+
+We need a bit more massaging of our equations to get an expression for $\partial_t \Sigma$. Here, we combine equations $1$ and $3$. We also assume that $\dot{\Omega} = 0$. We can take $3 \times R - 1 \times R^3 \Omega$. Doing this to our equations, we get a very general equation:
+
+$$
+\boxed{\frac{\partial \Sigma}{\partial t} =  - \frac{1}{2\pi R} \frac{\partial}{\partial R} \left(\frac{1}{\left(R^2 \Omega\right)^\prime }\frac{\partial T}{\partial R}\right)}
+$$
+
+where 
+
+$$
+(R^2 \Omega)^\prime \equiv \frac{\partial }{\partial R}(R^2 \Omega)
+$$
+
+is just a shorthand. 
+
+
+
+Let's take the equation above and look at a Keplerian disk case (central point source). In this case, we have: $v_\varphi = R\Omega$ by definition. This is also:
+
+$$
+v_\varphi = R\Omega =  \sqrt{\frac{GM}{R}}
+$$
+
+$\Omega$ in our case is:
+
+$$
+\Omega = A R^{-3/2}
+$$
+
+for Keplerian orbits, where $A$ is just some amplitude. This means that $(R^2 \Omega)^\prime = \frac{A}{2}R^{-1/2}$.  The torque term becomes:
+
+$$
+T = 2\pi \nu \Sigma R^3 \frac{\partial \Omega}{\partial R} = -3\pi\nu\Sigma R^3 \cdot \left(AR\right)^{-5/2} 
+$$
+
+We can now calculate $\partial T / \partial R$, and we get:
+
+$$
+\frac{1}{(R^2 \Omega)^\prime} \frac{\partial T}{\partial R} = -6\pi R^{1/2} \frac{\partial}{\partial R}(\nu \Sigma R^{1/2})
+$$
+And we get our final equation:
+
+$$
+\boxed{\frac{\partial \Sigma}{\partial t} = \frac{3}{R}\frac{\partial}{\partial R}\left(R^{1/2} \frac{\partial}{\partial R} \left(\nu \Sigma R^{1/2}\right)\right)}
+$$
+
+
+**This is the basic equation for the time-evolution of surface density in a Keplerian accretion disk!!**
 
 
