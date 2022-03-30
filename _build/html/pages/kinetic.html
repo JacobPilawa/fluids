@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -203,6 +205,19 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#phase-space-distribution-functions-and-the-boltzmann-equation">
+   Phase Space Distribution Functions and the Boltzmann Equation
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -215,6 +230,19 @@
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#phase-space-distribution-functions-and-the-boltzmann-equation">
+   Phase Space Distribution Functions and the Boltzmann Equation
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -223,6 +251,70 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="kinetic-theory">
 <h1>Kinetic Theory<a class="headerlink" href="#kinetic-theory" title="Permalink to this headline">¶</a></h1>
+<p>This can be an entire class, and we are about to open a huge can of worms. Plasma physics is an example. CMB anisotropies are also an example.</p>
+<p>Recall the fluid approximation from our first lectures. The fluid treatment is only valid when a fluid element of size <span class="math notranslate nohighlight">\(R\)</span> can be found where:</p>
+<p>1. <span class="math notranslate nohighlight">\(R \gg n^{-1/3}\)</span></p>
+<p>2. <span class="math notranslate nohighlight">\(R \gg \ell_{mfp}\)</span></p>
+<p>3. <span class="math notranslate nohighlight">\(R \ll \frac{Q}{|\vec \nabla Q|}\)</span></p>
+<p>When one of these break down, we cannot use fluid analysis. We instead have to consider kinetic theory.</p>
+<div class="section" id="phase-space-distribution-functions-and-the-boltzmann-equation">
+<h2>Phase Space Distribution Functions and the Boltzmann Equation<a class="headerlink" href="#phase-space-distribution-functions-and-the-boltzmann-equation" title="Permalink to this headline">¶</a></h2>
+<p><strong>Phase space is a six dimensional parameter space of positions <span class="math notranslate nohighlight">\(\vec x\)</span> and conjugate momenta <span class="math notranslate nohighlight">\(\vec p\)</span>.</strong> The phase space distribution function <span class="math notranslate nohighlight">\(\mathcal{f}\)</span> can be thought of as a probability distribution <span class="math notranslate nohighlight">\(\mathcal{f}(\vec x, \vec p, t)\)</span>. The Boltzmann equation governs the evolution of <span class="math notranslate nohighlight">\(\mathcal{f}\)</span>. We will find that the lowest moments of the Boltzmann equation map directly into the fluid equations that the fluid equations do not deal with.</p>
+<p>We also have to consider the “phase space volume” centered at a <span class="math notranslate nohighlight">\((\vec x, \vec p) \rightarrow (\vec x + \Delta \vec x, \vec p + \Delta \vec p) = d^3\vec xd^3 \vec p\)</span>. Note that the phase space volume has units of <span class="math notranslate nohighlight">\(h^3\)</span>, the Planck constant.</p>
+<p>The number of particles in phase space volume <span class="math notranslate nohighlight">\(d^3 \vec x d^3 \vec p\)</span> around point <span class="math notranslate nohighlight">\(\vec x, \vec p\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[
+n = \int \mathcal{f}(\vec x, \vec p, t) \, \mathrm{d}^3\vec x \, \mathrm{d}^3\vec p  
+\]</div>
+<p>We can now write down the phase-space continuity equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \mathcal{f}}{\partial t} + \frac{\partial}{\partial x_i} \left(\underbrace{\dot{x}_i \mathcal{f}}_\text{flux out of spatial volume}\right) + \frac{\partial}{\partial p_i} \left(\underbrace{\dot{p}_i \mathcal{f}}_\text{flux out of momentum volume}\right) = 0
+\]</div>
+<p>This is analgous to our continuity equation in the fluid case:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \rho}{\partial t} + \vec \nabla (\rho \vec v) = 0
+\]</div>
+<p>We can re-write our equation as:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial f}{\partial t} + \dot{x}_i \frac{\partial f}{\partial x_i} + \dot{p}_i \frac{\partial f}{\partial p_i} + f\left(\underbrace{\frac{\partial \dot{x}_i}{\partial x_i} + \frac{\partial \dot{p}_i}{\partial p_i}}_\text{0 from Hamilton eq.}\right) = 0
+\]</div>
+<p>Recall the Hamiltonian is <span class="math notranslate nohighlight">\(H\)</span> and the Hamilton equation is:</p>
+<div class="math notranslate nohighlight">
+\[
+\dot{x}_i = \frac{\partial H}{\partial p_i}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\dot{p}_i = -\frac{\partial H}{\partial x_i}
+\]</div>
+<p>These two equations tell us that:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \dot{x}_i}{\partial x_i} + \frac{\partial \dot{p}_i}{\partial p_i} = 0 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{}{}
+\]</div>
+<p>And now we have the <strong>Boltzmann equation</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial f}{\partial t} + \dot{x}_i \frac{\partial f}{\partial x_i} + \dot{p}_i \frac{\partial f}{\partial p_i} = 0
+\]</div>
+<p>Or more elegantly:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{Df}{Dt} = 0}
+\]</div>
+<p>This is the <strong>collisionless Boltzmann equation.</strong> Sometimes we have processes which change the number density. If we had collisonal terms, this would look something like:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{Df}{Dt} = \underbrace{\left(\frac{\partial f}{\partial t}\right)_C}_\text{collisional term}
+\]</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
