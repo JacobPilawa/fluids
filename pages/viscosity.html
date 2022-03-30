@@ -53,6 +53,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Kinetic Theory" href="kinetic.html" />
     <link rel="prev" title="Fluid Instabilities" href="instabilities.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -116,6 +117,11 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Viscous Flows
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="kinetic.html">
+   Kinetic Theory
   </a>
  </li>
 </ul>
@@ -276,6 +282,11 @@
        Momentum Equation (Navier-Stokes Equation)
       </a>
      </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sources-of-viscosity">
+       Sources of Viscosity
+      </a>
+     </li>
     </ul>
    </li>
   </ul>
@@ -369,6 +380,11 @@
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#momentum-equation-navier-stokes-equation">
        Momentum Equation (Navier-Stokes Equation)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sources-of-viscosity">
+       Sources of Viscosity
       </a>
      </li>
     </ul>
@@ -866,6 +882,108 @@ T = 2\pi \nu \Sigma R^3 \frac{\partial \Omega}{\partial R} = -3\pi\nu\Sigma R^3 
 \boxed{\frac{\partial \Sigma}{\partial t} = \frac{3}{R}\frac{\partial}{\partial R}\left(R^{1/2} \frac{\partial}{\partial R} \left(\nu \Sigma R^{1/2}\right)\right)}
 \]</div>
 <p><strong>This is the basic equation for the time-evolution of surface density in a Keplerian accretion disk!!</strong></p>
+<hr class="docutils" />
+<p>We continue here from last time, where we considered a Keplerian disk. By combining the continuity equatio and the Navier-Stokes equation, we found that, assuming Keplerian rotation, the surface mass density evolves according to:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \Sigma(R,t)}{\partial t} = \frac{3}{R}\frac{\partial}{\partial R}\left(R^{1/2} \frac{\partial}{\partial R} \left(\nu \Sigma R^{1/2}\right)\right)
+\]</div>
+<p>This equation has solutions which we will see in Problem Set 6. We assume that the solution is separable.</p>
+<p>For an initial delta function surface-density at <span class="math notranslate nohighlight">\(R=R_0\)</span> (a ring):</p>
+<div class="math notranslate nohighlight">
+\[
+\Sigma(R,t=0) = \frac{m }{2\pi R_0}\delta(R-R_0)
+\]</div>
+<p>One can show that:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\Sigma(R,t) \rightarrow \Sigma(x,\tau) = \frac{m}{\pi R_0^2} \frac{1}{\tau x^{1/4}} e^{-\frac{1+x^2}{\tau}} I_{1/4}\left(\frac{2x}{\tau}\right)}
+\]</div>
+<p>where the dimensionless quantities are defined as <span class="math notranslate nohighlight">\(x \equiv R/R_0\)</span> and <span class="math notranslate nohighlight">\(\tau = \frac{12\nu t}{R_0^2}\)</span> and where <span class="math notranslate nohighlight">\(I_{1/4}\)</span> is the modified Bessel function of order 1/4. What does this equation mean?</p>
+<p>If we combine the continuity equation with the equation above, we can show that:</p>
+<div class="math notranslate nohighlight">
+\[
+v_R = -\frac{3\nu}{R_0} \frac{\partial}{\partial x} \left(\frac14 \ln x + \frac{1+x^2}{\tau} + \ln I_{1/4}(\frac{2x}{\tau})\right)
+\]</div>
+<p>We now want to see what <span class="math notranslate nohighlight">\(v_R\)</span> is close and far from our source. Note that:</p>
+<div class="math notranslate nohighlight">
+\[
+I_{1/4}(z) \propto z^{-1/2} e^{z} \text{ for } z \gg 1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+I_{1/4}(z) \propto z^{1/4} \text{ for } z \ll 1
+\]</div>
+<p>For <span class="math notranslate nohighlight">\(2x\gg \tau\)</span>: the right side is positive if and only if <span class="math notranslate nohighlight">\(x&gt;1\)</span> (beyond the ring):</p>
+<div class="math notranslate nohighlight">
+\[
+v_{R} \approx \frac{3 \nu}{R_{0}}\left[\frac{1}{4 x}+\frac{2 x}{\tau}-\frac{2}{\tau}\right]
+\]</div>
+<p>Thus for <span class="math notranslate nohighlight">\(R&gt;R_0\)</span>, mass flows to larger radii, taking angular momentum away.</p>
+<p>For <span class="math notranslate nohighlight">\(2x \ll \tau\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+v_{R} \approx-\frac{3 \nu}{R_{0}}\left[\frac{1}{2 x}-\frac{2 x}{\tau}\right]
+\]</div>
+<p>Thus <span class="math notranslate nohighlight">\(v_r &lt; 0\)</span> if <span class="math notranslate nohighlight">\(\tau &gt; 4x^2\)</span>. The implication is that the inner portion of the disk (satisfying this condition) moves inward.</p>
+</div>
+<div class="section" id="sources-of-viscosity">
+<h4>Sources of Viscosity<a class="headerlink" href="#sources-of-viscosity" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>We still haven’t said anything about <span class="math notranslate nohighlight">\(\nu\)</span> other than that it is a parameter. Which is faster, though – the processes that govern accretion or the processes that govern viscosity?</p></li>
+</ul>
+<p>The most natural question one can ask is thus: what is the associated timescale of molecular viscosity?</p>
+<ul class="simple">
+<li><p>Inward velocity:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+v_R \sim -\frac{3\nu}{R_0}\frac{1}{2x} \sim -\frac{3}{2}\frac{\nu}{R_0}
+\]</div>
+<p>The timescale of radial inflow is thus:</p>
+<div class="math notranslate nohighlight">
+\[
+t_{inflow} \sim \frac{R}{|v_R|} \sim \frac{R^2}{\nu} \sim \underbrace{\frac{R}{v_\varphi}}_\text{orbital timescale} \underbrace{\frac{R v_\phi}{\nu}}_\text{Reynold's number!}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+t_{inflow} \sim \mathcal{R} t_{orbital}
+\]</div>
+<p>Orbital times are quite fast – all that matters is our Reynold’s number! So what are relevant Reynold’s number for astrophysical accretion disks?</p>
+<p>Well, recall that:</p>
+<div class="math notranslate nohighlight">
+\[
+\nu \sim v_{thermal} \cdot \ell_{mfp} \sim v_{th} \frac{1}{\sigma n} \rightarrow \mathcal{R} \sim \frac{R v_\varphi}{v_{thermal} \ell_{mfp}} \sim \frac{R v_\varphi}{v_{th}} \sigma n
+\]</div>
+<p>In a typical region of an astrophysical accretion disk around a star:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R \sim 10^{10} \text{ cm}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(T_{gas} \sim 10^4 \text{ K}\)</span>, anything hotter becomes warm/hot x-ray gas. Anything lower is molecular clouds. This is about right for a hydrogen/helium disk. We have <span class="math notranslate nohighlight">\(k_b T \sim \frac12 mv^2 \rightarrow  v_{th} \sim 10 \text{ km } \text{ s }^{-1}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(n \gtrsim 10^{15} \text{ cm}^{-3}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma \sim 10^{-16} \text{ cm}^2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v_\phi \sim 100 \text{ km } \text { s }^{-1}\)</span></p></li>
+</ul>
+<p>This gives:</p>
+<div class="math notranslate nohighlight">
+\[
+\nu \sim \frac{v_{th}}{\sigma n} \sim 10^7 \frac{\text{cm}^2}{\text{s}}
+\]</div>
+<p>We also had:</p>
+<div class="math notranslate nohighlight">
+\[
+v_R \sim \frac{\nu}{R} \sim \frac{10^{7}}{10^{10}} \sim 10^{-3} \frac{\text{cm}^2}{\text{s}} \ll v_\varphi
+\]</div>
+<p>And what is the Reynold’s number here?</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\mathcal{R} \sim \frac{R v_\varphi}{\nu} \sim 10^{10}}
+\]</div>
+<p>Thus:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{t_{inflow} \sim 10^{10} t_{orb} \gg t_\text{Hubble}} 
+\]</div>
+<p>So what does this mean? It means that <strong>molecular viscosity alone is simply not effective at bringing material toward the central object.</strong> So what other processes could dominate the inflow?</p>
 </div>
 </div>
 </div>
@@ -902,6 +1020,13 @@ T = 2\pi \nu \Sigma R^3 \frac{\partial \Omega}{\partial R} = -3\pi\nu\Sigma R^3 
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Fluid Instabilities</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="kinetic.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Kinetic Theory</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             

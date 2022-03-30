@@ -616,3 +616,134 @@ $$
 **This is the basic equation for the time-evolution of surface density in a Keplerian accretion disk!!**
 
 
+
+---
+
+We continue here from last time, where we considered a Keplerian disk. By combining the continuity equatio and the Navier-Stokes equation, we found that, assuming Keplerian rotation, the surface mass density evolves according to:
+
+
+$$
+\frac{\partial \Sigma(R,t)}{\partial t} = \frac{3}{R}\frac{\partial}{\partial R}\left(R^{1/2} \frac{\partial}{\partial R} \left(\nu \Sigma R^{1/2}\right)\right)
+$$
+
+
+This equation has solutions which we will see in Problem Set 6. We assume that the solution is separable. 
+
+For an initial delta function surface-density at $R=R_0$ (a ring):
+
+$$
+\Sigma(R,t=0) = \frac{m }{2\pi R_0}\delta(R-R_0)
+$$
+
+One can show that:
+
+$$
+\boxed{\Sigma(R,t) \rightarrow \Sigma(x,\tau) = \frac{m}{\pi R_0^2} \frac{1}{\tau x^{1/4}} e^{-\frac{1+x^2}{\tau}} I_{1/4}\left(\frac{2x}{\tau}\right)}
+$$
+
+where the dimensionless quantities are defined as $x \equiv R/R_0$ and $\tau = \frac{12\nu t}{R_0^2}$ and where $I_{1/4}$ is the modified Bessel function of order 1/4. What does this equation mean? 
+
+If we combine the continuity equation with the equation above, we can show that:
+
+$$
+v_R = -\frac{3\nu}{R_0} \frac{\partial}{\partial x} \left(\frac14 \ln x + \frac{1+x^2}{\tau} + \ln I_{1/4}(\frac{2x}{\tau})\right)
+$$
+
+We now want to see what $v_R$ is close and far from our source. Note that:
+
+$$
+I_{1/4}(z) \propto z^{-1/2} e^{z} \text{ for } z \gg 1
+$$
+
+$$
+I_{1/4}(z) \propto z^{1/4} \text{ for } z \ll 1
+$$
+
+For $2x\gg \tau$: the right side is positive if and only if $x>1$ (beyond the ring):
+
+$$
+v_{R} \approx \frac{3 \nu}{R_{0}}\left[\frac{1}{4 x}+\frac{2 x}{\tau}-\frac{2}{\tau}\right]
+$$
+
+Thus for $R>R_0$, mass flows to larger radii, taking angular momentum away.
+
+For $2x \ll \tau$: 
+
+$$
+v_{R} \approx-\frac{3 \nu}{R_{0}}\left[\frac{1}{2 x}-\frac{2 x}{\tau}\right]
+$$
+
+Thus $v_r < 0$ if $\tau > 4x^2$. The implication is that the inner portion of the disk (satisfying this condition) moves inward.
+
+
+
+#### Sources of Viscosity
+
+* We still haven't said anything about $\nu$ other than that it is a parameter. Which is faster, though – the processes that govern accretion or the processes that govern viscosity? 
+
+The most natural question one can ask is thus: what is the associated timescale of molecular viscosity?
+
+
+* Inward velocity:
+
+$$
+v_R \sim -\frac{3\nu}{R_0}\frac{1}{2x} \sim -\frac{3}{2}\frac{\nu}{R_0}
+$$
+
+The timescale of radial inflow is thus:
+
+$$
+t_{inflow} \sim \frac{R}{|v_R|} \sim \frac{R^2}{\nu} \sim \underbrace{\frac{R}{v_\varphi}}_\text{orbital timescale} \underbrace{\frac{R v_\phi}{\nu}}_\text{Reynold's number!}
+$$
+
+$$
+t_{inflow} \sim \mathcal{R} t_{orbital}
+$$
+Orbital times are quite fast – all that matters is our Reynold's number! So what are relevant Reynold's number for astrophysical accretion disks?
+
+Well, recall that:
+
+$$
+\nu \sim v_{thermal} \cdot \ell_{mfp} \sim v_{th} \frac{1}{\sigma n} \rightarrow \mathcal{R} \sim \frac{R v_\varphi}{v_{thermal} \ell_{mfp}} \sim \frac{R v_\varphi}{v_{th}} \sigma n
+$$
+
+In a typical region of an astrophysical accretion disk around a star:
+
+* $R \sim 10^{10} \text{ cm}$ 
+* $T_{gas} \sim 10^4 \text{ K}$, anything hotter becomes warm/hot x-ray gas. Anything lower is molecular clouds. This is about right for a hydrogen/helium disk. We have $k_b T \sim \frac12 mv^2 \rightarrow  v_{th} \sim 10 \text{ km } \text{ s }^{-1}$.
+* $n \gtrsim 10^{15} \text{ cm}^{-3}$ 
+* $\sigma \sim 10^{-16} \text{ cm}^2$ 
+* $v_\phi \sim 100 \text{ km } \text { s }^{-1}$ 
+
+This gives:
+
+$$
+\nu \sim \frac{v_{th}}{\sigma n} \sim 10^7 \frac{\text{cm}^2}{\text{s}}
+$$
+We also had:
+
+$$
+v_R \sim \frac{\nu}{R} \sim \frac{10^{7}}{10^{10}} \sim 10^{-3} \frac{\text{cm}^2}{\text{s}} \ll v_\varphi
+$$
+
+And what is the Reynold's number here?
+
+$$
+\boxed{\mathcal{R} \sim \frac{R v_\varphi}{\nu} \sim 10^{10}}
+$$
+
+Thus:
+
+$$
+\boxed{t_{inflow} \sim 10^{10} t_{orb} \gg t_\text{Hubble}} 
+$$
+
+So what does this mean? It means that **molecular viscosity alone is simply not effective at bringing material toward the central object.** So what other processes could dominate the inflow?
+
+
+
+
+
+
+
+
