@@ -8,3 +8,4 @@ chapters:
 - file: pages/waves
 - file: pages/instabilities
 - file: pages/viscosity
+- file: pages/kinetic
