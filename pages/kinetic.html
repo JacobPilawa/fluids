@@ -214,6 +214,39 @@
   <a class="reference internal nav-link" href="#phase-space-distribution-functions-and-the-boltzmann-equation">
    Phase Space Distribution Functions and the Boltzmann Equation
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#velocity-moments-of-the-boltzmann-equation">
+     Velocity Moments of the Boltzmann Equation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#take-zeroth-moment-of-be">
+       Take Zeroth Moment of BE
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#take-first-moment-of-be">
+       Take First Moment of BE
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#take-second-moment-of-be">
+       Take Second Moment of BE
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#take-the-ellth-velocity-moment">
+       Take the
+       <span class="math notranslate nohighlight">
+        \(\ell\)
+       </span>
+       th velocity moment:
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -239,6 +272,39 @@
   <a class="reference internal nav-link" href="#phase-space-distribution-functions-and-the-boltzmann-equation">
    Phase Space Distribution Functions and the Boltzmann Equation
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#velocity-moments-of-the-boltzmann-equation">
+     Velocity Moments of the Boltzmann Equation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#take-zeroth-moment-of-be">
+       Take Zeroth Moment of BE
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#take-first-moment-of-be">
+       Take First Moment of BE
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#take-second-moment-of-be">
+       Take Second Moment of BE
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#take-the-ellth-velocity-moment">
+       Take the
+       <span class="math notranslate nohighlight">
+        \(\ell\)
+       </span>
+       th velocity moment:
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -314,6 +380,174 @@ n = \int \mathcal{f}(\vec x, \vec p, t) \, \mathrm{d}^3\vec x \, \mathrm{d}^3\ve
 \[
 \frac{Df}{Dt} = \underbrace{\left(\frac{\partial f}{\partial t}\right)_C}_\text{collisional term}
 \]</div>
+<hr class="docutils" />
+<p>We start here from last time. Recall the collisionless Boltzmann equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{Df}{Dt} = \frac{\partial f}{\partial t} + \dot{x}_i \frac{\partial f}{\partial x_i} + \dot{p}_i \frac{\partial f}{\partial p_i} = 0
+\]</div>
+<p>A standard way forward is to take velocity moments of the Boltmzann equation. There are infinite moments, by the way, constituting a “hierarchy.”</p>
+<p>What do we mean by velocity moments? Let’s examine.</p>
+<p>0. Zeroth Moment (no velocity weighting)</p>
+<div class="math notranslate nohighlight">
+\[
+\int d^{3} p \, v^0 f = \frac{N}{V} = \text{ number density of particles }
+\]</div>
+<p>1. First Moment</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\int d^3p \, \vec v\cdot f}{\int d^3p\, \cdot f} = \frac{1}{n} \int d^3p\, \vec v \cdot f = \langle \vec v\rangle
+\]</div>
+<p>2. Second Moment</p>
+<div class="math notranslate nohighlight">
+\[
+\langle v_i v_j \rangle = \frac{1}{n} \int d^3p\, v_i v_j f 
+\]</div>
+<p>We typically use: <span class="math notranslate nohighlight">\(\sigma_{ij}^2 \equiv \langle v_i v_j \rangle - \langle v_i \rangle \langle v_j\rangle\)</span>.</p>
+<p>3. <span class="math notranslate nohighlight">\(\ell\)</span>th moment:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle v_i v_j \cdots v_\ell \rangle = \cdots 
+\]</div>
+<ul class="simple">
+<li><p>But why does this help us? Each moment allows us to recover a macroscopic quantity! Taking moments takes us from individual particle pictures to macroscopic values.</p></li>
+<li><p>Above was moments in general, but let’s apply this to the Boltzmann equation by taking its velocity moments. We then want to justify dropping higher order moments.</p></li>
+</ul>
+<div class="section" id="velocity-moments-of-the-boltzmann-equation">
+<h3>Velocity Moments of the Boltzmann Equation<a class="headerlink" href="#velocity-moments-of-the-boltzmann-equation" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="take-zeroth-moment-of-be">
+<h4>Take Zeroth Moment of BE<a class="headerlink" href="#take-zeroth-moment-of-be" title="Permalink to this headline">¶</a></h4>
+<div class="math notranslate nohighlight">
+\[
+\int d^3 p \, \left(\text{B.E}\right)
+\]</div>
+<p>This gives:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial}{\partial t} \int d^3p \, f + \int d^3p \, \vec v \cdot \vec \nabla f - \underbrace{m \partial_i \Phi}_{\dot{p}_i} \cdot \int d^3p \, \frac{\partial f}{\partial p_i} = 0
+\]</div>
+<p>Note we can take gradients out of the integrals and we can also do integation by parts on the last term, assuming that <span class="math notranslate nohighlight">\(f \rightarrow 0\)</span> at large <span class="math notranslate nohighlight">\(p\)</span>, and we find that the last term is <span class="math notranslate nohighlight">\(0\)</span>. Collecting terms:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{\partial n}{\partial t} + \vec \nabla (n \cdot \langle \vec v \rangle ) = 0}
+\]</div>
+<p>And we recover the <strong>continuity equation!</strong> We interpret the velocity as the fluid velocity.</p>
+</div>
+<div class="section" id="take-first-moment-of-be">
+<h4>Take First Moment of BE<a class="headerlink" href="#take-first-moment-of-be" title="Permalink to this headline">¶</a></h4>
+<div class="math notranslate nohighlight">
+\[
+\int d^3 p \, v_j \left(\text{B.E.}\right)
+\]</div>
+<p>We have (with free index <span class="math notranslate nohighlight">\(v_j\)</span>)</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial}{\partial t} \int d^3 p \, v_j f + \int d^3p\, v_j v_i \partial_i f - m \partial_i \Phi \int d^3p \, v_j \frac{\partial f}{\partial p_i} = 0
+\]</div>
+<p>And we have three terms to deal with.</p>
+<p>1. Term 1: We have done this before. We get:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial}{\partial t} \left(n\langle v_j\rangle\right) = n\frac{\partial \langle v_j \rangle}{\partial t} + \langle v_j \rangle \frac{\partial n}{\partial t}
+\]</div>
+<p>And we can use the continuity equation to get rid of the <span class="math notranslate nohighlight">\(\partial n / \partial t\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+= n \frac{\partial \langle v_j \rangle}{\partial t} - \langle v_j \rangle \partial_i (n\langle v_i\rangle)
+\]</div>
+<p>In a moment, we will see why we did this.</p>
+<p>2. Term 2:</p>
+<p>We saw the second velocity moment before. The second term thus becomes:</p>
+<div class="math notranslate nohighlight">
+\[
+\partial_i \left(n\langle v_i v_j \rangle\right) = \partial_i \left(n \sigma_{ij}^2\right) + \partial_i \left(n\langle v_i\rangle \langle v_j\rangle\right)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+ = \partial_i \left(n\sigma_{ij}^2\right) + \underbrace{\langle v_j\rangle \partial_i\left(n \langle v_i\rangle\right)} + n\langle v_i\rangle \partial_i \left(\langle v_j\rangle\right)
+\]</div>
+<p><strong>Hey! Look at that! From Term 1 above, we should recognize some familiar terms.</strong></p>
+<p>3. Term 3:</p>
+<p>Here, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+-\partial_i \Phi \cdot \int d^3p \, \cdot p_j \frac{\partial f}{\partial p_i} = - \partial_i \Phi \cdot \int d^3p\, \left(\underbrace{\frac{\partial}{\partial p_i}(p_j f)}_\text{surface term} - f\underbrace{\frac{\partial p_j}{\partial p_i}}_{\delta_{ij}}\right)
+\]</div>
+<p>And we assume the first term (the surface term) goes to <span class="math notranslate nohighlight">\(0\)</span> since we thing <span class="math notranslate nohighlight">\(f\)</span> falls off faster than <span class="math notranslate nohighlight">\(p\)</span>. Otherwise, this would be quite unphysical. So what are we actually left with?</p>
+<div class="math notranslate nohighlight">
+\[
+= \left(\partial_j \Phi\right) \cdot n
+\]</div>
+<p>4. Adding our terms back together: 1+2+3 and simplifying a bit:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{\partial }{\partial t}\langle v_j\rangle  + \langle v_i \rangle \partial_i \left(\langle v_j\rangle\right) = -\partial_j \Phi - \frac{1}{n}\partial_i \left(n\sigma_{ij}^2\right)}
+\]</div>
+<p>Let’s compare this to our Euler equation!</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \vec v}{\partial t} + \left(\vec v \cdot \vec \nabla\right)\vec v = -\vec \nabla \Phi - \frac{1}{\rho}\vec \nabla P
+\]</div>
+<p>We thus recover the Euler equation, <strong><em>almost</em></strong>. We need to map:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec \nabla P \rightarrow \partial_i (\rho \sigma_{ij}^2)
+\]</div>
+<p>We actually encountered this before! We said earlier that the pressure is becoming the Stress tensor <span class="math notranslate nohighlight">\(\sigma_{ij}\)</span>. In the particle picture, this is just the velocity dispersion which is kinda like a pressure for particle pictures/in the kinetic picture. <strong>Pressure is too simplistic.</strong> We can actually write:</p>
+<div class="math notranslate nohighlight">
+\[
+\rho \sigma_{ij}^2 = P \delta_{ij} + \underbrace{\tau_{ij}}_\text{anisotropic stress tensor}
+\]</div>
+<p>What physical processes can contribute to non-zero <span class="math notranslate nohighlight">\(\tau_{ij}\)</span>:</p>
+<ul class="simple">
+<li><p>Viscosity</p></li>
+<li><p>Anisotropic stress in neutrinos</p>
+<ul>
+<li><p>They are weakly interacting and thus precisely not a fluid</p></li>
+</ul>
+</li>
+<li></li>
+</ul>
+</div>
+<div class="section" id="take-second-moment-of-be">
+<h4>Take Second Moment of BE<a class="headerlink" href="#take-second-moment-of-be" title="Permalink to this headline">¶</a></h4>
+<div class="math notranslate nohighlight">
+\[
+\partial d^3p\, v_i v_j \text{(B.E.)}
+\]</div>
+<p>This means to something like…</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial}{\partial t}\sigma_{ij}^2 + \cdots = \cdots \underbrace{\sigma_{ijk}}_\text{third vel. moment}
+\]</div>
+<ul class="simple">
+<li><p>Note some patterns: 0th moment equation contains first moment and <span class="math notranslate nohighlight">\(n\)</span></p></li>
+<li><p>First moment has second moment <span class="math notranslate nohighlight">\(\sigma\)</span> and first moment</p></li>
+<li><p>Second moment will continue third moment and <span class="math notranslate nohighlight">\(\sigma\)</span></p></li>
+<li><p>Thus we have an infinite hierarchy where higher order moments dictate lower moments…need to truncate or go to infinity!</p></li>
+<li><p>**Any time we take a moment of the BE equation, we will get one moment higher because of the momentum term in the BE!</p></li>
+<li></li>
+<li></li>
+</ul>
+</div>
+<div class="section" id="take-the-ellth-velocity-moment">
+<h4>Take the <span class="math notranslate nohighlight">\(\ell\)</span>th velocity moment:<a class="headerlink" href="#take-the-ellth-velocity-moment" title="Permalink to this headline">¶</a></h4>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial}{\partial t} \sigma_{ijk\cdots \ell} = 
+\]</div>
+<ul class="simple">
+<li><p>The <span class="math notranslate nohighlight">\(\ell\)</span>th moment is coupled to the <span class="math notranslate nohighlight">\((\ell -1)\)</span> and <span class="math notranslate nohighlight">\((\ell + 1)\)</span> moments</p></li>
+<li><p>We assume a <strong>closure relation</strong> to truncate the infinite series – how you close the Boltzmann hierarchy is very important to avoid spuripous numerical problems.</p></li>
+<li><p>The photon and neutrino equations need high <span class="math notranslate nohighlight">\(\ell\)</span>.</p>
+<ul>
+<li><p>If you truncate hard (setting to 0, for example), it’s a bit like you shake a rope with a very hard boundary condition (introducing back traveling waves). This spurious hard boundary comes back and affects the photon number density! So typically you use something like Bessel functions which are a bit smoother.</p></li>
+<li><p>We typically go to <span class="math notranslate nohighlight">\(\ell\)</span> of many thousands.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 
