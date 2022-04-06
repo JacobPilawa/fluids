@@ -9,3 +9,4 @@ chapters:
 - file: pages/instabilities
 - file: pages/viscosity
 - file: pages/kinetic
+- file: pages/magneto
