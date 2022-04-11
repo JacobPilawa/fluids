@@ -227,6 +227,11 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ohm-s-law-and-induction-equation-for-the-magnetic-field">
+   Ohm’s Law and Induction Equation for the Magnetic Field
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -258,6 +263,11 @@
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ohm-s-law-and-induction-equation-for-the-magnetic-field">
+   Ohm’s Law and Induction Equation for the Magnetic Field
+  </a>
  </li>
 </ul>
 
@@ -384,6 +394,104 @@
 \]</div>
 <p>We get a wave equation! And we get the same for a <span class="math notranslate nohighlight">\(\vec E\)</span> field as well.</p>
 </div>
+</div>
+<div class="section" id="ohm-s-law-and-induction-equation-for-the-magnetic-field">
+<h2>Ohm’s Law and Induction Equation for the Magnetic Field<a class="headerlink" href="#ohm-s-law-and-induction-equation-for-the-magnetic-field" title="Permalink to this headline">¶</a></h2>
+<p>Ohm’s Law is an empirical law, describing the relation between electric current and electric field (the Engineer’s Version):</p>
+<div class="math notranslate nohighlight">
+\[
+I = \frac{V}{R}
+\]</div>
+<p>This often fails at high <span class="math notranslate nohighlight">\(\vec E\)</span>.</p>
+<p>1. In the rest frame of the conducting material: <span class="math notranslate nohighlight">\(\vec J^\prime = \sigma \vec E^{\prime}\)</span>, where <span class="math notranslate nohighlight">\(\prime\)</span> denotes we are in the rest frame. Here, <span class="math notranslate nohighlight">\(\sigma\)</span> is the electric conductivity, with units of <span class="math notranslate nohighlight">\(\frac{1}{\text{time}}\)</span>. We have:</p>
+<div class="math notranslate nohighlight">
+\[
+J \sim \frac{1}{A}, E\sim \frac{V}{L} \rightarrow \text{ Ohm's Law: } \frac{I}{A} \sim \sigma \frac{V}{L} \rightarrow V \sim \frac{L}{A\sigma}I \equiv RI
+\]</div>
+<p>Thus:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma = \frac{L}{A\sigma} \rightarrow R \sim \frac{L}{A\sigma} \sigma \frac{1}{L\sigma} \propto \frac{1}{\sigma}
+\]</div>
+<p>Resistance is inversely propotional to conductivity.</p>
+<p>2. In the lab frame (an intertial frame), the conductor is moving at <span class="math notranslate nohighlight">\(\vec v\)</span>. We will show that, in this case,</p>
+<div class="math notranslate nohighlight">
+\[
+\vec J = \sigma \left(\vec E + \vec v\times \frac{\vec B}{c}\right)
+\]</div>
+<p>For a <strong>perfect conductor</strong>, meaning that <span class="math notranslate nohighlight">\(\sigma \rightarrow \infty\)</span>, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec E + \vec v \times \frac{\vec B}{c} = 0 \rightarrow \vec E \perp \vec B
+\]</div>
+<p>We also have:</p>
+<div class="math notranslate nohighlight">
+\[
+|\vec E | \sim \frac{v}{c}|\vec B| \ll |\vec B|
+\]</div>
+<p>We now have three equations (Ohm’s Law, Faraday’s Law, Ampere’s Law) and three unknown vector fields (<span class="math notranslate nohighlight">\(\vec B, \vec E, \vec J\)</span>). We combine these equations to get a single equation for <span class="math notranslate nohighlight">\(\vec B\)</span>, giving <strong>the induction equation.</strong></p>
+<p>Start with Ohm’s Law:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec E = \frac{\vec J}{\sigma} - \frac{\vec v \times \vec B}{c} \underbrace{\rightarrow}_\text{Ampere + ignore displacement current} \frac{c}{4\pi \sigma}\vec \nabla \times \vec B - \frac{\vec v \times \vec B}{c}
+\]</div>
+<p>We now use Faraday’s Law:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \vec B}{\partial t} + c \vec \nabla \times \vec E = 0 
+\]</div>
+<p>We now have:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \vec B}{\partial t} + \frac{c^2}{4\pi \sigma}\vec v \times \left(\vec \nabla \times \vec B\right) - \vec \nabla \times (\vec v \times \vec B) = 0 \text{ assuming that } \sigma \text{ is spatially constant}
+\]</div>
+<p>Last time, we looked at <span class="math notranslate nohighlight">\(\vec \nabla \times (\vec \nabla \times \vec B) = -\nabla^2 \vec B + \vec \nabla (\underbrace{\vec \nabla \cdot \vec B}_{0})\)</span></p>
+<p>And thus gives:</p>
+<div class="admonition-the-induction-equation-the-evolution-equation-for-b-fields admonition">
+<p class="admonition-title">The Induction Equation – the evolution equation for B fields</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{\partial \vec B}{\partial t} = \vec \nabla \times \left(\vec v \times \vec B\right) + \eta \nabla^2 \vec B}
+\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[
+\eta \equiv \frac{c^2}{4\pi \sigma}
+\]</div>
+<p>is the “magnetic diffusivity” which is proportional to resistance.</p>
+</div>
+<p>This equation above is similar to the NS equation, by the way! And it motivates the introduction of the <strong>magnetic Reynold’s number.</strong> First, recall the hydrodynamical Reynold’s number:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{Re} = \frac{vL}{\nu}
+\]</div>
+<p>Similarly,we can define:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{Re}_{m} \sim \frac{|\vec \nabla \times (\vec v\times \vec B)|}{|\eta \nabla^2 \vec B|}
+\]</div>
+<p>Dimensionally, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{Re}_{m} \sim\frac{vB/L}{\eta B/L^2} \sim \frac{vL}{\eta}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(v\)</span> is the velocity, <span class="math notranslate nohighlight">\(L\)</span> is the lenght of a typical variation of <span class="math notranslate nohighlight">\(\vec B\)</span>, and <span class="math notranslate nohighlight">\(\eta\)</span> is the magnetic diffusivity/magnetic resistance.</p>
+<p>We thus have two regimes, the low and high (magnetic) Reynold’s number regions:</p>
+<p><strong>1. Low <span class="math notranslate nohighlight">\(\mathcal{Re}_{m}\)</span> has diffusion dominating:</strong></p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \vec B}{\partial t} \approx \eta \nabla^2 \vec B
+\]</div>
+<p>And we can estimate the timescale for field decay due to diffusion:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{B}{\tau} \sim \frac{\eta B}{L^2} \rightarrow \tau \sim \frac{L^2}{\eta}
+\]</div>
+<p><strong>2. Convective term dominates</strong>: this happens when we have really large conductivity (no resistance). This is the <strong>ideal MHD limit.</strong> Many astrophysical systems are well-described in this regime.</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \vec B}{\partial t} \approx \vec \nabla \times (\vec v\times \vec B)
+\]</div>
 </div>
 </div>
 
