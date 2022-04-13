@@ -231,6 +231,27 @@
   <a class="reference internal nav-link" href="#ohm-s-law-and-induction-equation-for-the-magnetic-field">
    Ohm’s Law and Induction Equation for the Magnetic Field
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples-of-conducting-fluids">
+     Examples of Conducting Fluids
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lorentz-force">
+     Lorentz Force
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#two-types-of-vec-b-forces">
+     Two Types of
+     <span class="math notranslate nohighlight">
+      \(\vec B\)
+     </span>
+     Forces
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -268,6 +289,27 @@
   <a class="reference internal nav-link" href="#ohm-s-law-and-induction-equation-for-the-magnetic-field">
    Ohm’s Law and Induction Equation for the Magnetic Field
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples-of-conducting-fluids">
+     Examples of Conducting Fluids
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lorentz-force">
+     Lorentz Force
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#two-types-of-vec-b-forces">
+     Two Types of
+     <span class="math notranslate nohighlight">
+      \(\vec B\)
+     </span>
+     Forces
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -492,6 +534,169 @@ J \sim \frac{1}{A}, E\sim \frac{V}{L} \rightarrow \text{ Ohm's Law: } \frac{I}{A
 \[
 \frac{\partial \vec B}{\partial t} \approx \vec \nabla \times (\vec v\times \vec B)
 \]</div>
+<hr class="docutils" />
+<p>We continue here from last time. We had the magnetic Reynold’s Number:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{Re}_{m} \sim \frac{vL}{\eta}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\eta\)</span> is our magnetic diffusivity vs. our classic Re:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{Re}\sim\frac{vL}{\nu}
+\]</div>
+<div class="section" id="examples-of-conducting-fluids">
+<h3>Examples of Conducting Fluids<a class="headerlink" href="#examples-of-conducting-fluids" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Astrophysical systems typically have <span class="math notranslate nohighlight">\(\mathcal{Re}_{m} \gg 1\)</span>.</p></li>
+<li><p>This is the “ideal MHD” limit.</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>L [m]</p></th>
+<th class="head"><p>v [m/s]</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\eta\)</span> [m<span class="math notranslate nohighlight">\(^2\)</span>/s]</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\tau \sim L^2 / \eta\)</span> (field decay time)</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\mathcal{Re}_{m}\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Mercury</p></td>
+<td><p>0.1</p></td>
+<td><p>0.1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>0.01</p></td>
+</tr>
+<tr class="row-odd"><td><p>Liquid Sodium</p></td>
+<td><p>0.1</p></td>
+<td><p>0.1</p></td>
+<td><p>0.1</p></td>
+<td><p>0.1</p></td>
+<td><p>0.1</p></td>
+</tr>
+<tr class="row-even"><td><p>Earth’s Core</p></td>
+<td><p><span class="math notranslate nohighlight">\(10^{7}\)</span></p></td>
+<td><p>0.1</p></td>
+<td><p>1</p></td>
+<td><p><span class="math notranslate nohighlight">\(10^{14} \sim 3\)</span> million years</p></td>
+<td><p><span class="math notranslate nohighlight">\(10^6\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Sun’s Corona</p></td>
+<td><p><span class="math notranslate nohighlight">\(10^7\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(10^{3}\)</span></p></td>
+<td><p>1</p></td>
+<td><p><span class="math notranslate nohighlight">\(10^{14} \sim 3\)</span> million years</p></td>
+<td><p><span class="math notranslate nohighlight">\(10^{10}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>ISM</p></td>
+<td><p><span class="math notranslate nohighlight">\(10^{17}\)</span> (3 pc)</p></td>
+<td><p><span class="math notranslate nohighlight">\(10^{3}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(10^{3}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(10^{31}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(10^{17}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p>What does this mean? For high magnetic Reynold’s number, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \vec B}{\partial t} \approx \vec \nabla \times (\vec v \times \vec B)
+\]</div>
+<p>And remember the vorticity from the Bernoulli law:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec \omega = \vec \nabla\times\vec v
+\]</div>
+<p>We had re-written the Euler equation, and had:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \vec \omega}{\partial t} = \vec \nabla \times (\vec v \times \vec \omega)
+\]</div>
+<p><strong>This is the Kelvin vorticity theorem.</strong></p>
+<p>This statement is a restatement of angular momentum, which has the same form as the magnetic equation we had above. What does this equation <strong>mean</strong> though?</p>
+<ul class="simple">
+<li><p>We have the flux of <span class="math notranslate nohighlight">\(\vec B\)</span> or <span class="math notranslate nohighlight">\(\vec \omega\)</span>, equivalently, is conserved, and it moves along with the fluid. We can thus think of the magnetic field as being in “frozen in” with the fluid.</p></li>
+</ul>
+</div>
+<div class="section" id="lorentz-force">
+<h3>Lorentz Force<a class="headerlink" href="#lorentz-force" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The force on a charged particle moving with velocity <span class="math notranslate nohighlight">\(\vec u\)</span> in a charged <span class="math notranslate nohighlight">\(\vec E\)</span> and <span class="math notranslate nohighlight">\(\vec B\)</span> field is given by:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\vec F = q\vec E + q \frac{\vec u}{c}\times \vec B
+\]</div>
+<ul class="simple">
+<li><p>Note: we now move to force density instead of force, dividing by volume.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\vec F = \rho_e \vec E + \frac{1}{c}\vec J\times \vec B
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\vec J = \rho_e \vec u\)</span>. Typically in astrophysical systems, <span class="math notranslate nohighlight">\(\rho_e\)</span> is very small (the material is almost always neutral), so we will ignore that term.</p>
+<ul class="simple">
+<li><p>We will also ignore the displacement current, allowing us to re-write <span class="math notranslate nohighlight">\(\vec J\)</span> from Ampere’s Law:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\vec J = \frac{c}{4\pi} \vec \nabla \times \vec B
+\]</div>
+<p>Note that, dimensionally, we have <span class="math notranslate nohighlight">\(B \sim \frac{v}{c}E \ll E\)</span> for <span class="math notranslate nohighlight">\(v/c \ll 1\)</span> (allowing us to drop the displacement current term).</p>
+<p>Making these assumptions, we return to the force density equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec F = \frac{1}{4\pi}(\vec \nabla \times \vec B)\times \vec B = \frac{1}{4\pi} \left(-\frac{1}{2}\vec\nabla B^2 + (\vec B \cdot \vec \nabla)\vec B\right)
+\]</div>
+<p>And we can now add this to the RHS of the Navier-Stokes equation:</p>
+<div class="admonition-ideal-mhd-navier-stokes-equation admonition">
+<p class="admonition-title">Ideal MHD Navier-Stokes Equation</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{\partial \vec v}{\partial t} + \left(\vec v \cdot \vec \nabla\right)\vec v = -\frac{1}{\rho}\vec \nabla\left(P + \frac{B^2}{8\pi}\right) - \vec \nabla \Phi + \frac{1}{4\pi \rho} \left(\vec B \cdot \vec \nabla\right) \vec B + \nu \left(\nabla^2 \vec v + \frac13 \vec \nabla(\vec \nabla \cdot \vec v)\right)}
+\]</div>
+<ul class="simple">
+<li><p>Let’s make sense of the new terms. Note that the <span class="math notranslate nohighlight">\(B^2 / 8\pi\)</span> term represents magnetic pressure, since this is the energy density of the <span class="math notranslate nohighlight">\(B\)</span>-field. Magnetic fields do not like to be squeezed together, in the same way molecules don’t want to be squeezed! Thus, this is where the pressure comes from.</p></li>
+<li><p>The other new term <span class="math notranslate nohighlight">\((\frac{1}{4\pi \rho} (\vec B\cdot \vec \nabla)\vec B)\)</span> is called “magnetic tension.”</p></li>
+<li><p>We also hear about the “plasma <span class="math notranslate nohighlight">\(\beta\)</span>”-parameter, a measure of magnetic field strength relative to the pressure:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\beta \equiv \frac{P}{B^2/8\pi}
+\]</div>
+<ul class="simple">
+<li><p>In the weak-field limit, we have <span class="math notranslate nohighlight">\(\beta \gg 1\)</span> (such as the interior of the Sun).</p></li>
+<li><p>In the strong-field limit, we have <span class="math notranslate nohighlight">\(\beta \ll 1\)</span> (such as the solar corona).</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta \sim 1 \rightarrow\)</span>, such as the ISM.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="two-types-of-vec-b-forces">
+<h3>Two Types of <span class="math notranslate nohighlight">\(\vec B\)</span> Forces<a class="headerlink" href="#two-types-of-vec-b-forces" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>(1) Pressure Gradient Term: the <strong>magnetic pressure force</strong> points in the direction of decreasing magnetic field density (<span class="math notranslate nohighlight">\(\propto -\vec \nabla \frac{B^2}{4\pi}\)</span>). That is to say that a high <span class="math notranslate nohighlight">\(\vec B\)</span> region pushes out against a lower <span class="math notranslate nohighlight">\(\vec B\)</span> region. This wants to spread out the fields uniformly.</p></li>
+<li><p>(2) Magnetic Tension Term: <span class="math notranslate nohighlight">\(\frac{1}{4\pi \rho} (\vec B \cdot \vec \nabla) \vec B\)</span>:</p>
+<ul>
+<li><p>For a straight-line magnetic field (not curved): <span class="math notranslate nohighlight">\(\vec B = B \hat{z}\)</span>. Note that because the divergence has to be <span class="math notranslate nohighlight">\(0\)</span>, the strength of <span class="math notranslate nohighlight">\(B\)</span> cannot depend on <span class="math notranslate nohighlight">\(z\)</span>.</p></li>
+<li><p>Now let’s bend the field! Let’s have <span class="math notranslate nohighlight">\(\vec B(x,z) = B_0 \hat{z} + B_1 (x,z) \hat{x}\)</span>. Let’s examine the weird <span class="math notranslate nohighlight">\(\vec B \cdot \vec \nabla\)</span> piece:</p>
+<ul>
+<li><p>We have: <span class="math notranslate nohighlight">\((\vec B \cdot \vec \nabla) \vec B = (\vec B \cdot \vec \nabla) B_1 \hat{x}\)</span>. This term that we are left with is in the <span class="math notranslate nohighlight">\(\hat{x}\)</span> direction! If we bend the magnetic field, this force is trying to straighten it back out!</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/fig23.png"><img alt="../_images/fig23.png" class="align-center" src="../_images/fig23.png" style="width: 600px;" /></a>
+</div>
 </div>
 </div>
 
