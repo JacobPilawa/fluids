@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Magnetohydrodynamics (MHD) &#8212; Astrophysical Fluid Dynamics</title>
+    <title>Magnetohydrodynamics &#8212; Astrophysical Fluid Dynamics</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -125,7 +125,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Magnetohydrodynamics (MHD)
+   Magnetohydrodynamics
   </a>
  </li>
 </ul>
@@ -253,6 +253,28 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#magnetohydrodynamical-waves">
+   Magnetohydrodynamical Waves
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#longitudinal-magnetosonic-waves">
+     Longitudinal Magnetosonic Waves
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parallel">
+     Parallel
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#transverse">
+     Transverse
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -263,7 +285,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Magnetohydrodynamics (MHD)</h1>
+                <h1>Magnetohydrodynamics</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -311,6 +333,28 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#magnetohydrodynamical-waves">
+   Magnetohydrodynamical Waves
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#longitudinal-magnetosonic-waves">
+     Longitudinal Magnetosonic Waves
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parallel">
+     Parallel
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#transverse">
+     Transverse
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
                         </nav>
@@ -320,8 +364,8 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="magnetohydrodynamics-mhd">
-<h1>Magnetohydrodynamics (MHD)<a class="headerlink" href="#magnetohydrodynamics-mhd" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="magnetohydrodynamics">
+<h1>Magnetohydrodynamics<a class="headerlink" href="#magnetohydrodynamics" title="Permalink to this headline">¶</a></h1>
 <p>Magnetohydrodynamics describes the dynamics of electrically conducting fluids in the presence of a magnetic field <span class="math notranslate nohighlight">\(\vec B\)</span>. The basic process that we are examining is:</p>
 <ul class="simple">
 <li><p>The <span class="math notranslate nohighlight">\(\vec B\)</span> field idnuces currents in a moving, conducting fluid. The current in turn creates forces on the fluid, and also changes the <span class="math notranslate nohighlight">\(\vec B\)</span> field. We add some aditional terms to the Navier-Stokes equation, and we couple those terms with Maxwell’s Equations.</p></li>
@@ -696,6 +740,139 @@ J \sim \frac{1}{A}, E\sim \frac{V}{L} \rightarrow \text{ Ohm's Law: } \frac{I}{A
 </li>
 </ul>
 <a class="reference internal image-reference" href="../_images/fig23.png"><img alt="../_images/fig23.png" class="align-center" src="../_images/fig23.png" style="width: 600px;" /></a>
+<hr class="docutils" />
+<p>We continue here from last time. We had the induction equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \vec B}{\partial t} = \vec \nabla \times (\vec v \times \vec B) + \eta \nabla^2 \vec B
+\]</div>
+<p>We also had the Lorentz force:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec F = \frac{1}{4\pi} ( \vec \nabla \times \vec B ) \times \vec B
+\]</div>
+<p>Using vector identities:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec F = \frac{1}{4\pi}\left(-\frac12 \vec \nabla \vec B^2 + (\vec B \cdot \vec \nabla)\vec B\right)
+\]</div>
+<p>And thus we had the NS equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{\partial \vec v}{\partial t} + \left(\vec v \cdot \vec \nabla\right)\vec v = -\frac{1}{\rho}\vec \nabla\left(P + \frac{B^2}{8\pi}\right) - \vec \nabla \Phi + \frac{1}{4\pi \rho} \left(\vec B \cdot \vec \nabla\right) \vec B + \nu \left(\nabla^2 \vec v + \frac13 \vec \nabla(\vec \nabla \cdot \vec v)\right)}
+\]</div>
+<p>We will take today to examine MHD waves!</p>
+</div>
+</div>
+<div class="section" id="magnetohydrodynamical-waves">
+<h2>Magnetohydrodynamical Waves<a class="headerlink" href="#magnetohydrodynamical-waves" title="Permalink to this headline">¶</a></h2>
+<p>Let’s start by turning off a few things. Consider a non-viscous (inviscid), perfectly conducting fluid <span class="math notranslate nohighlight">\((\sigma \rightarrow \infty)\)</span> in a <span class="math notranslate nohighlight">\(\vec B\)</span> field without gravity.</p>
+<p>We now perform linear perturbations on densities, velocities, and the magnetic field:</p>
+<div class="math notranslate nohighlight">
+\[
+\rho(\vec x, t) = \rho_0 + \rho_1(\vec x, t)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+v(\vec x, t) =  v_1(\vec x, t)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\vec B (\vec x, t) = \vec B_0 + \vec B_1 (\vec x, t) 
+\]</div>
+<p>Our continuity equation becomes:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{\partial \rho_1}{\partial t} + \rho_0 \vec \nabla \cdot \vec v_1 = 0}
+\]</div>
+<p>And our NS equations becomes (using equation for F instead of vector identities):</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \vec v}{\partial t} + (\vec v \cdot \vec \nabla) \vec v = -\frac{1}{\rho}\vec \nabla P + \frac{1}{4\pi \rho}\left(\vec \nabla \times\vec B\right)\vec B
+\]</div>
+<p>This is our original equation, let’s perturb it:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{\partial \vec v_1}{\partial t} = \frac{v_s^2}{\rho_0}\vec \nabla P_1 + \frac{1}{4\pi \rho_0} (\vec \nabla \times \vec B_1)\times \vec B_0}
+\]</div>
+<p>We can now perturb our conduction equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{\partial \vec B_1}{\partial t} = \vec \nabla \times (\vec v_1 \times \vec B_0)}
+\]</div>
+<p>We can combine the three boxed equations above:</p>
+<p>We start by taking the time derivative of the perturbed NS equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial^2 \vec v_1}{\partial t^2} = v_s^2  \underbrace{\vec \nabla \left(\vec \nabla \cdot \vec v_1\right)}_\text{used first boxed eq} + \frac{1}{4\pi \rho_0}\left(\vec \nabla \times \underbrace{[\vec \nabla \times (\vec v_1 \times \vec B_0)]}_\text{from third eq boxed}\right) \times \vec B_0
+\]</div>
+<p>We will now define a new velocity. We will define the <strong>Alfven speed/velocity</strong>:</p>
+<div class="admonition-alfven-velocity admonition">
+<p class="admonition-title">Alfven Velocity</p>
+<div class="math notranslate nohighlight">
+\[
+\vec v_A \equiv \frac{1}{\sqrt{4\pi \rho_0}}\vec B_0
+\]</div>
+</div>
+<p>This makes our equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{\partial^2 \vec v_1}{\partial t^2} - v_s^2 \vec \nabla (\vec \nabla \cdot \vec v_1) + \vec v_a \times \left(\vec \nabla \times [\vec \nabla \times (\vec v_1 \times \vec v_A)]\right) = 0}
+\]</div>
+<p><strong>We have three velocities here and four curls!</strong> What the hell is this? Let’s go to Fourier space…where <span class="math notranslate nohighlight">\(\vec \nabla\)</span> becomes <span class="math notranslate nohighlight">\(\vec k\)</span>!</p>
+<div class="math notranslate nohighlight">
+\[
+\vec v_1 (\vec x, t) = \int \mathrm{d}^3 k \, \vec v_1 (\vec k) e^{i (\vec k \cdot \vec r - \omega t)}
+\]</div>
+<p>In <span class="math notranslate nohighlight">\(k\)</span> space, we can re-write our nasty equation from above. <span class="math notranslate nohighlight">\(\partial t\)</span> will give <span class="math notranslate nohighlight">\(i\omega\)</span> each time.</p>
+<div class="math notranslate nohighlight">
+\[
+-\omega^2 \vec v_1 + (v_s^2  + v_A^2)(\vec k \cdot \vec v_1)\vec k  + \vec v_A \cdot \vec k\left((\vec v_A \cdot \vec k)\vec v_1 - (\vec v_1 \cdot \vec k)\vec v_A - (\vec v_A \cdot \vec v_1)\vec k\right) = 0
+\]</div>
+<p>The non-zero terms depend on where we are pointing relative to <span class="math notranslate nohighlight">\(\vec k\)</span>. We breakdown our vector components into:</p>
+<div class="section" id="longitudinal-magnetosonic-waves">
+<h3>Longitudinal Magnetosonic Waves<a class="headerlink" href="#longitudinal-magnetosonic-waves" title="Permalink to this headline">¶</a></h3>
+<p>1. For <span class="math notranslate nohighlight">\(\vec k \perp \vec v_a\)</span> (recall that <span class="math notranslate nohighlight">\(\vec v_A \parallel \vec B_0 \rightarrow \vec k \perp \vec B_0\)</span>). In other words, these are modes perpendicular to the direction of the field. This makes our equation above:</p>
+<div class="math notranslate nohighlight">
+\[
+\omega^2 \vec v_1 = (v_s^2 + v_A^2)k^2 \left(\vec v_1 \cdot \hat{k}\right) \hat{k}
+\]</div>
+<p><strong>The fluid equation tells us that <span class="math notranslate nohighlight">\(\vec v_1 \parallel \hat{k}\)</span> and <span class="math notranslate nohighlight">\(\boxed{\omega^2 = (v_s^2 + v_a^2)k^2}\)</span></strong> This is a dispersion relative like free-sound waves, but with the extra magnetic pressure term. This is called <strong>longitudinal (in direction of k) magneto-sonic waves</strong> with phase velocity <span class="math notranslate nohighlight">\(v_{\phi} = \sqrt{v_s^2 + v_A^2}\)</span>, depending on both the hydrostatic and magnetic pressures. This makes sense since the <span class="math notranslate nohighlight">\(\vec B\)</span> lines are “frozen” to the fluid and get compressed with the fluid.</p>
+<p>Now remember our conduction equation! As we compress the magnetic field lines (squeezing them closer together). Our <span class="math notranslate nohighlight">\(\vec B_1\)</span> comes form our pertubed conduction equation, and we get:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec B_1 = \frac{k}{\omega} v_1 \vec B_0
+\]</div>
+<p>These waves are parallel to <span class="math notranslate nohighlight">\(\vec B_0\)</span> and thus <strong>only change the strength of the magnetic fields, not the direction.</strong></p>
+</div>
+<div class="section" id="parallel">
+<h3>Parallel<a class="headerlink" href="#parallel" title="Permalink to this headline">¶</a></h3>
+<p>2. For <span class="math notranslate nohighlight">\(\vec k \parallel \vec v_A \parallel \vec B_0\)</span> , we return to our large equation above, and we get two types of wave-motions. We will call them (2i) and (2ii).</p>
+<p>2i. Longitudinal <span class="math notranslate nohighlight">\(\vec v_1 \parallel \vec k \parallel \vec v_A \parallel \vec B_0\)</span>  (everyone is in the same direction). We return to our monster equation. Because we are all in the same direction, we can drop all vector signs. This gives:</p>
+<div class="math notranslate nohighlight">
+\[
+-\omega^2 v_1 + (v_s^2 + v_A^2) k^2 v_1 - v_A^2 k^2 v_a^2 = 0 
+\]</div>
+<p>And the magnetic field term cancels!</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\omega^2 = v_s^2 k^2}
+\]</div>
+<p>These are normal sound waves! And what happens to the perturbed <span class="math notranslate nohighlight">\(\vec B_1\)</span> piece? <span class="math notranslate nohighlight">\(\vec B_1 = \vec 0\)</span> since <span class="math notranslate nohighlight">\(\vec v_1 \times \vec B_0 = 0\)</span> (assuming <span class="math notranslate nohighlight">\(\vec B_1(t=0)=0\)</span>. <strong>Waves which travel along the magnetic field lines do not actually feel the magnetic field!</strong></p>
+</div>
+<div class="section" id="transverse">
+<h3>Transverse<a class="headerlink" href="#transverse" title="Permalink to this headline">¶</a></h3>
+<p>2ii. In this case <span class="math notranslate nohighlight">\(\vec k\)</span> is still parallel but <span class="math notranslate nohighlight">\(\vec v_1\)</span> is perpendicular to <span class="math notranslate nohighlight">\(\vec k\)</span>. This is to say that <span class="math notranslate nohighlight">\(\vec B_1 \perp \vec v_A\)</span>, and also that <span class="math notranslate nohighlight">\(\vec v_1 \perp \vec B_0\)</span>. Returning to our major equation:</p>
+<div class="math notranslate nohighlight">
+\[
+-\omega^2 \vec v_1 +  (v_A k)^2 \vec v_1 = 0 \rightarrow \boxed{\omega^2 = v_A^2 k^2}
+\]</div>
+<p>These are <strong>pure MHD waves, something we have never seen before, and are called Alfven waves.</strong> For completeness, what happens to <span class="math notranslate nohighlight">\(\vec B_1\)</span>? From the conductivity equation, we have: <span class="math notranslate nohighlight">\(\vec B_1 = - \frac{k}{\omega} B_0 \vec v_1\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\dot{\rho} = 0 \rightarrow \text{No density perturbations (from equation 1 above)!}
+\]</div>
+<p>These waves travel up and down the magnetic field lines, shaking them left and right. They make the fluids wiggle around!</p>
 </div>
 </div>
 </div>
