@@ -1,4 +1,4 @@
-# Magnetohydrodynamics (MHD)
+# Magnetohydrodynamics 
 
 Magnetohydrodynamics describes the dynamics of electrically conducting fluids in the presence of a magnetic field $\vec B$. The basic process that we are examining is:
 
@@ -347,3 +347,166 @@ $$
 :width: 600px
 :align: center
 ```
+
+---
+
+
+We continue here from last time. We had the induction equation:
+
+$$
+\frac{\partial \vec B}{\partial t} = \vec \nabla \times (\vec v \times \vec B) + \eta \nabla^2 \vec B
+$$
+
+We also had the Lorentz force:
+
+$$
+\vec F = \frac{1}{4\pi} ( \vec \nabla \times \vec B ) \times \vec B
+$$
+Using vector identities:
+
+$$
+\vec F = \frac{1}{4\pi}\left(-\frac12 \vec \nabla \vec B^2 + (\vec B \cdot \vec \nabla)\vec B\right)
+$$
+
+And thus we had the NS equation:
+
+$$
+\boxed{\frac{\partial \vec v}{\partial t} + \left(\vec v \cdot \vec \nabla\right)\vec v = -\frac{1}{\rho}\vec \nabla\left(P + \frac{B^2}{8\pi}\right) - \vec \nabla \Phi + \frac{1}{4\pi \rho} \left(\vec B \cdot \vec \nabla\right) \vec B + \nu \left(\nabla^2 \vec v + \frac13 \vec \nabla(\vec \nabla \cdot \vec v)\right)}
+$$
+
+
+We will take today to examine MHD waves!
+
+## Magnetohydrodynamical Waves
+
+Let's start by turning off a few things. Consider a non-viscous (inviscid), perfectly conducting fluid $(\sigma \rightarrow \infty)$ in a $\vec B$ field without gravity. 
+
+We now perform linear perturbations on densities, velocities, and the magnetic field:
+
+$$
+\rho(\vec x, t) = \rho_0 + \rho_1(\vec x, t)
+$$
+
+
+$$
+v(\vec x, t) =  v_1(\vec x, t)
+$$
+
+$$
+\vec B (\vec x, t) = \vec B_0 + \vec B_1 (\vec x, t) 
+$$
+Our continuity equation becomes:
+
+$$
+\boxed{\frac{\partial \rho_1}{\partial t} + \rho_0 \vec \nabla \cdot \vec v_1 = 0}
+$$
+
+And our NS equations becomes (using equation for F instead of vector identities):
+
+$$
+\frac{\partial \vec v}{\partial t} + (\vec v \cdot \vec \nabla) \vec v = -\frac{1}{\rho}\vec \nabla P + \frac{1}{4\pi \rho}\left(\vec \nabla \times\vec B\right)\vec B
+$$
+
+This is our original equation, let's perturb it:
+
+$$
+\boxed{\frac{\partial \vec v_1}{\partial t} = \frac{v_s^2}{\rho_0}\vec \nabla P_1 + \frac{1}{4\pi \rho_0} (\vec \nabla \times \vec B_1)\times \vec B_0}
+$$
+
+We can now perturb our conduction equation:
+
+$$
+\boxed{\frac{\partial \vec B_1}{\partial t} = \vec \nabla \times (\vec v_1 \times \vec B_0)}
+$$
+We can combine the three boxed equations above:
+
+We start by taking the time derivative of the perturbed NS equation:
+
+$$
+\frac{\partial^2 \vec v_1}{\partial t^2} = v_s^2  \underbrace{\vec \nabla \left(\vec \nabla \cdot \vec v_1\right)}_\text{used first boxed eq} + \frac{1}{4\pi \rho_0}\left(\vec \nabla \times \underbrace{[\vec \nabla \times (\vec v_1 \times \vec B_0)]}_\text{from third eq boxed}\right) \times \vec B_0
+$$
+
+We will now define a new velocity. We will define the **Alfven speed/velocity**:
+
+```{admonition} Alfven Velocity
+
+
+$$
+\vec v_A \equiv \frac{1}{\sqrt{4\pi \rho_0}}\vec B_0
+$$
+
+```
+
+
+This makes our equation:
+
+$$
+\boxed{\frac{\partial^2 \vec v_1}{\partial t^2} - v_s^2 \vec \nabla (\vec \nabla \cdot \vec v_1) + \vec v_a \times \left(\vec \nabla \times [\vec \nabla \times (\vec v_1 \times \vec v_A)]\right) = 0}
+$$
+
+**We have three velocities here and four curls!** What the hell is this? Let's go to Fourier space...where $\vec \nabla$ becomes $\vec k$!
+
+$$
+\vec v_1 (\vec x, t) = \int \mathrm{d}^3 k \, \vec v_1 (\vec k) e^{i (\vec k \cdot \vec r - \omega t)}
+$$
+In $k$ space, we can re-write our nasty equation from above. $\partial t$ will give $i\omega$ each time.
+
+$$
+-\omega^2 \vec v_1 + (v_s^2  + v_A^2)(\vec k \cdot \vec v_1)\vec k  + \vec v_A \cdot \vec k\left((\vec v_A \cdot \vec k)\vec v_1 - (\vec v_1 \cdot \vec k)\vec v_A - (\vec v_A \cdot \vec v_1)\vec k\right) = 0
+$$
+
+The non-zero terms depend on where we are pointing relative to $\vec k$. We breakdown our vector components into:
+
+### Longitudinal Magnetosonic Waves
+
+1\. For $\vec k \perp \vec v_a$ (recall that $\vec v_A \parallel \vec B_0 \rightarrow \vec k \perp \vec B_0$). In other words, these are modes perpendicular to the direction of the field. This makes our equation above:
+
+$$
+\omega^2 \vec v_1 = (v_s^2 + v_A^2)k^2 \left(\vec v_1 \cdot \hat{k}\right) \hat{k}
+$$
+**The fluid equation tells us that $\vec v_1 \parallel \hat{k}$ and $\boxed{\omega^2 = (v_s^2 + v_a^2)k^2}$** This is a dispersion relative like free-sound waves, but with the extra magnetic pressure term. This is called **longitudinal (in direction of k) magneto-sonic waves** with phase velocity $v_{\phi} = \sqrt{v_s^2 + v_A^2}$, depending on both the hydrostatic and magnetic pressures. This makes sense since the $\vec B$ lines are "frozen" to the fluid and get compressed with the fluid.
+
+Now remember our conduction equation! As we compress the magnetic field lines (squeezing them closer together). Our $\vec B_1$ comes form our pertubed conduction equation, and we get:
+
+$$
+\vec B_1 = \frac{k}{\omega} v_1 \vec B_0
+$$
+These waves are parallel to $\vec B_0$ and thus **only change the strength of the magnetic fields, not the direction.**
+
+### Parallel
+
+2\. For $\vec k \parallel \vec v_A \parallel \vec B_0$ , we return to our large equation above, and we get two types of wave-motions. We will call them (2i) and (2ii).
+
+2i\. Longitudinal $\vec v_1 \parallel \vec k \parallel \vec v_A \parallel \vec B_0$  (everyone is in the same direction). We return to our monster equation. Because we are all in the same direction, we can drop all vector signs. This gives:
+
+$$
+-\omega^2 v_1 + (v_s^2 + v_A^2) k^2 v_1 - v_A^2 k^2 v_a^2 = 0 
+$$
+
+And the magnetic field term cancels!
+
+$$
+\boxed{\omega^2 = v_s^2 k^2}
+$$
+
+These are normal sound waves! And what happens to the perturbed $\vec B_1$ piece? $\vec B_1 = \vec 0$ since $\vec v_1 \times \vec B_0 = 0$ (assuming $\vec B_1(t=0)=0$. **Waves which travel along the magnetic field lines do not actually feel the magnetic field!**
+
+
+### Transverse
+
+
+2ii\. In this case $\vec k$ is still parallel but $\vec v_1$ is perpendicular to $\vec k$. This is to say that $\vec B_1 \perp \vec v_A$, and also that $\vec v_1 \perp \vec B_0$. Returning to our major equation:
+
+$$
+-\omega^2 \vec v_1 +  (v_A k)^2 \vec v_1 = 0 \rightarrow \boxed{\omega^2 = v_A^2 k^2}
+$$
+These are **pure MHD waves, something we have never seen before, and are called Alfven waves.** For completeness, what happens to $\vec B_1$? From the conductivity equation, we have: $\vec B_1 = - \frac{k}{\omega} B_0 \vec v_1$. 
+
+$$
+\dot{\rho} = 0 \rightarrow \text{No density perturbations (from equation 1 above)!}
+$$
+These waves travel up and down the magnetic field lines, shaking them left and right. They make the fluids wiggle around!
+
+
+
+
