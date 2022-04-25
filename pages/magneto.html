@@ -275,6 +275,18 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#magneto-rotational-instability">
+   Magneto-Rotational Instability
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-comments-on-the-dispersion-relation-above">
+     Some comments on the dispersion relation above
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -351,6 +363,18 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#transverse">
      Transverse
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#magneto-rotational-instability">
+   Magneto-Rotational Instability
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-comments-on-the-dispersion-relation-above">
+     Some comments on the dispersion relation above
     </a>
    </li>
   </ul>
@@ -873,6 +897,138 @@ v(\vec x, t) =  v_1(\vec x, t)
 \dot{\rho} = 0 \rightarrow \text{No density perturbations (from equation 1 above)!}
 \]</div>
 <p>These waves travel up and down the magnetic field lines, shaking them left and right. They make the fluids wiggle around!</p>
+<hr class="docutils" />
+<p>We continue here from last time. Recall from last time that we had three types of MHD waves:</p>
+<p>1. <span class="math notranslate nohighlight">\(\vec k \perp \vec B_0\)</span> (<span class="math notranslate nohighlight">\(\vec v_A \parallel \vec B_0\)</span>). Here we had magnetosonic waves (<strong>combination of the two below</strong>):</p>
+<div class="math notranslate nohighlight">
+\[
+\omega^2 = (v_s^2 + v_A^2)^2
+\]</div>
+<p>In this case, we had <span class="math notranslate nohighlight">\(\vec B_1 \parallel \vec B_0\)</span> and <span class="math notranslate nohighlight">\(\vec v_1 \parallel \hat{k}\)</span> and we had the <span class="math notranslate nohighlight">\(\vec B\)</span> field compressing in space.</p>
+<p>2. <span class="math notranslate nohighlight">\(\vec k \parallel \vec B_0\)</span>. Unlike previosuly, we have two cases where <span class="math notranslate nohighlight">\(\vec v_1\)</span> is parallel or perpendicular to <span class="math notranslate nohighlight">\(\vec k\)</span>.</p>
+<p>2i. <span class="math notranslate nohighlight">\(\vec v_1 \parallel \vec k\)</span> (everything is parallel here since these are also <span class="math notranslate nohighlight">\(\propto \hat{z}\)</span>. In this case, we get <strong>pure sound waves</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\omega^2 = v_s^2 k^2
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+\vec B_1 = 0
+\]</div>
+<p>giving us normal sound waves. If you are moving in the direction of <span class="math notranslate nohighlight">\(\vec B\)</span>, you don’t feel the <span class="math notranslate nohighlight">\(\vec B\)</span> and thus we have normal sound waves.</p>
+<p>2ii. <span class="math notranslate nohighlight">\(\vec v_1 \perp \vec k\)</span>. In this case, we get <strong>pure MHD waves</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\omega^2 = v_A^2 k^2 
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+\vec B_1 \propto \vec v_1
+\]</div>
+<p>The result here is that the <span class="math notranslate nohighlight">\(\vec B\)</span> fields wiggle / the fluid is perturbed along the magnetic fields perpendicular to <span class="math notranslate nohighlight">\(\vec B_0\)</span>. These are sometimes called Alfven waves.</p>
+<p>Remember back in early April where we were discussing disks? Let’s return there.</p>
+</div>
+</div>
+<div class="section" id="magneto-rotational-instability">
+<h2>Magneto-Rotational Instability<a class="headerlink" href="#magneto-rotational-instability" title="Permalink to this headline">¶</a></h2>
+<p>Consider a razor thin accretion disk in a <span class="math notranslate nohighlight">\(\vec B = B_0 \hat{z}\)</span> field in cylindrical coordinates. We are rotating with <span class="math notranslate nohighlight">\(\vec \Omega = \Omega \hat{\phi}\)</span>. The relevant MHD equations are:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{D\vec v}{Dt} = -\frac{1}{\rho}\vec\nabla\left(P + \frac{B^2}{8\pi} \right) - \vec \nabla \Phi + \frac{1}{4\pi \rho} \left(\vec B \cdot \vec \nabla\right) \vec B
+\]</div>
+<p>And the induction equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \vec B}{\partial t} = \vec \nabla \times (\vec v \times \vec B) 
+\]</div>
+<p>(where the induction equation is in the perfect conductor limit). We can re-write this as :</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \vec B}{\partial t} = (\vec B \cdot \vec \nabla) \vec v - (\vec v \cdot \vec \nabla) \vec B + \vec v(\vec \nabla \cdot \vec B) - \vec B (\vec \nabla \cdot \vec v)
+\]</div>
+<p>Two terms are <span class="math notranslate nohighlight">\(0\)</span>. We have <span class="math notranslate nohighlight">\(\vec \nabla \cdot \vec B = 0\)</span> from Maxwell, and because we are incompressible, we have <span class="math notranslate nohighlight">\(\vec \nabla \cdot \vec v = 0\)</span>. Linear perturbation theory continues from here.</p>
+<p>We perturb about the equilibrium state of a Keplerian accretion disk surrounding a massive object. This disk has a uniform, vertical <span class="math notranslate nohighlight">\(\vec B\)</span> field given by: <span class="math notranslate nohighlight">\(\vec B = B_0 \hat{z}\)</span>. We consider small perturbations:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec u_0 \equiv \vec v - R \vec \Omega = 0 \text{ in rotating frame }
+\]</div>
+<p>And we introduce</p>
+<div class="math notranslate nohighlight">
+\[
+\vec u_1 \equiv \text{ perturbed fluid velocity in the rotating frame}
+\]</div>
+<p>We also have:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec B = B_0 \hat{z}  + \vec B_1
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\vec B_1\)</span> is the perturbed magnetic field. We now assume a solution of the form:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec u_1 \propto e^{i(kz - \omega t)}
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+\vec B_1 \propto e^{i(kz-\omega t)}
+\]</div>
+<p><strong>That is to say we are considering perturbation modes with <span class="math notranslate nohighlight">\(\vec k = k \hat{z} \parallel \vec B_0\)</span> in the disk plane.</strong> By construction here, we are limit ourselves to the case when we get pure MHD waves. We will skip many lines of math.…</p>
+<p>At the end of the day, we have four unknowns: <span class="math notranslate nohighlight">\(u_{1R},u_{1\phi}\)</span> and <span class="math notranslate nohighlight">\(B_{1R},B_{1\phi}\)</span> with 4 equations (MHD + Induction). In the end, we get the dispersion relatio for MRI:</p>
+<div class="admonition-magneto-rotational-instability admonition">
+<p class="admonition-title">Magneto-Rotational Instability </p>
+<div class="math notranslate nohighlight">
+\[
+\omega^4 - \omega^2 \left(\kappa^2 + 2\left(k v_A\right)^2\right) + (kv_a)^2\left[(k v_A)^2 + \frac{d(\Omega^2)}{d\ln R}\right] = 0
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\kappa\)</span> is the epicylcic frequency we have discussed before. Let’s analyze what this equation means!</p>
+</div>
+<div class="section" id="some-comments-on-the-dispersion-relation-above">
+<h3>Some comments on the dispersion relation above<a class="headerlink" href="#some-comments-on-the-dispersion-relation-above" title="Permalink to this headline">¶</a></h3>
+<p>1. Turn off rotation. Remember earlier that rotation stabilizes disks. Do we find the same here? When we turn off rotation, we have <span class="math notranslate nohighlight">\(\kappa \rightarrow \Omega \rightarrow 0\)</span>. This leaves:</p>
+<div class="math notranslate nohighlight">
+\[
+\omega^4 - 2(kv_a)^2\omega^2 = 0 \rightarrow (\omega^2 - k^2 v_A^2)^2 = 0 \rightarrow \omega^2 = k^2 v_A^2
+\]</div>
+<p>We recover pure MHD waves!</p>
+<p>2. Back to full dispersion relation….the disk is MRI-unstable if <span class="math notranslate nohighlight">\(\omega^2 &lt; 0\)</span>. We can show in PS7 that <span class="math notranslate nohighlight">\(\omega^2 &lt; 0\)</span> if:</p>
+<div class="admonition-instability-criterion-for-mri admonition">
+<p class="admonition-title">Instability Criterion for MRI</p>
+<div class="math notranslate nohighlight">
+\[
+k^2 v_A^2 &lt; -\frac{d(\Omega^2)}{d\ln R}
+\]</div>
+</div>
+<p>For Keplerian orbits, <span class="math notranslate nohighlight">\(\Omega \equiv \frac{v_\phi}{R} \propto \frac{1}{R^{3/2}} \rightarrow k^2 v_A^2 &lt; 3\Omega^2\)</span>  is the condition for a Keplerian disk. Large wavelength <span class="math notranslate nohighlight">\(\lambda\)</span> modes are thus MRI unstable. So rotation is actaully introducing instability!</p>
+<p>3. Unstable modes grow with <span class="math notranslate nohighlight">\(e^{|\omega| t}\)</span> . In PS7, we will show that there is maximum <span class="math notranslate nohighlight">\(\omega_{max}\)</span>. What is the correpsonding <span class="math notranslate nohighlight">\(k\)</span> for <span class="math notranslate nohighlight">\(\omega_{max}\)</span>?</p>
+<div class="math notranslate nohighlight">
+\[
+\omega_{max} \text{ occurs at } k_{max}^2 v_A^2 = -\frac14 \left(1+\frac{\kappa^2}{4\Omega^2}\right)\frac{d(\Omega^2)}{d\ln R}
+\]</div>
+<p>For a Keplerian disk, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{|\omega_{max}| = \frac{1}{2}|\frac{d\Omega}{d\ln R}|}
+\]</div>
+<p>So….how fast is this? For a Keplerian disk, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+|\omega_{max}| = \frac34 \Omega
+\]</div>
+<p>The orbital period is <span class="math notranslate nohighlight">\(2\pi /\Omega\)</span>, so these timescales are actually comparable! The instability is on the orbital timescale! This is very fast, with the growth factor giving:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{Growth } \propto e^{|\omega_{max}|t}
+\]</div>
+<p>In 1 orbital period, <span class="math notranslate nohighlight">\(e^{\omega_{max}t} \sim e^{\frac34 \Omega \cdot \frac{2\pi}{\Omega}} \sim e^{1.5\pi} \sim 110!!!!!\)</span>.</p>
+<p>This is the whole idea behind MRI! Within a few orbital periods, the magnetic fields enhance our initial amplitudes by factors of 100’s! We don’t have the same timescale issues from viscosity alone.</p>
+<p>What is the physical picture here? What’s going on? Why does rotation induce instability?</p>
+<ul class="simple">
+<li><p>Inner orbits race ahead of the outer orbits! Importantly, though, the angular momentum <span class="math notranslate nohighlight">\(L \propto VR \propto R^2 \Omega\)</span> and so the angular momentum actually grows with <span class="math notranslate nohighlight">\(R!\)</span>.</p></li>
+<li><p>As interior masses move ahead of exterior masses, the magnetic tension between the two makes the system lose angular momentum. This induces the interior mass to drop in orbit, and the outer masses moves outward!</p></li>
+<li><p>This is typically how people exlain MRI. Rotation helps because it causes this angular momentum transfer.</p></li>
+</ul>
 </div>
 </div>
 </div>

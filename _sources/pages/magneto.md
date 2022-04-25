@@ -508,5 +508,170 @@ $$
 These waves travel up and down the magnetic field lines, shaking them left and right. They make the fluids wiggle around!
 
 
+---
+
+We continue here from last time. Recall from last time that we had three types of MHD waves:
+
+1\. $\vec k \perp \vec B_0$ ($\vec v_A \parallel \vec B_0$). Here we had magnetosonic waves (**combination of the two below**):
+
+$$
+\omega^2 = (v_s^2 + v_A^2)^2
+$$
+
+In this case, we had $\vec B_1 \parallel \vec B_0$ and $\vec v_1 \parallel \hat{k}$ and we had the $\vec B$ field compressing in space.
+
+2\. $\vec k \parallel \vec B_0$. Unlike previosuly, we have two cases where $\vec v_1$ is parallel or perpendicular to $\vec k$. 
+
+2i\. $\vec v_1 \parallel \vec k$ (everything is parallel here since these are also $\propto \hat{z}$. In this case, we get **pure sound waves**:
+
+$$
+\omega^2 = v_s^2 k^2
+$$
+
+and 
+
+$$
+\vec B_1 = 0
+$$
+giving us normal sound waves. If you are moving in the direction of $\vec B$, you don't feel the $\vec B$ and thus we have normal sound waves.
+
+2ii\. $\vec v_1 \perp \vec k$. In this case, we get **pure MHD waves**:
+
+$$
+\omega^2 = v_A^2 k^2 
+$$
+and 
+
+$$
+\vec B_1 \propto \vec v_1
+$$
+
+The result here is that the $\vec B$ fields wiggle / the fluid is perturbed along the magnetic fields perpendicular to $\vec B_0$. These are sometimes called Alfven waves.
+
+Remember back in early April where we were discussing disks? Let's return there. 
+
+## Magneto-Rotational Instability 
+
+Consider a razor thin accretion disk in a $\vec B = B_0 \hat{z}$ field in cylindrical coordinates. We are rotating with $\vec \Omega = \Omega \hat{\phi}$. The relevant MHD equations are:
+
+$$
+\frac{D\vec v}{Dt} = -\frac{1}{\rho}\vec\nabla\left(P + \frac{B^2}{8\pi} \right) - \vec \nabla \Phi + \frac{1}{4\pi \rho} \left(\vec B \cdot \vec \nabla\right) \vec B
+$$
+
+And the induction equation:
+
+$$
+\frac{\partial \vec B}{\partial t} = \vec \nabla \times (\vec v \times \vec B) 
+$$
+
+(where the induction equation is in the perfect conductor limit). We can re-write this as :
+
+$$
+\frac{\partial \vec B}{\partial t} = (\vec B \cdot \vec \nabla) \vec v - (\vec v \cdot \vec \nabla) \vec B + \vec v(\vec \nabla \cdot \vec B) - \vec B (\vec \nabla \cdot \vec v)
+$$
+
+Two terms are $0$. We have $\vec \nabla \cdot \vec B = 0$ from Maxwell, and because we are incompressible, we have $\vec \nabla \cdot \vec v = 0$. Linear perturbation theory continues from here. 
+
+We perturb about the equilibrium state of a Keplerian accretion disk surrounding a massive object. This disk has a uniform, vertical $\vec B$ field given by: $\vec B = B_0 \hat{z}$. We consider small perturbations:
+
+$$
+\vec u_0 \equiv \vec v - R \vec \Omega = 0 \text{ in rotating frame }
+$$
+And we introduce 
+
+$$
+\vec u_1 \equiv \text{ perturbed fluid velocity in the rotating frame}
+$$
+We also have:
+
+$$
+\vec B = B_0 \hat{z}  + \vec B_1
+$$
+where $\vec B_1$ is the perturbed magnetic field. We now assume a solution of the form:
+
+$$
+\vec u_1 \propto e^{i(kz - \omega t)}
+$$
+
+and 
+
+$$
+\vec B_1 \propto e^{i(kz-\omega t)}
+$$
+
+**That is to say we are considering perturbation modes with $\vec k = k \hat{z} \parallel \vec B_0$ in the disk plane.** By construction here, we are limit ourselves to the case when we get pure MHD waves. We will skip many lines of math.…
+
+At the end of the day, we have four unknowns: $u_{1R},u_{1\phi}$ and $B_{1R},B_{1\phi}$ with 4 equations (MHD + Induction). In the end, we get the dispersion relatio for MRI:
+
+
+```{admonition} Magneto-Rotational Instability 
+
+
+$$
+\omega^4 - \omega^2 \left(\kappa^2 + 2\left(k v_A\right)^2\right) + (kv_a)^2\left[(k v_A)^2 + \frac{d(\Omega^2)}{d\ln R}\right] = 0
+$$
+
+where $\kappa$ is the epicylcic frequency we have discussed before. Let's analyze what this equation means!
+
+```
+
+### Some comments on the dispersion relation above
+
+1\. Turn off rotation. Remember earlier that rotation stabilizes disks. Do we find the same here? When we turn off rotation, we have $\kappa \rightarrow \Omega \rightarrow 0$. This leaves:
+
+$$
+\omega^4 - 2(kv_a)^2\omega^2 = 0 \rightarrow (\omega^2 - k^2 v_A^2)^2 = 0 \rightarrow \omega^2 = k^2 v_A^2
+$$
+
+We recover pure MHD waves!
+
+2\. Back to full dispersion relation....the disk is MRI-unstable if $\omega^2 < 0$. We can show in PS7 that $\omega^2 < 0$ if:
+
+
+```{admonition} Instability Criterion for MRI
+
+$$
+k^2 v_A^2 < -\frac{d(\Omega^2)}{d\ln R}
+$$
+
+```
+
+For Keplerian orbits, $\Omega \equiv \frac{v_\phi}{R} \propto \frac{1}{R^{3/2}} \rightarrow k^2 v_A^2 < 3\Omega^2$  is the condition for a Keplerian disk. Large wavelength $\lambda$ modes are thus MRI unstable. So rotation is actaully introducing instability! 
+
+3\. Unstable modes grow with $e^{|\omega| t}$ . In PS7, we will show that there is maximum $\omega_{max}$. What is the correpsonding $k$ for $\omega_{max}$? 
+
+$$
+\omega_{max} \text{ occurs at } k_{max}^2 v_A^2 = -\frac14 \left(1+\frac{\kappa^2}{4\Omega^2}\right)\frac{d(\Omega^2)}{d\ln R}
+$$
+For a Keplerian disk, we have:
+
+$$
+\boxed{|\omega_{max}| = \frac{1}{2}|\frac{d\Omega}{d\ln R}|}
+$$
+
+So....how fast is this? For a Keplerian disk, we have:
+
+$$
+|\omega_{max}| = \frac34 \Omega
+$$
+
+The orbital period is $2\pi /\Omega$, so these timescales are actually comparable! The instability is on the orbital timescale! This is very fast, with the growth factor giving:
+
+$$
+\text{Growth } \propto e^{|\omega_{max}|t}
+$$
+
+In 1 orbital period, $e^{\omega_{max}t} \sim e^{\frac34 \Omega \cdot \frac{2\pi}{\Omega}} \sim e^{1.5\pi} \sim 110!!!!!$. 
+
+This is the whole idea behind MRI! Within a few orbital periods, the magnetic fields enhance our initial amplitudes by factors of 100's! We don't have the same timescale issues from viscosity alone.
+
+What is the physical picture here? What's going on? Why does rotation induce instability? 
+
+* Inner orbits race ahead of the outer orbits! Importantly, though, the angular momentum $L \propto VR \propto R^2 \Omega$ and so the angular momentum actually grows with $R!$. 
+* As interior masses move ahead of exterior masses, the magnetic tension between the two makes the system lose angular momentum. This induces the interior mass to drop in orbit, and the outer masses moves outward! 
+* This is typically how people exlain MRI. Rotation helps because it causes this angular momentum transfer. 
+
+
+
 
 
