@@ -10,3 +10,4 @@ chapters:
 - file: pages/viscosity
 - file: pages/kinetic
 - file: pages/magneto
+- file: pages/turbulence
