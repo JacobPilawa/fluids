@@ -672,6 +672,14 @@ What is the physical picture here? What's going on? Why does rotation induce ins
 * This is typically how people exlain MRI. Rotation helps because it causes this angular momentum transfer. 
 
 
+---
+
+
+
+
+
+
+
 
 
 
